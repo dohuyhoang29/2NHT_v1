@@ -27,21 +27,35 @@
   -fx-background-color: #fff;
 }
 
+.background-center {
+  -fx-background-color: #fff;
+  -fx-background-radius: 10;
+}
+
 .number_insert {
   -fx-background-radius: 50;
-  -fx-background-color: #fc0;
+  -fx-background-color: #56d;
+}
+
+.lb-number-insert {
+  -fx-text-fill: #fff;
+}
+
+.lb-number-insert-non {
+  -fx-text-fill: #56d;
 }
 
 .number_insert_non {
   -fx-background-radius: 50;
   -fx-background-color: #fff;
   -fx-border-width: 2;
-  -fx-border-color: #fc0;
+  -fx-border-color: #56d;
   -fx-border-radius: 50;
 }
 
 .choice-box-category {
   -fx-background-color: #fff;
-  -fx-border-width: 0 0 1 0;
-  -fx-border-color: #000;
+  -fx-border-width: 1;
+  -fx-border-color: #bababa;
+  -fx-border-radius: 3;
 }

@@ -1,5 +1,6 @@
 package com;
 
+import com.view.Navigator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,11 +11,14 @@ public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("view/InsertProductBasicInfoUI.fxml"));
+//    Parent root = FXMLLoader.load(getClass().getResource("view/InsertLaptopBasicInfoUI.fxml"));
+//
+//    Scene scene = new Scene(root);
+//    primaryStage.setScene(scene);
+//    primaryStage.show();
 
-    Scene scene = new Scene(root, 1280, 900);
-    primaryStage.setScene(scene);
-    primaryStage.show();
+    Navigator.getInstance().setStage(primaryStage);
+    Navigator.getInstance().goToInsertLaptopBasicInfo();
     //test commit
   }
 }
