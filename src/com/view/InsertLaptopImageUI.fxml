@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.InsertLaptopImageController">
+<StackPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.InsertLaptopImageController">
   <children>
     <Pane>
       <children>
@@ -278,44 +287,46 @@
                     <Font size="16.0" />
                   </font>
                 </Label>
-                        <HBox spacing="20.0">
-                           <children>
-                      <Label text="Upload Product Images" textFill="#667777">
-                        <font>
-                          <Font size="14.0" />
-                        </font>
-                      </Label>
-                              <Button fx:id="btnChooseImages" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #56d;" text="Browse" textFill="WHITE" />
-                           </children>
-                        </HBox>
-                        <HBox fx:id="imgChoosed" prefHeight="200.0" prefWidth="700.0" style="-fx-border-image-width: 1; -fx-border-color: #56d; -fx-border-radius: 5;" stylesheets="@../css/style.css">
-                           <children>
-                              <ScrollPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                                 <content>
-                                    <HBox fx:id="imgChoosedLayout" prefHeight="183.0" prefWidth="1200.0" />
-                                 </content>
-                              </ScrollPane>
-                           </children></HBox>
-                        <HBox prefHeight="24.0" prefWidth="700.0" />
+                <HBox spacing="20.0">
+                  <children>
+                    <Label text="Upload Product Images" textFill="#667777">
+                      <font>
+                        <Font size="14.0" />
+                      </font>
+                    </Label>
+                    <Button fx:id="btnChooseImages" mnemonicParsing="false" onMousePressed="#clickChooseImage" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #56d;" text="Browse" textFill="WHITE" />
+                  </children>
+                </HBox>
+                <HBox fx:id="imgChoosed" prefHeight="200.0" prefWidth="700.0" style="-fx-border-image-width: 1; -fx-border-color: #56d; -fx-border-radius: 5;" stylesheets="@../css/style.css">
+                  <children>
+                    <ScrollPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                      <content>
+                        <HBox fx:id="imgChoosedLayout" prefHeight="183.0" prefWidth="696.0" />
+                      </content>
+                    </ScrollPane>
+                  </children>
+                </HBox>
+                <HBox prefHeight="24.0" prefWidth="700.0" />
                 <HBox spacing="5.0" />
                 <HBox prefHeight="38.0" prefWidth="700.0">
                   <children>
                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                                 <children>
+                      <children>
                         <Button fx:id="btnPrevious" mnemonicParsing="false" onAction="#clickPrevious" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: #56d;" stylesheets="@../css/style.css" text="Previous" textFill="WHITE">
                           <font>
                             <Font name="System Bold" size="14.0" />
                           </font>
                         </Button>
-                                 </children></HBox>
+                      </children>
+                    </HBox>
                     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                                 <children>
-                                    <Button fx:id="btnNext" mnemonicParsing="false" onAction="#clickNext" prefHeight="30.0" prefWidth="71.0" style="-fx-background-color: #56d;" stylesheets="@../css/style.css" text="Next" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
+                      <children>
+                        <Button fx:id="btnNext" mnemonicParsing="false" onAction="#clickNext" prefHeight="30.0" prefWidth="71.0" style="-fx-background-color: #56d;" stylesheets="@../css/style.css" text="Next" textFill="WHITE">
+                          <font>
+                            <Font name="System Bold" size="14.0" />
+                          </font>
+                        </Button>
+                      </children>
                     </HBox>
                   </children>
                 </HBox>
