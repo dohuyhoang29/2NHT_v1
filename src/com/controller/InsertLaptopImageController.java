@@ -75,11 +75,11 @@ public class InsertLaptopImageController implements Initializable {
 
   @FXML
   void clickChooseImage(MouseEvent mouseEvent) {
-    List<File> listFile = fileChooser.showOpenMultipleDialog(Navigator.getInstance().getStage());
-    setImgChoosed(listFile);
-    for(File i : listFile) {
-      System.out.println(i);
-    }
+//    List<File> listFile = fileChooser.showOpenMultipleDialog(Navigator.getInstance().getStage());
+//    setImgChoosed(listFile);
+//    for(File i : listFile) {
+//      System.out.println(i);
+//    }
   }
 
   @FXML
@@ -115,26 +115,26 @@ public class InsertLaptopImageController implements Initializable {
   }
 
   int count;
-  FileChooser fileChooser = new FileChooser();
+//  FileChooser fileChooser = new FileChooser();
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 
   }
 
-  public void setImgChoosed(List<File> list) {
-    for (int i = 0; i < list.size(); i++) {
-      try {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/com/view/imgChoosedUI.fxml"));
-        HBox imgBox = fxmlLoader.load();
-        ImgChoosedController imgChoosedController = fxmlLoader.getController();
-        System.out.println(list.get(i));
-        imgChoosedController.setData(list.get(i).toString());
-        imgChoosedLayout.getChildren().add(imgBox);
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    }
-  }
+//  public void setImgChoosed(List<File> list) {
+//    for (int i = 0; i < list.size(); i++) {
+//      try {
+//        FXMLLoader fxmlLoader = new FXMLLoader();
+//        fxmlLoader.setLocation(getClass().getResource("/com/view/imgChoosedUI.fxml"));
+//        HBox imgBox = fxmlLoader.load();
+//        ImgChoosedController imgChoosedController = fxmlLoader.getController();
+//        System.out.println(list.get(i));
+//        imgChoosedController.setData(list.get(i).toString());
+//        imgChoosedLayout.getChildren().add(imgBox);
+//      } catch (IOException e) {
+//        e.printStackTrace();
+//      }
+//    }
+//  }
 }

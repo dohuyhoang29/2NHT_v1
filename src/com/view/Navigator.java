@@ -9,10 +9,16 @@ import javafx.stage.Stage;
 public class Navigator {
   private Navigator() {
   }
-
+  static final String PROJECT_NAME = "2NHT";
   static final String INSERT_LAPTOP_BASIC_INFO = "InsertLaptopBasicInfoUI.fxml";
   static final String INSERT_LAPTOP_IMG = "InsertLaptopImageUI.fxml";
   static final String INSERT_LAPTOP_PRODUCT_DATA = "InsertLaptopProductDataUI.fxml";
+  static final String INSERT_PHONE_BASIC_INFO = "InsertPhoneBasicInfoUI.fxml";
+  static final String INSERT_PHONE_IMG = "InsertPhoneImageUI.fxml";
+  static final String INSERT_PHONE_PRODUCT_DATA = "InsertPhoneProductDataUI.fxml";
+  static final String INSERT_TABLET_BASIC_INFO = "InsertTabletBasicInfoUI.fxml";
+  static final String INSERT_TABLET_IMG = "InsertTabletImageUI.fxml";
+  static final String INSERT_TABLET_PRODUCT_DATA = "InsertTabletProductDataUI.fxml";
 
   private FXMLLoader loader;
   private static Navigator navigator;
@@ -46,15 +52,39 @@ public class Navigator {
   }
 
   public void goToInsertLaptopBasicInfo() throws IOException {
-    goToScene("Add Product", INSERT_LAPTOP_BASIC_INFO);
+    goToScene(PROJECT_NAME, INSERT_LAPTOP_BASIC_INFO);
   }
 
   public void goToInsertLaptopImage() throws IOException {
-    goToScene("Add Product", INSERT_LAPTOP_IMG);
+    goToScene(PROJECT_NAME, INSERT_LAPTOP_IMG);
   }
 
   public void goToInsertLaptopProductData() throws IOException {
-    goToScene("Add Product", INSERT_LAPTOP_PRODUCT_DATA);
+    goToScene(PROJECT_NAME, INSERT_LAPTOP_PRODUCT_DATA);
+  }
+
+  public void goToInsertPhoneBasicInfo() throws IOException {
+    goToScene(PROJECT_NAME, INSERT_PHONE_BASIC_INFO);
+  }
+
+  public void goToInsertPhoneImage() throws IOException {
+    goToScene(PROJECT_NAME, INSERT_PHONE_IMG);
+  }
+
+  public void goToInsertPhoneProductData() throws IOException {
+    goToScene(PROJECT_NAME, INSERT_PHONE_PRODUCT_DATA);
+  }
+
+  public void goToInsertTabletBasicInfo() throws IOException {
+    goToScene(PROJECT_NAME, INSERT_TABLET_BASIC_INFO);
+  }
+
+  public void goToInsertTabletImage() throws IOException {
+    goToScene(PROJECT_NAME, INSERT_TABLET_IMG);
+  }
+
+  public void goToInsertTabletProductData() throws IOException {
+    goToScene(PROJECT_NAME, INSERT_TABLET_PRODUCT_DATA);
   }
 
 //  public void goToEditAccount(Account account) throws IOException {

@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -15,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class InsertLaptopProductDataController implements Initializable {
+public class InsertPhoneImageController implements Initializable {
   @FXML
   private VBox changeLanguageContainer;
 
@@ -53,46 +52,41 @@ public class InsertLaptopProductDataController implements Initializable {
   private HBox addTablet;
 
   @FXML
-  private TextField txtCPU;
+  private Button btnChooseImages;
 
   @FXML
-  private TextField txtRam;
+  private HBox imgChoosed;
 
   @FXML
-  private TextField txtScreen;
-
-  @FXML
-  private TextField txtGraphics;
-
-  @FXML
-  private TextField txtHardDrive;
-
-  @FXML
-  private ChoiceBox<?> cbOperatingSystem;
-
-  @FXML
-  private TextField txtWeight;
-
-  @FXML
-  private TextField txtDimensions;
+  private HBox imgChoosedLayout;
 
   @FXML
   private Button btnPrevious;
 
   @FXML
-  private Button btnSave;
+  private Button btnNext;
 
   @FXML
-  private void clickSave() throws IOException {
+  void clickChooseImage(MouseEvent mouseEvent) {
+//    List<File> listFile = fileChooser.showOpenMultipleDialog(Navigator.getInstance().getStage());
+//    setImgChoosed(listFile);
+//    for(File i : listFile) {
+//      System.out.println(i);
+//    }
+  }
+
+  @FXML
+  private void clickNext() throws IOException {
+    Navigator.getInstance().goToInsertPhoneProductData();
   }
 
   @FXML
   private void clickPrevious() throws IOException {
-    Navigator.getInstance().goToInsertLaptopImage();
+    Navigator.getInstance().goToInsertPhoneBasicInfo();
   }
 
   @FXML
-  private void showAddProductMousePressed (MouseEvent mouseEvent) {
+  void showAddProductMousePressed(MouseEvent event) {
     count++;
     if (count % 2 != 0) {
       addProductContainer.setVisible(true);

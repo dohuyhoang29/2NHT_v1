@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class InsertLaptopProductDataController implements Initializable {
+public class InsertPhoneProductDataController implements Initializable {
   @FXML
   private VBox changeLanguageContainer;
 
@@ -88,7 +88,7 @@ public class InsertLaptopProductDataController implements Initializable {
 
   @FXML
   private void clickPrevious() throws IOException {
-    Navigator.getInstance().goToInsertLaptopImage();
+    Navigator.getInstance().goToInsertPhoneImage();
   }
 
   @FXML

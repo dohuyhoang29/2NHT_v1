@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class InsertLaptopProductDataController implements Initializable {
+public class InsertPhoneBasicInfoController implements Initializable {
   @FXML
   private VBox changeLanguageContainer;
 
@@ -53,42 +53,32 @@ public class InsertLaptopProductDataController implements Initializable {
   private HBox addTablet;
 
   @FXML
-  private TextField txtCPU;
+  private TextField txtProductCode;
 
   @FXML
-  private TextField txtRam;
+  private TextField txtProductName;
 
   @FXML
-  private TextField txtScreen;
+  private ChoiceBox<String> cbManufacturer;
 
   @FXML
-  private TextField txtGraphics;
+  private TextField txtImportPrice;
 
   @FXML
-  private TextField txtHardDrive;
+  private TextField txtPrice;
 
   @FXML
-  private ChoiceBox<?> cbOperatingSystem;
+  private TextField txtOrigin;
 
   @FXML
-  private TextField txtWeight;
+  private TextField txtImportDate;
 
   @FXML
-  private TextField txtDimensions;
+  private Button btnNext;
 
   @FXML
-  private Button btnPrevious;
-
-  @FXML
-  private Button btnSave;
-
-  @FXML
-  private void clickSave() throws IOException {
-  }
-
-  @FXML
-  private void clickPrevious() throws IOException {
-    Navigator.getInstance().goToInsertLaptopImage();
+  private void clickNext() throws IOException {
+    Navigator.getInstance().goToInsertPhoneImage();
   }
 
   @FXML
