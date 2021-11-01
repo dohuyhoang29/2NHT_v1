@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.InsertLaptopBasicInfoController">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.InsertLaptopBasicInfoController">
 <top>
   <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="background_main" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
     <children>
@@ -40,7 +40,7 @@
           </ImageView>
           <TextField fx:id="txtSearch" prefHeight="30.0" prefWidth="194.0" promptText="Search" styleClass="transparent" stylesheets="@../css/style.css">
             <font>
-              <Font size="18.0" />
+              <Font size="14.0" />
             </font>
           </TextField>
         </children>
@@ -51,7 +51,7 @@
       <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
       <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="84.0" prefWidth="246.0" spacing="10.0">
         <children>
-          <ImageView fx:id="changeLanguage" fitHeight="40.0" fitWidth="40.0" onMousePressed="#showChangeLanguageMousePressed" pickOnBounds="true" preserveRatio="true">
+          <ImageView fx:id="changeLanguage" fitHeight="30.0" fitWidth="30.0" onMousePressed="#showChangeLanguageMousePressed" pickOnBounds="true" preserveRatio="true">
             <image>
               <Image url="@../images/ic_usa.png" />
             </image>
@@ -59,14 +59,14 @@
               <Insets right="15.0" />
             </HBox.margin>
           </ImageView>
-          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
             <image>
               <Image url="@../images/user.png" />
             </image>
           </ImageView>
           <Label fx:id="username" text="Do Huy Hoang" textFill="#667777">
             <font>
-              <Font size="18.0" />
+              <Font size="16.0" />
             </font>
           </Label>
         </children>
@@ -79,14 +79,14 @@
     <children>
       <HBox fx:id="dashboard">
         <children>
-          <ImageView fx:id="imgdashboard" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+          <ImageView fx:id="imgdashboard" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
             <image>
               <Image url="@../images/ic_dashboard.png" />
             </image>
           </ImageView>
           <Label fx:id="lbdashboard" text="Dashboard" textFill="WHITE">
             <font>
-              <Font name="System Bold" size="24.0" />
+              <Font name="System Bold" size="20.0" />
             </font>
           </Label>
         </children>
@@ -96,7 +96,7 @@
       </HBox>
       <HBox fx:id="addProduct2" alignment="CENTER_LEFT" onMousePressed="#showAddProductMousePressed" style="-fx-background-color: #234;">
         <children>
-          <ImageView fitHeight="40.0" fitWidth="40.0" onMousePressed="#showAddProductMousePressed" pickOnBounds="true" preserveRatio="true">
+          <ImageView fitHeight="30.0" fitWidth="30.0" onMousePressed="#showAddProductMousePressed" pickOnBounds="true" preserveRatio="true">
             <image>
               <Image url="@../images/ic_product.png" />
             </image>
@@ -106,7 +106,7 @@
           </ImageView>
           <Label text="Add Product" textFill="WHITE">
             <font>
-              <Font name="System Bold" size="24.0" />
+              <Font name="System Bold" size="20.0" />
             </font>
           </Label>
         </children>
@@ -122,7 +122,7 @@
               </ImageView>
               <Label text="Phone" textFill="WHITE">
                 <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                 </font>
               </Label>
             </children>
@@ -136,7 +136,7 @@
               </ImageView>
               <Label text="Laptop" textFill="WHITE">
                 <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                 </font>
               </Label>
             </children>
@@ -150,14 +150,14 @@
               </ImageView>
               <Label text="Tablet" textFill="WHITE">
                 <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                 </font>
               </Label>
             </children>
           </HBox>
         </children>
         <VBox.margin>
-          <Insets left="20.0" />
+          <Insets />
         </VBox.margin>
       </VBox>
     </children>
@@ -221,23 +221,23 @@
           <children>
             <Label text="Add Product">
               <font>
-                <Font name="System Bold" size="24.0" />
+                <Font name="System Bold" size="20.0" />
               </font>
               <VBox.margin>
                 <Insets left="25.0" top="15.0" />
               </VBox.margin>
             </Label>
-            <VBox spacing="20.0" styleClass="background-center" stylesheets="@../css/style.css" VBox.vgrow="ALWAYS">
+            <VBox spacing="10.0" styleClass="background-center" stylesheets="@../css/style.css" VBox.vgrow="ALWAYS">
               <VBox.margin>
                 <Insets bottom="15.0" left="25.0" right="15.0" top="15.0" />
               </VBox.margin>
               <children>
-                <HBox alignment="CENTER" prefHeight="79.0" prefWidth="1367.0">
+                <HBox alignment="CENTER" prefHeight="88.0" prefWidth="966.0">
                   <children>
                     <Separator prefHeight="0.0" prefWidth="128.0" HBox.hgrow="ALWAYS" />
                     <VBox alignment="CENTER" prefHeight="65.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
                       <children>
-                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" styleClass="number_insert" stylesheets="@../css/style.css">
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="number_insert" stylesheets="@../css/style.css">
                           <children>
                             <Label styleClass="lb-number-insert" stylesheets="@../css/style.css" text="1">
                               <font>
@@ -248,14 +248,14 @@
                         </HBox>
                         <Label alignment="CENTER" text="Basic Info">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="14.0" />
                                        </font></Label>
                       </children>
                     </VBox>
                     <Separator prefHeight="0.0" prefWidth="128.0" HBox.hgrow="ALWAYS" />
                     <VBox alignment="CENTER" prefHeight="65.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
                       <children>
-                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
                           <children>
                             <Label styleClass="lb-number-insert-non" stylesheets="@../css/style.css" text="2">
                               <font>
@@ -266,14 +266,14 @@
                         </HBox>
                         <Label alignment="CENTER" maxWidth="-Infinity" prefHeight="18.0" text="Product Images">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="14.0" />
                                        </font></Label>
                       </children>
                     </VBox>
                     <Separator prefHeight="0.0" prefWidth="128.0" HBox.hgrow="ALWAYS" />
                     <VBox alignment="CENTER" prefHeight="65.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
                       <children>
-                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
                           <children>
                             <Label styleClass="lb-number-insert-non" stylesheets="@../css/style.css" text="3">
                               <font>
@@ -284,7 +284,7 @@
                         </HBox>
                         <Label alignment="CENTER" prefHeight="18.0" text="Product Data">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="14.0" />
                                        </font></Label>
                       </children>
                     </VBox>
@@ -296,12 +296,12 @@
                 </HBox>
                 <Label text="Basic Infomation">
                   <font>
-                    <Font size="24.0" />
+                    <Font size="20.0" />
                   </font>
                 </Label>
                 <Label text="Fill all information bellow" textFill="#667777">
                   <font>
-                    <Font size="18.0" />
+                    <Font size="16.0" />
                   </font>
                 </Label>
                 <HBox spacing="5.0">
@@ -310,12 +310,12 @@
                       <children>
                         <Label text="Product Code">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </Label>
                         <TextField fx:id="txtProductCode">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </TextField>
                       </children>
@@ -324,12 +324,12 @@
                       <children>
                         <Label text="Product Name">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </Label>
                         <TextField fx:id="txtProductName">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </TextField>
                       </children>
@@ -342,7 +342,7 @@
                       <children>
                         <Label text="Manufacturer Name">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </Label>
                         <ChoiceBox fx:id="cbManufacturer" prefHeight="127.0" prefWidth="409.0" styleClass="choice-box-category" stylesheets="@../css/style.css" VBox.vgrow="ALWAYS" />
@@ -352,12 +352,12 @@
                       <children>
                         <Label text="Import Price">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </Label>
                         <TextField fx:id="txtImportPrice" VBox.vgrow="ALWAYS">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </TextField>
                       </children>
@@ -366,12 +366,12 @@
                       <children>
                         <Label text="Price">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </Label>
                         <TextField fx:id="txtPrice" VBox.vgrow="ALWAYS">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </TextField>
                       </children>
@@ -384,12 +384,12 @@
                       <children>
                         <Label text="Origin">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </Label>
                                     <TextField fx:id="txtOrigin">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="16.0" />
                                        </font>
                                     </TextField>
                       </children>
@@ -398,12 +398,12 @@
                       <children>
                         <Label text="Import Date">
                           <font>
-                            <Font size="18.0" />
+                            <Font size="16.0" />
                           </font>
                         </Label>
                         <TextField fx:id="txtImportDate" prefHeight="55.0" prefWidth="346.0" promptText="dd-mm-yyyy">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="16.0" />
                                        </font></TextField>
                       </children>
                     </VBox>
@@ -414,9 +414,9 @@
                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                       <children>
-                        <Button fx:id="btnNext" mnemonicParsing="false" onAction="#clickNext" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #56d;" stylesheets="@../css/style.css" text="Next" textFill="WHITE">
+                        <Button fx:id="btnNext" mnemonicParsing="false" onAction="#clickNext" prefHeight="41.0" prefWidth="85.0" style="-fx-background-color: #56d;" stylesheets="@../css/style.css" text="Next" textFill="WHITE">
                           <font>
-                            <Font name="System Bold" size="24.0" />
+                            <Font name="System Bold" size="18.0" />
                           </font>
                         </Button>
                       </children>
