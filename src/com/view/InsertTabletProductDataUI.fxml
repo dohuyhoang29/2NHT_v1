@@ -74,6 +74,7 @@
     </HBox>
   </top>
   <left>
+
     <VBox alignment="TOP_CENTER" prefHeight="570.0" prefWidth="223.0" spacing="10.0" styleClass="background-logo" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
       <children>
         <HBox fx:id="dashboard" alignment="CENTER_LEFT">
