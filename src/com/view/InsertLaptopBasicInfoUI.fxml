@@ -253,7 +253,7 @@
                       </children>
                     </VBox>
                     <Separator prefHeight="0.0" prefWidth="128.0" HBox.hgrow="ALWAYS" />
-                    <VBox alignment="CENTER" prefHeight="65.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <VBox alignment="CENTER" prefHeight="59.0" prefWidth="45.0" HBox.hgrow="ALWAYS">
                       <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
                           <children>
@@ -271,7 +271,7 @@
                       </children>
                     </VBox>
                     <Separator prefHeight="0.0" prefWidth="128.0" HBox.hgrow="ALWAYS" />
-                    <VBox alignment="CENTER" prefHeight="65.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                    <VBox alignment="CENTER" prefHeight="59.0" prefWidth="36.0" HBox.hgrow="ALWAYS">
                       <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
                           <children>
