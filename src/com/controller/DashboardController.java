@@ -1,5 +1,7 @@
 package com.controller;
 
+import com.view.Navigator;
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -57,7 +59,7 @@ public class DashboardController implements Initializable {
     private PieChart pcSalesAnalytics;
 
     @FXML
-    private StackedAreaChart<?, ?> sacRevenue;
+    private AreaChart<Number, Number> acRevenue;
 
     @FXML
     private Label saleRevenue;
@@ -93,6 +95,21 @@ public class DashboardController implements Initializable {
         }
     }
 
+    @FXML
+    private void goToAddPhone(MouseEvent mouseEvent) throws IOException {
+        Navigator.getInstance().goToInsertPhoneBasicInfo();
+    }
+
+    @FXML
+    private void goToAddLaptop(MouseEvent mouseEvent) throws IOException {
+        Navigator.getInstance().goToInsertLaptopBasicInfo();
+    }
+
+    @FXML
+    private void goToAddTablet(MouseEvent mouseEvent) throws IOException {
+        Navigator.getInstance().goToInsertTabletBasicInfo();
+    }
+
     int count;
 
     @Override
@@ -104,67 +121,35 @@ public class DashboardController implements Initializable {
         );
         pcSalesAnalytics.setData(pieChartData);
 
-        CategoryAxis xAxis = new CategoryAxis();
-//        xAxis.setCategories(FXCollections.<String>observableArrayList(
-//                Arrays.asList("1750", "1800", "1850", "1900", "1950", "1999", "2050" )));
+        final NumberAxis xAxis = new NumberAxis(1, 12, 1);
+        xAxis.setLabel("abc");
+        final NumberAxis yAxis = new NumberAxis();
+        acRevenue = new AreaChart<Number, Number>(xAxis, yAxis);
 
-        NumberAxis yAxis = new NumberAxis(0, 10000, 2500);
-        yAxis.setLabel("Population in Millions");
-        sacRevenue = new StackedAreaChart(xAxis, yAxis);
-//
-        XYChart.Series series1 = new XYChart.Series();
-        series1.setName("Asia");
-        series1.getData().add(new XYChart.Data("1750", 502));
-        series1.getData().add(new XYChart.Data("1800", 635));
-        series1.getData().add(new XYChart.Data("1850", 809));
-        series1.getData().add(new XYChart.Data("1900", 947));
-        series1.getData().add(new XYChart.Data("1950", 1402));
-        series1.getData().add(new XYChart.Data("1999", 3634));
-        series1.getData().add(new XYChart.Data("2050", 5268));
+        XYChart.Series<Number, Number> series2014 = new XYChart.Series<Number, Number>();
 
-        XYChart.Series series2 = new XYChart.Series();
-        series2.setName("Africa");
-        series2.getData().add(new XYChart.Data("1750", 106));
-        series2.getData().add(new XYChart.Data("1800", 107));
-        series2.getData().add(new XYChart.Data("1850", 111));
-        series2.getData().add(new XYChart.Data("1900", 133));
-        series2.getData().add(new XYChart.Data("1950", 221));
-        series2.getData().add(new XYChart.Data("1999", 767));
-        series2.getData().add(new XYChart.Data("2050", 1766));
+        series2014.setName("2014");
 
-        XYChart.Series series3 = new XYChart.Series();
-        series3.setName("Europe");
+        series2014.getData().add(new XYChart.Data<Number, Number>(1, 400));
+        series2014.getData().add(new XYChart.Data<Number, Number>(3, 1000));
+        series2014.getData().add(new XYChart.Data<Number, Number>(4, 1500));
+        series2014.getData().add(new XYChart.Data<Number, Number>(5, 800));
+        series2014.getData().add(new XYChart.Data<Number, Number>(7, 500));
+        series2014.getData().add(new XYChart.Data<Number, Number>(8, 1800));
+        series2014.getData().add(new XYChart.Data<Number, Number>(10, 1500));
+        series2014.getData().add(new XYChart.Data<Number, Number>(12, 1300));
 
-        series3.getData().add(new XYChart.Data("1750", 163));
-        series3.getData().add(new XYChart.Data("1800", 203));
-        series3.getData().add(new XYChart.Data("1850", 276));
-        series3.getData().add(new XYChart.Data("1900", 408));
-        series3.getData().add(new XYChart.Data("1950", 547));
-        series3.getData().add(new XYChart.Data("1999", 729));
-        series3.getData().add(new XYChart.Data("2050", 628));
+        XYChart.Series<Number, Number> series2015 = new XYChart.Series<Number, Number>();
+        series2015.setName("2015");
+        series2015.getData().add(new XYChart.Data<Number, Number>(1, 2000));
+        series2015.getData().add(new XYChart.Data<Number, Number>(3, 1500));
+        series2015.getData().add(new XYChart.Data<Number, Number>(4, 1300));
+        series2015.getData().add(new XYChart.Data<Number, Number>(5, 1200));
+        series2015.getData().add(new XYChart.Data<Number, Number>(7, 1400));
+        series2015.getData().add(new XYChart.Data<Number, Number>(8, 1080));
+        series2015.getData().add(new XYChart.Data<Number, Number>(10, 2050));
+        series2015.getData().add(new XYChart.Data<Number, Number>(12, 2005));
 
-        XYChart.Series series4 = new XYChart.Series();
-        series4.setName("America");
-        series4.getData().add(new XYChart.Data("1750", 18));
-        series4.getData().add(new XYChart.Data("1800", 31));
-        series4.getData().add(new XYChart.Data("1850", 54));
-        series4.getData().add(new XYChart.Data("1900", 156));
-        series4.getData().add(new XYChart.Data("1950", 339));
-        series4.getData().add(new XYChart.Data("1999", 818));
-        series4.getData().add(new XYChart.Data("2050", 1201));
-
-        XYChart.Series series5 = new XYChart.Series();
-        series5.setName("Oceania");
-        series5.getData().add(new XYChart.Data("1750", 2));
-        series5.getData().add(new XYChart.Data("1800", 2));
-        series5.getData().add(new XYChart.Data("1850", 2));
-        series5.getData().add(new XYChart.Data("1900", 6));
-        series5.getData().add(new XYChart.Data("1950", 13));
-        series5.getData().add(new XYChart.Data("1999", 30));
-        series5.getData().add(new XYChart.Data("2050", 46));
-
-        sacRevenue.getData().addAll(series1, series2, series3, series4, series5);
-
-
+        acRevenue.getData().addAll(series2014, series2015);
     }
 }

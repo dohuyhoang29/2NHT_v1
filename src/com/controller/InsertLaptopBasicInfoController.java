@@ -104,6 +104,20 @@ public class InsertLaptopBasicInfoController implements Initializable {
     }
   }
 
+  @FXML
+  private void goToAddPhone(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToInsertPhoneBasicInfo();
+  }
+
+  @FXML
+  private void goToAddLaptop(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToInsertLaptopBasicInfo();
+  }
+
+  @FXML
+  private void goToAddTablet(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToInsertTabletBasicInfo();
+  }
   int count;
 
   @Override
