@@ -18,7 +18,7 @@ public class Main extends Application {
 //    primaryStage.show();
 
     Navigator.getInstance().setStage(primaryStage);
-    Navigator.getInstance().goToInsertLaptopBasicInfo();
+    Navigator.getInstance().goToDashboard();
     //test commit
   }
 }

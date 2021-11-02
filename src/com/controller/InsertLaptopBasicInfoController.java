@@ -82,8 +82,6 @@ public class InsertLaptopBasicInfoController implements Initializable {
     Navigator.getInstance().goToInsertLaptopImage();
   }
 
-  int count;
-
   @FXML
   private void showAddProductMousePressed (MouseEvent mouseEvent) {
     count++;
@@ -106,7 +104,7 @@ public class InsertLaptopBasicInfoController implements Initializable {
     }
   }
 
-
+  int count;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {

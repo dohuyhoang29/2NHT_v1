@@ -19,6 +19,7 @@ public class Navigator {
   static final String INSERT_TABLET_BASIC_INFO = "InsertTabletBasicInfoUI.fxml";
   static final String INSERT_TABLET_IMG = "InsertTabletImageUI.fxml";
   static final String INSERT_TABLET_PRODUCT_DATA = "InsertTabletProductDataUI.fxml";
+  static final String DASHBOARD = "DashboardUI.fxml";
 
   private FXMLLoader loader;
   private static Navigator navigator;
@@ -86,6 +87,11 @@ public class Navigator {
   public void goToInsertTabletProductData() throws IOException {
     goToScene(PROJECT_NAME, INSERT_TABLET_PRODUCT_DATA);
   }
+
+  public void goToDashboard() throws IOException {
+    goToScene(PROJECT_NAME, DASHBOARD);
+  }
+
 
 //  public void goToEditAccount(Account account) throws IOException {
 //    goToScene("EditAccount", EDIT_ACCOUNT);

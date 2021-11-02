@@ -11,12 +11,17 @@
   -fx-background-color: rgba(0, 0, 0, 0);
 }
 
+.background-dashboard {
+  -fx-background-color: #fff;
+  -fx-background-radius: 10;
+}
+
 .menu-button {
   -fx-background-color: #29d;
 }
 
 .background {
-  -fx-background-color: #29d;
+  -fx-background-color: #f1f5f7;
 }
 
 .background-logo {
