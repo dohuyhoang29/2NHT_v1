@@ -22,6 +22,7 @@ public class Navigator {
   static final String INSERT_TABLET_IMG = "InsertTabletImageUI.fxml";
   static final String INSERT_TABLET_PRODUCT_DATA = "InsertTabletProductDataUI.fxml";
   static final String DASHBOARD = "DashboardUI.fxml";
+  static final String PRODUCTS_LIST = "ProductsListUI.fxml";
 
   private FXMLLoader loader;
   private static Navigator navigator;
@@ -92,6 +93,10 @@ public class Navigator {
 
   public void goToDashboard() throws IOException {
     goToScene(PROJECT_NAME, DASHBOARD);
+  }
+
+  public void goToProductsList() throws IOException {
+    goToScene(PROJECT_NAME, PRODUCTS_LIST);
   }
 
 

@@ -64,3 +64,9 @@
   -fx-border-color: #bababa;
   -fx-border-radius: 3;
 }
+
+.background-button {
+  -fx-border-width: 1;
+  -fx-border-color: #56d;
+  -fx-border-radius: 5;
+}
