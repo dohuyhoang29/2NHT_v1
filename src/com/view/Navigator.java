@@ -1,6 +1,8 @@
 package com.view;
 
 import java.io.IOException;
+
+import com.helper.TranslateManager;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -42,7 +44,7 @@ public class Navigator {
   }
 
   public void goToScene(String title, String url) throws IOException {
-    loader = new FXMLLoader(getClass().getResource(url));
+    loader = new FXMLLoader(getClass().getResource(url), TranslateManager.getRb());
     Parent root = loader.load();
     Scene scene = new Scene(root);
     stage.setScene(scene);
