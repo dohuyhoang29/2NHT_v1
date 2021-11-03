@@ -90,6 +90,9 @@ public class ProductsListController implements Initializable {
     private TextField txtSearch;
 
     @FXML
+    private TextField txtSearchProduct;
+
+    @FXML
     private Label username;
 
     @FXML

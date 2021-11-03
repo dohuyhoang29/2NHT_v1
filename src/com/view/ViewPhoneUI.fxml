@@ -159,23 +159,23 @@
             <Insets />
           </VBox.margin>
         </VBox>
-            <HBox fx:id="productsList" alignment="CENTER_LEFT" onMousePressed="#showAddProductMousePressed" spacing="10.0" style="-fx-background-color: #234;">
-               <children>
-                  <ImageView fitHeight="35.0" fitWidth="25.0" onMousePressed="#showAddProductMousePressed" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/ic_product_list.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="30.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label text="Product List" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
+        <HBox fx:id="productsList" alignment="CENTER_LEFT" onMousePressed="#showAddProductMousePressed" spacing="10.0" style="-fx-background-color: #234;">
+          <children>
+            <ImageView fitHeight="35.0" fitWidth="25.0" onMousePressed="#showAddProductMousePressed" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../images/ic_product_list.png" />
+              </image>
+              <HBox.margin>
+                <Insets left="30.0" />
+              </HBox.margin>
+            </ImageView>
+            <Label text="Product List" textFill="WHITE">
+              <font>
+                <Font name="System Bold" size="20.0" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
       </children>
       <padding>
         <Insets top="15.0" />
@@ -251,131 +251,15 @@
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
               </padding>
                      <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="967.0">
+                        <HBox prefHeight="100.0" prefWidth="967.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <Label prefHeight="25.0" prefWidth="59.0" text="ID">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="25.0" prefWidth="235.0" text="Product Name">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="25.0" prefWidth="154.0" text="Manufacturer Name">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="25.0" prefWidth="116.0" text="Import Price">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="25.0" prefWidth="79.0" text="Price">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="25.0" prefWidth="115.0" text="Import Date">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="25.0" prefWidth="51.0" text="Status">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" prefHeight="25.0" prefWidth="148.0" text="Actions">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
+                              <ScrollPane>
+                                 <content>
+                                    <HBox prefHeight="473.0" prefWidth="224.0" />
+                                 </content>
+                              </ScrollPane>
                            </children>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
                         </HBox>
-                        <ScrollPane prefHeight="200.0" prefWidth="967.0" style="-fx-background-color: #fff;" styleClass="transparent" stylesheets="@../css/style.css" VBox.vgrow="ALWAYS">
-                           <content>
-                              <VBox prefHeight="424.0" prefWidth="965.0" style="-fx-background-color: #fff;">
-                                 <children>
-                                    <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="967.0">
-                                       <children>
-                                          <Label prefHeight="25.0" prefWidth="59.0" text="001">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </Label>
-                                          <HBox alignment="CENTER_LEFT">
-                                             <children>
-                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../images/Phone/apple/ip13promax/iphone-13-pro-max-blue-select.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Label prefHeight="25.0" prefWidth="204.0" text="Iphone 13 Pro Max">
-                                                   <font>
-                                                      <Font size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </HBox>
-                                          <Label prefHeight="25.0" prefWidth="154.0" text="Apple">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="25.0" prefWidth="116.0" text="4500">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="25.0" prefWidth="79.0" text="4800">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="25.0" prefWidth="115.0" text="03/11/2021">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </Label>
-                                          <Label prefHeight="25.0" prefWidth="43.0" text="Stock">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                          </Label>
-                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="140.0" spacing="10.0" HBox.hgrow="ALWAYS">
-                                             <children>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../images/ic_eye.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../images/ic_pencil.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../images/ic_trash.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                       <padding>
-                                          <Insets left="10.0" />
-                                       </padding>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                           </content>
-                        </ScrollPane>
                      </children>
             </VBox>
           </children>

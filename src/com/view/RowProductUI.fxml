@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="967.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="productCode" prefHeight="25.0" prefWidth="59.0" text="001">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <ImageView fx:id="productImageSrc" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Phone/apple/ip13promax/iphone-13-pro-max-blue-select.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="productName" prefHeight="25.0" prefWidth="204.0" text="Iphone 13 Pro Max">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="manufacturerName" prefHeight="25.0" prefWidth="154.0" text="Apple">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="importPrice" prefHeight="25.0" prefWidth="116.0" text="4500">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="price" prefHeight="25.0" prefWidth="79.0" text="4800">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="importDate" prefHeight="25.0" prefWidth="115.0" text="03/11/2021">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="status" prefHeight="25.0" prefWidth="43.0" text="Stock">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="140.0" spacing="10.0" HBox.hgrow="ALWAYS">
+         <children>
+            <ImageView fx:id="view" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_eye.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="edit" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_pencil.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="delete" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_trash.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets left="10.0" />
+   </padding>
+</HBox>

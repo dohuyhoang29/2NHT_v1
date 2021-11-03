@@ -1,8 +1,6 @@
 
 ;
 2NHT_v1.iml,5\a\5a7ecdc78de207321ca4bed03e615d7a314cda63
-I
-src/com/model/Laptop.java,4\5\45a004f39c71648fdca28ce30d5f19f5f14baf9c
 A
 src/com/Main.java,2\a\2a5cdaf319e94880e9c08f79042d717d422d6e7e
 \
@@ -13,3 +11,21 @@ c
 3src/com/controller/InsertTabletImageController.java,b\5\b544df83548ef134e3eb1280410a5eb0cae8178f
 K
 src/com/view/Navigator.java,a\4\a4e65d59f646f35f969ff59abca8d1f081eddf7b
+c
+3src/com/controller/InsertLaptopImageController.java,0\6\06ee2f82f8404faf1e9ef949c892cd7a6861842c
+f
+6src/com/controller/InsertPhoneBasicInfoController.java,1\b\1b9b53eec09c223b33a754bca39fddb6ca732d80
+b
+2src/com/controller/InsertPhoneImageController.java,b\8\b891fcd3de8adcc0d1edd4506bbef6ccbcd449cd
+h
+8src/com/controller/InsertPhoneProductDataController.java,9\1\911535b89a14efabc3230f210379f89380ad7638
+i
+9src/com/controller/InsertTabletProductDataController.java,4\0\4069bcd869a061ef96c0a8ad94161a44fcdb63f4
+i
+9src/com/controller/InsertLaptopProductDataController.java,b\8\b81f97c6fab7faf762412d26de54483a770507a3
+g
+7src/com/controller/InsertLaptopBasicInfoController.java,7\9\79c396300dbb159f7fa883332310089e8031ae03
+U
+%src/com/view/InsertLaptopImageUI.fxml,3\8\38e901ef23a25ac11cd9a154ae425df4f0dae054
+[
++src/com/view/InsertLaptopProductDataUI.fxml,9\2\92b1d7895b815a58ca502aef848f317b2f4c6058
