@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.InsertTabletProductDataController">
+<BorderPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.InsertTabletProductDataController">
   <top>
     <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="background_main" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
       <children>
@@ -80,7 +80,7 @@
 
     <VBox alignment="TOP_CENTER" prefHeight="570.0" prefWidth="223.0" spacing="10.0" styleClass="background-logo" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
       <children>
-        <HBox fx:id="dashboard" alignment="CENTER_LEFT" spacing="10.0">
+        <HBox fx:id="dashboard" alignment="CENTER_LEFT">
           <children>
             <ImageView fx:id="imgdashboard" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -97,7 +97,7 @@
             <Insets left="30.0" />
           </VBox.margin>
         </HBox>
-        <HBox fx:id="addProduct2" alignment="CENTER_LEFT" onMousePressed="#showAddProductMousePressed" spacing="10.0" style="-fx-background-color: #234;">
+        <HBox fx:id="addProduct2" alignment="CENTER_LEFT" onMousePressed="#showAddProductMousePressed" style="-fx-background-color: #234;">
           <children>
             <ImageView fitHeight="35.0" fitWidth="35.0" onMousePressed="#showAddProductMousePressed" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -257,12 +257,12 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="967.0" spacing="10.0">
                            <children>
-                              <ChoiceBox fx:id="cbCategory" prefHeight="25.0" prefWidth="191.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="txtSearchProduct" promptText="Search" HBox.hgrow="ALWAYS" />
+                              <ChoiceBox prefHeight="25.0" prefWidth="191.0" HBox.hgrow="ALWAYS" />
+                              <TextField promptText="%search" HBox.hgrow="ALWAYS" />
                               <Pane prefHeight="61.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <DatePicker fx:id="dpImportDate" HBox.hgrow="ALWAYS" />
-                              <ChoiceBox fx:id="cbStatus" prefWidth="150.0" HBox.hgrow="ALWAYS" />
-                              <Button fx:id="btnSearch" mnemonicParsing="false" style="-fx-background-color: #56d;" text="Search" textFill="WHITE" />
+                              <DatePicker HBox.hgrow="ALWAYS" />
+                              <ChoiceBox prefWidth="150.0" HBox.hgrow="ALWAYS" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: #56d;" text="%seach" textFill="WHITE" />
                            </children>
                         </HBox>
                         <TableView fx:id="tbProduct" prefHeight="431.0" prefWidth="966.0" VBox.vgrow="ALWAYS">

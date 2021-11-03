@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.InsertLaptopBasicInfoController">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.InsertLaptopBasicInfoController">
 <top>
   <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="background_main" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
     <children>
@@ -29,7 +38,7 @@
               <Image url="@../images/ic_search.png" />
             </image>
           </ImageView>
-          <TextField fx:id="txtSearch" prefHeight="30.0" prefWidth="194.0" promptText="Search" styleClass="transparent" stylesheets="@../css/style.css">
+          <TextField fx:id="txtSearch" prefHeight="30.0" prefWidth="194.0" promptText="%search" styleClass="transparent" stylesheets="@../css/style.css">
             <font>
               <Font size="14.0" />
             </font>
@@ -75,7 +84,7 @@
               <Image url="@../images/ic_dashboard.png" />
             </image>
           </ImageView>
-          <Label fx:id="lbdashboard" text="Dashboard" textFill="WHITE">
+          <Label fx:id="lbdashboard" text="%dashboard" textFill="WHITE">
             <font>
               <Font name="System Bold" size="20.0" />
             </font>
@@ -95,7 +104,7 @@
               <Insets left="30.0" />
             </HBox.margin>
           </ImageView>
-          <Label text="Add Product" textFill="WHITE">
+          <Label text="%addProduct" textFill="WHITE">
             <font>
               <Font name="System Bold" size="20.0" />
             </font>
@@ -111,7 +120,7 @@
                   <Image url="@../images/ic_phone.png" />
                 </image>
               </ImageView>
-              <Label text="Phone" textFill="WHITE">
+              <Label text="%phone" textFill="WHITE">
                 <font>
                   <Font name="System Bold" size="18.0" />
                 </font>
@@ -125,7 +134,7 @@
                   <Image url="@../images/ic_laptop.png" />
                 </image>
               </ImageView>
-              <Label text="Laptop" textFill="WHITE">
+              <Label text="%laptop" textFill="WHITE">
                 <font>
                   <Font name="System Bold" size="18.0" />
                 </font>
@@ -139,7 +148,7 @@
                   <Image url="@../images/ic_tablet.png" />
                 </image>
               </ImageView>
-              <Label text="Tablet" textFill="WHITE">
+              <Label text="%tablet" textFill="WHITE">
                 <font>
                   <Font name="System Bold" size="18.0" />
                 </font>
@@ -210,7 +219,7 @@
             </HBox>
         <VBox prefHeight="200.0" prefWidth="100.0">
           <children>
-            <Label text="Add Laptop">
+            <Label text="%addLaptop">
               <font>
                 <Font name="System Bold" size="20.0" />
               </font>
@@ -237,7 +246,7 @@
                             </Label>
                           </children>
                         </HBox>
-                        <Label alignment="CENTER" text="Basic Info">
+                        <Label alignment="CENTER" text="%basicInfo">
                                        <font>
                                           <Font size="14.0" />
                                        </font></Label>
@@ -255,7 +264,7 @@
                             </Label>
                           </children>
                         </HBox>
-                        <Label alignment="CENTER" maxWidth="-Infinity" prefHeight="18.0" text="Product Images">
+                        <Label alignment="CENTER" maxWidth="-Infinity" prefHeight="18.0" text="%productImages">
                                        <font>
                                           <Font size="14.0" />
                                        </font></Label>
@@ -273,7 +282,7 @@
                             </Label>
                           </children>
                         </HBox>
-                        <Label alignment="CENTER" prefHeight="18.0" text="Product Data">
+                        <Label alignment="CENTER" prefHeight="18.0" text="%productData">
                                        <font>
                                           <Font size="14.0" />
                                        </font></Label>
@@ -285,7 +294,7 @@
                     <Insets bottom="10.0" />
                   </VBox.margin>
                 </HBox>
-                <Label text="Basic Infomation">
+                <Label text="%basicInformation">
                   <font>
                     <Font size="20.0" />
                   </font>
@@ -299,7 +308,7 @@
                   <children>
                     <VBox HBox.hgrow="ALWAYS">
                       <children>
-                        <Label text="Product Code">
+                        <Label text="%productCode">
                           <font>
                             <Font size="16.0" />
                           </font>
@@ -313,7 +322,7 @@
                     </VBox>
                     <VBox HBox.hgrow="ALWAYS">
                       <children>
-                        <Label text="Product Name">
+                        <Label text="%productName">
                           <font>
                             <Font size="16.0" />
                           </font>
@@ -331,7 +340,7 @@
                   <children>
                     <VBox prefHeight="50.0" prefWidth="159.0" HBox.hgrow="ALWAYS">
                       <children>
-                        <Label text="Manufacturer Name">
+                        <Label text="%manufacturerName">
                           <font>
                             <Font size="16.0" />
                           </font>
@@ -341,7 +350,7 @@
                     </VBox>
                     <VBox HBox.hgrow="ALWAYS">
                       <children>
-                        <Label text="Import Price">
+                        <Label text="%importPrice">
                           <font>
                             <Font size="16.0" />
                           </font>
@@ -355,7 +364,7 @@
                     </VBox>
                     <VBox HBox.hgrow="ALWAYS">
                       <children>
-                        <Label text="Price">
+                        <Label text="%price">
                           <font>
                             <Font size="16.0" />
                           </font>
@@ -373,7 +382,7 @@
                   <children>
                     <VBox prefHeight="50.0" prefWidth="178.0" HBox.hgrow="ALWAYS">
                       <children>
-                        <Label text="Origin">
+                        <Label text="%origin">
                           <font>
                             <Font size="16.0" />
                           </font>
@@ -387,7 +396,7 @@
                     </VBox>
                     <VBox prefHeight="48.0" prefWidth="175.0" HBox.hgrow="ALWAYS">
                       <children>
-                        <Label text="Import Date">
+                        <Label text="%importDate">
                           <font>
                             <Font size="16.0" />
                           </font>
@@ -405,7 +414,7 @@
                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                       <children>
-                        <Button fx:id="btnNext" mnemonicParsing="false" onAction="#clickNext" prefHeight="30.0" prefWidth="71.0" style="-fx-background-color: #56d;" stylesheets="@../css/style.css" text="Next" textFill="WHITE">
+                        <Button fx:id="btnNext" mnemonicParsing="false" onAction="#clickNext" prefHeight="30.0" prefWidth="71.0" style="-fx-background-color: #56d;" stylesheets="@../css/style.css" text="%next" textFill="WHITE">
                           <font>
                             <Font name="System Bold" size="14.0" />
                           </font>

@@ -39,7 +39,7 @@
                                 <Image url="@../images/ic_search.png" />
                             </image>
                         </ImageView>
-                        <TextField fx:id="txtSearch" prefHeight="30.0" prefWidth="194.0" promptText="Search" styleClass="transparent" stylesheets="@../css/style.css">
+                        <TextField fx:id="txtSearch" prefHeight="30.0" prefWidth="194.0" promptText="%search" styleClass="transparent" stylesheets="@../css/style.css">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -85,7 +85,7 @@
                                 <Image url="@../images/ic_dashboard.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="lbdashboard" text="Dashboard" textFill="WHITE">
+                        <Label fx:id="lbdashboard" text="%dashboard" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -105,7 +105,7 @@
                                 <Insets left="30.0" />
                             </HBox.margin>
                         </ImageView>
-                        <Label text="Add Product" textFill="WHITE">
+                        <Label text="%addProduct" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -121,7 +121,7 @@
                                         <Image url="@../images/ic_phone.png" />
                                     </image>
                                 </ImageView>
-                                <Label text="Phone" textFill="WHITE">
+                                <Label text="%phone" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font>
@@ -135,7 +135,7 @@
                                         <Image url="@../images/ic_laptop.png" />
                                     </image>
                                 </ImageView>
-                                <Label text="Laptop" textFill="WHITE">
+                                <Label text="%laptop" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font>
@@ -149,7 +149,7 @@
                                         <Image url="@../images/ic_tablet.png" />
                                     </image>
                                 </ImageView>
-                                <Label text="Tablet" textFill="WHITE">
+                                <Label text="%tablet" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font>
@@ -274,7 +274,7 @@
                                        <children>
                                           <VBox prefHeight="100.0" prefWidth="155.0" HBox.hgrow="ALWAYS">
                                              <children>
-                                                <Label text="Sales Revenue">
+                                                <Label text="%salesRevenue">
                                                    <font>
                                                       <Font size="16.0" />
                                                    </font>
@@ -334,7 +334,7 @@
                               </HBox>
                               <VBox styleClass="background-dashboard" stylesheets="@../css/style.css">
                                  <children>
-                                    <Label text="Earning Reports">
+                                    <Label text="%earningReports">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
@@ -343,7 +343,7 @@
                                        <children>
                                           <VBox alignment="CENTER" prefHeight="140.0" prefWidth="144.0" HBox.hgrow="ALWAYS">
                                              <children>
-                                                <Label text="Weekly Earnings">
+                                                <Label text="%weeklyEarnings">
                                                    <font>
                                                       <Font size="20.0" />
                                                    </font>
@@ -366,7 +366,7 @@
                                           </VBox>
                                           <VBox alignment="CENTER" prefHeight="140.0" prefWidth="144.0" HBox.hgrow="ALWAYS">
                                              <children>
-                                                <Label text="Monthly Earnings">
+                                                <Label text="%monthlyEarnings">
                                                    <font>
                                                       <Font size="20.0" />
                                                    </font>
