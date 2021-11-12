@@ -1,6 +1,9 @@
 package com.controller;
 
+import com.helper.CategoryDatabaseHelper;
 import com.model.Category;
+import com.view.Navigator;
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -38,12 +41,13 @@ public class CategoryListItemController {
   }
 
   @FXML
-  void deleteCategory(MouseEvent event) {
-
+  void deleteCategory(MouseEvent event) throws IOException {
+    CategoryDatabaseHelper.deleteCategory(category.getId());
+    Navigator.getInstance().goToCategoryList();
   }
 
   @FXML
-  void editCategory(MouseEvent event) {
-
+  void editCategory(MouseEvent event) throws IOException {
+    Navigator.getInstance().goToEditCategory(category);
   }
 }

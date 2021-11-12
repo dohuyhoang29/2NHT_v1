@@ -1,26 +1,22 @@
 package com.controller;
 
 import com.helper.CategoryDatabaseHelper;
-import com.model.Category;
 import com.view.Navigator;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class CategoryListController implements Initializable {
+public class InsertCategoryController implements Initializable {
   @FXML
   private TextField txtSearch;
 
@@ -34,45 +30,37 @@ public class CategoryListController implements Initializable {
   private HBox dashboard;
 
   @FXML
-  private HBox addProduct;
+  private ImageView imgdashboard;
 
   @FXML
-  private HBox productList;
+  private Label lbdashboard;
+
+  @FXML
+  private HBox addProduct2;
+
+  @FXML
+  private HBox productsList;
+
+  @FXML
+  private HBox accountList;
 
   @FXML
   private VBox changeLanguageContainer;
 
   @FXML
-  private Button btnAddCategory;
+  private TextField txtName;
 
   @FXML
-  private TextField txtSearchCategory;
+  private TextArea txtDescription;
 
   @FXML
-  private Button btnSearch;
-
-  @FXML
-  private VBox itemLayout;
+  private Button btnSave;
 
   int count;
-  List<Category> list = new ArrayList<>();
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    list = CategoryDatabaseHelper.getAllCategories();
 
-    try {
-      for (Category c : list) {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/com/view/CategoryListItemUI.fxml"));
-        HBox hBox = fxmlLoader.load();
-        CategoryListItemController controller = fxmlLoader.getController();
-        controller.setData(c);
-        itemLayout.getChildren().add(hBox);
-      }
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
   }
 
   //Hanh dong
@@ -87,12 +75,11 @@ public class CategoryListController implements Initializable {
   }
 
   @FXML
-  private void addCategory(ActionEvent event) throws IOException {
-    Navigator.getInstance().goToInsertCategory();
+  private void insertCategory() {
+    CategoryDatabaseHelper.insertCategory(txtName.getText(), txtDescription.getText());
   }
 
   //Dieu Huong
-
   @FXML
   private void goToInsertProduct (MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToInsertProduct();

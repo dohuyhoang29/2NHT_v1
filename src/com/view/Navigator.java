@@ -1,7 +1,9 @@
 package com.view;
 
 import com.controller.EditAccountController;
+import com.controller.EditCategoryController;
 import com.model.Account;
+import com.model.Category;
 import java.io.IOException;
 
 import com.helper.TranslateManager;
@@ -23,6 +25,8 @@ public class Navigator {
   static final String INSERT_ACCOUNT = "InsertAccountUI.fxml";
   static final String EDIT_ACCOUNT = "EditAccountUI.fxml";
   static final String CATEGORY_LIST = "CategoryListUI.fxml";
+  static final String INSERT_CATEGORY = "InsertCategoryUI.fxml";
+  static final String EDIT_CATEGORY = "EditCategoryUI.fxml";
 
   private FXMLLoader loader;
   private static Navigator navigator;
@@ -93,9 +97,13 @@ public class Navigator {
     goToScene(PROJECT_NAME, CATEGORY_LIST);
   }
 
-//  public void goToEditAccount(Account account) throws IOException {
-//    goToScene("EditAccount", EDIT_ACCOUNT);
-//    EditAccountController controller = loader.getController();
-//    controller.loadData(account);
-//  }
+  public void goToInsertCategory() throws IOException {
+    goToScene(PROJECT_NAME, INSERT_CATEGORY);
+  }
+
+  public void goToEditCategory(Category category) throws IOException {
+    goToScene(PROJECT_NAME, EDIT_CATEGORY);
+    EditCategoryController controller = loader.getController();
+    controller.setData(category);
+  }
 }
