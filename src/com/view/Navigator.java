@@ -1,5 +1,7 @@
 package com.view;
 
+import com.controller.EditAccountController;
+import com.model.Account;
 import java.io.IOException;
 
 import com.helper.TranslateManager;
@@ -12,17 +14,15 @@ public class Navigator {
   private Navigator() {
   }
   static final String PROJECT_NAME = "2NHT";
-  static final String INSERT_LAPTOP_BASIC_INFO = "InsertLaptopBasicInfoUI.fxml";
-  static final String INSERT_LAPTOP_IMG = "InsertLaptopImageUI.fxml";
-  static final String INSERT_LAPTOP_PRODUCT_DATA = "InsertLaptopProductDataUI.fxml";
-  static final String INSERT_PHONE_BASIC_INFO = "InsertPhoneBasicInfoUI.fxml";
-  static final String INSERT_PHONE_IMG = "InsertPhoneImageUI.fxml";
-  static final String INSERT_PHONE_PRODUCT_DATA = "InsertPhoneProductDataUI.fxml";
-  static final String INSERT_TABLET_BASIC_INFO = "InsertTabletBasicInfoUI.fxml";
-  static final String INSERT_TABLET_IMG = "InsertTabletImageUI.fxml";
-  static final String INSERT_TABLET_PRODUCT_DATA = "InsertTabletProductDataUI.fxml";
+  static final String INSERT_PRODUCT = "InsertProductUI.fxml";
   static final String DASHBOARD = "DashboardUI.fxml";
   static final String PRODUCTS_LIST = "ProductsListUI.fxml";
+  static final String LOGIN = "LoginUI.fxml";
+  static final String REGISTER = "RegisterUI.fxml";
+  static final String ACCOUNT_LIST = "AccountListUI.fxml";
+  static final String INSERT_ACCOUNT = "InsertAccountUI.fxml";
+  static final String EDIT_ACCOUNT = "EditAccountUI.fxml";
+  static final String CATEGORY_LIST = "CategoryListUI.fxml";
 
   private FXMLLoader loader;
   private static Navigator navigator;
@@ -55,40 +55,8 @@ public class Navigator {
     }
   }
 
-  public void goToInsertLaptopBasicInfo() throws IOException {
-    goToScene(PROJECT_NAME, INSERT_LAPTOP_BASIC_INFO);
-  }
-
-  public void goToInsertLaptopImage() throws IOException {
-    goToScene(PROJECT_NAME, INSERT_LAPTOP_IMG);
-  }
-
-  public void goToInsertLaptopProductData() throws IOException {
-    goToScene(PROJECT_NAME, INSERT_LAPTOP_PRODUCT_DATA);
-  }
-
-  public void goToInsertPhoneBasicInfo() throws IOException {
-    goToScene(PROJECT_NAME, INSERT_PHONE_BASIC_INFO);
-  }
-
-  public void goToInsertPhoneImage() throws IOException {
-    goToScene(PROJECT_NAME, INSERT_PHONE_IMG);
-  }
-
-  public void goToInsertPhoneProductData() throws IOException {
-    goToScene(PROJECT_NAME, INSERT_PHONE_PRODUCT_DATA);
-  }
-
-  public void goToInsertTabletBasicInfo() throws IOException {
-    goToScene(PROJECT_NAME, INSERT_TABLET_BASIC_INFO);
-  }
-
-  public void goToInsertTabletImage() throws IOException {
-    goToScene(PROJECT_NAME, INSERT_TABLET_IMG);
-  }
-
-  public void goToInsertTabletProductData() throws IOException {
-    goToScene(PROJECT_NAME, INSERT_TABLET_PRODUCT_DATA);
+  public void goToInsertProduct() throws IOException {
+    goToScene(PROJECT_NAME, INSERT_PRODUCT);
   }
 
   public void goToDashboard() throws IOException {
@@ -99,6 +67,31 @@ public class Navigator {
     goToScene(PROJECT_NAME, PRODUCTS_LIST);
   }
 
+  public void goToLogin() throws IOException {
+    goToScene(PROJECT_NAME, LOGIN);
+  }
+
+  public void goToRegister() throws IOException {
+    goToScene(PROJECT_NAME, REGISTER);
+  }
+
+  public void goToAccountList() throws IOException {
+    goToScene(PROJECT_NAME, ACCOUNT_LIST);
+  }
+
+  public void goToInsertAccount() throws IOException {
+    goToScene(PROJECT_NAME, INSERT_ACCOUNT);
+  }
+
+  public void goToEditAccount(Account account) throws IOException {
+    goToScene(PROJECT_NAME, EDIT_ACCOUNT);
+    EditAccountController editAccountController = loader.getController();
+    editAccountController.setData(account);
+  }
+
+  public void goToCategoryList() throws IOException {
+    goToScene(PROJECT_NAME, CATEGORY_LIST);
+  }
 
 //  public void goToEditAccount(Account account) throws IOException {
 //    goToScene("EditAccount", EDIT_ACCOUNT);

@@ -1,24 +1,27 @@
 package com.controller;
 
-import com.helper.ProductDatabaseHelper;
-import com.model.Product;
+import com.helper.AccountDatabaseHelper;
+import com.model.Account;
 import com.view.Navigator;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class ProductsListController implements Initializable {
+public class AccountListController implements Initializable {
 
   @FXML
   private TextField txtSearch;
@@ -48,19 +51,13 @@ public class ProductsListController implements Initializable {
   private VBox changeLanguageContainer;
 
   @FXML
-  private ChoiceBox<String> cpCategroy;
+  private Button btnAddAccount;
 
   @FXML
-  private ChoiceBox<String> cbStatus;
+  private ChoiceBox<?> cpType;
 
   @FXML
-  private TextField txtName;
-
-  @FXML
-  private DatePicker dpFrom;
-
-  @FXML
-  private DatePicker dpTo;
+  private TextField txtSearchAccount;
 
   @FXML
   private Button btnSearch;
@@ -68,19 +65,44 @@ public class ProductsListController implements Initializable {
   @FXML
   private VBox itemLayout;
 
-  int count;
+  @FXML
+  private HBox productListItem;
 
-  private List<Product> listData = new ArrayList<>();
+  @FXML
+  private Label code;
+
+  @FXML
+  private Label category;
+
+  @FXML
+  private Label quantity;
+
+  @FXML
+  private Label importPrice;
+
+  @FXML
+  private ImageView view;
+
+  @FXML
+  private ImageView edit;
+
+  @FXML
+  private ImageView delete;
+
+  int count;
+  List<Account> listAccount = new ArrayList<>();
+
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    listData = ProductDatabaseHelper.getAllProduct();
+    listAccount = AccountDatabaseHelper.getAllAccount();
+
     try {
-      for (Product p : listData) {
+      for (Account acc : listAccount) {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/com/view/ProductListItemUI.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/com/view/AccountListItemUI.fxml"));
         HBox hBox = fxmlLoader.load();
-        ProductListItemController productListItemController = fxmlLoader.getController();
-        productListItemController.setData(p);
+        AccountListItemController accountListItemController = fxmlLoader.getController();
+        accountListItemController.setData(acc);
         itemLayout.getChildren().add(hBox);
       }
     } catch (IOException e) {
@@ -90,7 +112,6 @@ public class ProductsListController implements Initializable {
 
   @FXML
   private void showChangeLanguageMousePressed(MouseEvent mouseEvent) {
-    //Hanh dong
     count++;
     if (count % 2 != 0) {
       changeLanguageContainer.setVisible(true);
@@ -99,7 +120,11 @@ public class ProductsListController implements Initializable {
     }
   }
 
-  //Dieu huong
+  @FXML
+  void addAccount(ActionEvent event) throws IOException {
+    Navigator.getInstance().goToInsertAccount();
+  }
+
   @FXML
   private void goToInsertProduct(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToInsertProduct();
@@ -113,15 +138,5 @@ public class ProductsListController implements Initializable {
   @FXML
   private void goToProductList(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToProductsList();
-  }
-
-  @FXML
-  private void goToAccountList(MouseEvent mouseEvent) throws IOException {
-    Navigator.getInstance().goToAccountList();
-  }
-
-  @FXML
-  private void goToCategoryList(MouseEvent mouseEvent) throws IOException {
-    Navigator.getInstance().goToCategoryList();
   }
 }
