@@ -88,14 +88,20 @@
 #psw {
 
 }
-#AP2 {
-  -fx-background-image: url('logo.jpeg');
-  -fx-background-position: center center;
-}
-#ap3 {
-  -fx-background-image: url('logo.jpeg');
-  -fx-background-position: center center;
-}
+/*#AP2 {*/
+/*  -fx-background-image: url('logo.jpeg');*/
+/*  -fx-background-position: center center;*/
+/*}*/
+/*#ap3 {*/
+/*  -fx-background-image: url('logo.jpeg');*/
+/*  -fx-background-position: center center;*/
+/*}*/
 .text-area {
   -fx-border-radius: 40 40 0 0;
+}
+
+.lb-border {
+  -fx-border-width: 1;
+  -fx-border-color: #000;
+  -fx-border-radius: 50;
 }

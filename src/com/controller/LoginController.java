@@ -8,6 +8,7 @@ package com.controller;
 
 
 import com.helper.AccountDatabaseHelper;
+import com.helper.ValidationManager;
 import com.model.Account;
 import com.sun.glass.ui.Window;
 import com.view.Navigator;
@@ -18,6 +19,7 @@ import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -43,9 +45,17 @@ public class LoginController implements Initializable {
     @FXML
     private RadioButton show_password_btn;
     @FXML
+    private Label errUsername;
+
+    @FXML
+    private Label errPassword;
+
+    @FXML
     private TextField texfield11;
     
     String written_text;
+    boolean valid;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -54,10 +64,15 @@ public class LoginController implements Initializable {
 
     @FXML
     private void goToDashBoard() throws IOException {
-        Account account = AccountDatabaseHelper.getAccountByUsernameOrEmail(username.getText());
-        if (username.getText().equalsIgnoreCase(account.getUsername()) || username.getText().equalsIgnoreCase(account.getEmail())) {
-            if (password.getText().equalsIgnoreCase(account.getPassword())) {
-                Navigator.getInstance().goToDashboard();
+        if (username.getText().isEmpty() || password.getText().isEmpty()) {
+            errUsername.setText("Username is required");
+            errPassword.setText("Username is required");
+        } else {
+            Account account = AccountDatabaseHelper.getAccountByUsernameOrEmail(username.getText());
+            if (username.getText().equalsIgnoreCase(account.getUsername()) || username.getText().equalsIgnoreCase(account.getEmail())) {
+                if (password.getText().equalsIgnoreCase(account.getPassword())) {
+                    Navigator.getInstance().goToDashboard();
+                }
             }
         }
     }

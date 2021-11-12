@@ -2,9 +2,11 @@ package com.controller;
 
 
 import com.helper.AccountDatabaseHelper;
+import com.helper.ValidationManager;
 import com.view.Navigator;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
@@ -12,7 +14,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -49,6 +55,24 @@ public class RegisterController implements Initializable {
   @FXML
   private RadioButton rdShowPass;
 
+  @FXML
+  private Label errUsername;
+
+  @FXML
+  private Label errAddress;
+
+  @FXML
+  private Label errPhone;
+
+  @FXML
+  private Label errEmail;
+
+  @FXML
+  private Label errConfirmPassword;
+
+  @FXML
+  private Label errPassword;
+
   String written_text;
 
   @Override
@@ -58,9 +82,25 @@ public class RegisterController implements Initializable {
 
   @FXML
   void createUserAccount(ActionEvent event) throws IOException {
-    if (txtPassword.getText().equalsIgnoreCase(txtConfirmPassword.getText())) {
-      AccountDatabaseHelper.insertAccount(txtUsername.getText(), txtEmail.getText(), txtPassword.getText(), "USER", txtAddress.getText(), txtPhone.getText());
-      Navigator.getInstance().goToLogin();
+//    if (ValidationManager.getInstance().validEmail(txtEmail.getText()) && ValidationManager.getInstance()
+//        .validAddress(txtAddress.getText()) && ValidationManager.getInstance().validPhoneNumber(txtPhone.getText()),
+//        ValidationManager.getInstance().validPassword(txtPassword.getText()), )
+      if (txtPassword.getText().equalsIgnoreCase(txtConfirmPassword.getText())) {
+      boolean check = AccountDatabaseHelper.insertAccount(txtUsername.getText(), txtEmail.getText(), txtPassword.getText(), "USER", txtAddress.getText(), txtPhone.getText());
+      if (check) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setHeaderText(null);
+        alert.setContentText("Register Successfully");
+        Optional<ButtonType> option = alert.showAndWait();
+        if (option.get() == ButtonType.OK) {
+          Navigator.getInstance().goToLogin();
+        }
+      } else {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setContentText("Register Failed");
+        alert.show();
+      }
     }
   }
 
@@ -78,29 +118,10 @@ public class RegisterController implements Initializable {
 
       txtPassword.setText(written_text);
     }
-
   }
 
   @FXML
-  private void handleOnMouseEntered(MouseEvent event) {
-    Node source = (Node) event.getSource();
-
-    scaleTransition1 = new ScaleTransition(Duration.millis(200), source);
-    scaleTransition1.setCycleCount(1);
-    scaleTransition1.setToX(1.2);
-    scaleTransition1.setToY(1.2);
-    scaleTransition1.playFromStart();
-  }
-
-  @FXML
-  private void handleOnMouseExited(MouseEvent event) {
-    Node source = (Node) event.getSource();
-
-    scaleTransition1 = new ScaleTransition(Duration.millis(200), source);
-    scaleTransition1.setCycleCount(1);
-    scaleTransition1.setToX(1);
-    scaleTransition1.setToY(1);
-
-    scaleTransition1.playFromStart();
+  void back(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToLogin();
   }
 }
