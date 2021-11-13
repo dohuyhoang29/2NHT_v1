@@ -293,6 +293,7 @@
                                 <Font size="16.0" />
                               </font>
                             </TextField>
+                                          <Label fx:id="errProductCode" />
                           </children>
                         </VBox>
                         <VBox HBox.hgrow="ALWAYS">
@@ -307,6 +308,7 @@
                                 <Font size="16.0" />
                               </font>
                             </TextField>
+                                          <Label text="Label" />
                           </children>
                         </VBox>
                       </children>
@@ -320,7 +322,8 @@
                                 <Font size="16.0" />
                               </font>
                             </Label>
-                            <ChoiceBox fx:id="cbCategory" prefHeight="37.0" prefWidth="292.0" styleClass="choice-box-category" stylesheets="@../css/style.css" />
+                            <ChoiceBox fx:id="cbCategory" prefHeight="36.0" prefWidth="292.0" styleClass="choice-box-category" stylesheets="@../css/style.css" />
+                                          <Label text="Label" />
                           </children>
                         </VBox>
                         <VBox HBox.hgrow="ALWAYS">
@@ -335,6 +338,7 @@
                                 <Font size="16.0" />
                               </font>
                             </TextField>
+                                          <Label text="Label" />
                           </children>
                         </VBox>
                         <VBox HBox.hgrow="ALWAYS">

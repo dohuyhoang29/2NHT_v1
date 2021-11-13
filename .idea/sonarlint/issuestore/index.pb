@@ -21,8 +21,6 @@ Q
 !src/com/view/InsertAccountUI.fxml,5\b\5b9e2b7b95c8d867e5b529195dd6b0d4500e0e24
 _
 /src/com/controller/InsertProductController.java,6\6\6654d053489f17b7ff0378773929c20d2a0267bf
-Q
-!src/com/view/InsertProductUI.fxml,e\1\e12aeae504d0f87d3464b9a0e23aba917696aed1
 J
 src/com/model/Product.java,9\c\9c1ea5a54994bf5dbcfcdf4eb61aa9a271dd2677
 Y
