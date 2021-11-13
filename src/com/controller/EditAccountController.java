@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.helper.AccountDatabaseHelper;
+import com.helper.ValidationManager;
 import com.model.Account;
 import com.view.Navigator;
 import java.io.IOException;
@@ -51,7 +52,13 @@ public class EditAccountController implements Initializable {
   private TextField txtUsername;
 
   @FXML
+  private Label errUsername;
+
+  @FXML
   private TextField txtEmail;
+
+  @FXML
+  private Label errEmail;
 
   @FXML
   private TextField txtAddress;
@@ -60,13 +67,22 @@ public class EditAccountController implements Initializable {
   private PasswordField pfPassword;
 
   @FXML
+  private Label errPassword;
+
+  @FXML
   private PasswordField pfConfirmPassword;
+
+  @FXML
+  private Label errConfirmPassword;
 
   @FXML
   private ChoiceBox<String> cbType;
 
   @FXML
   private TextField txtPhoneNumber;
+
+  @FXML
+  private Label errPhone;
 
   @FXML
   private Button btnSave;
@@ -76,10 +92,6 @@ public class EditAccountController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    cbType.getItems().add("ADMIN");
-    cbType.getItems().add("USER");
-    cbType.getItems().add("STAFF");
-
   }
 
   public void setData(Account account) {
@@ -91,7 +103,6 @@ public class EditAccountController implements Initializable {
     if (account.getAddress() != null) {
       txtAddress.setText(account.getAddress());
     }
-    cbType.setValue(account.getType());
     txtPhoneNumber.setText(account.getPhone());
   }
 
@@ -108,8 +119,61 @@ public class EditAccountController implements Initializable {
 
   @FXML
   void editAccount(ActionEvent event) throws IOException {
-    if (pfPassword.getText().equalsIgnoreCase(pfConfirmPassword.getText())) {
-      AccountDatabaseHelper.editAccount(txtUsername.getText(), txtEmail.getText(), pfPassword.getText(), cbType.getValue(), txtAddress.getText(), txtPhoneNumber.getText(), acc.getId());
+    int count = 0;
+    ValidationManager check = ValidationManager.getInstance();
+
+//    username
+    if(txtUsername.getText().isEmpty()) {
+      errUsername.setText("Username is required");
+      count++;
+    }else if(AccountDatabaseHelper.getAccountByUsernameOrEmail(txtUsername.getText()) != null && !txtUsername.getText().equalsIgnoreCase(acc.getUsername())) {
+      errUsername.setText("Username exists");
+      count++;
+    }else if (!check.validUsername(txtUsername.getText())) {
+      errUsername.setText("Username can only have characters and numbers");
+      count++;
+    }else {
+      errUsername.setText("");
+    }
+
+//    password
+    if(pfPassword.getText().isEmpty()) {
+      errPassword.setText("Password is required");
+      count++;
+    }else if (!check.validPassword(pfPassword.getText())) {
+      errPassword.setText("Use 8 or more characters with a mix of letters, numbers & symbols");
+      count++;
+    }else errPassword.setText("");
+
+//    confirm password
+    if (pfConfirmPassword.getText().isEmpty()) {
+      errConfirmPassword.setText("Confirm Password is required");
+      count++;
+    }else if(!pfConfirmPassword.getText().equalsIgnoreCase(pfPassword.getText())) {
+      errConfirmPassword.setText("Those passwords didn’t match");
+      count++;
+    }else errConfirmPassword.setText("");
+
+//    email
+    if (txtEmail.getText().isEmpty()) {
+      errEmail.setText("Email is required");
+      count++;
+    }else if (!check.validEmail(txtEmail.getText())) {
+      errEmail.setText("Email must have the same syntax as follows: xyz012@xyz.xyz");
+      count++;
+    }else errEmail.setText("");
+
+//    phone
+    if (txtPhoneNumber.getText().isEmpty()) {
+      errPhone.setText("Phone Number is required");
+      count++;
+    }else if (!check.validPhoneNumber(txtPhoneNumber.getText())) {
+      errPhone.setText("Phone numbers can only be numeric and have 10 numbers");
+      count++;
+    }else errPhone.setText("");
+
+    if (count == 0) {
+      AccountDatabaseHelper.editAccount(txtUsername.getText(), txtEmail.getText(), pfPassword.getText(), "STAFF", txtAddress.getText(), txtPhoneNumber.getText(), acc.getId());
       Navigator.getInstance().goToAccountList();
     }
   }

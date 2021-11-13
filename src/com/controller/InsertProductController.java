@@ -3,6 +3,7 @@ package com.controller;
 import com.helper.CategoryDatabaseHelper;
 import com.helper.ProductDatabaseHelper;
 import com.helper.ProductManager;
+import com.helper.ValidationManager;
 import com.model.Category;
 import com.view.Navigator;
 import java.io.File;
@@ -60,22 +61,40 @@ public class InsertProductController implements Initializable {
   private TextField txtProductCode;
 
   @FXML
+  private Label errProductCode;
+
+  @FXML
   private TextField txtProductName;
+
+  @FXML
+  private Label errProductName;
 
   @FXML
   private ChoiceBox<String> cbCategory;
 
   @FXML
+  private Label errProductCategory;
+
+  @FXML
   private TextField txtImportPrice;
 
   @FXML
+  private Label errImportPrice;
+
+  @FXML
   private TextField txtPrice;
+
+  @FXML
+  private Label errPrice;
 
   @FXML
   private TextField txtOrigin;
 
   @FXML
   private DatePicker dpImportDate;
+
+  @FXML
+  private Label errImportDate;
 
   @FXML
   private Button btnNextBasicInfo;
@@ -93,10 +112,16 @@ public class InsertProductController implements Initializable {
   private TextField txtColor;
 
   @FXML
+  private Label errColor;
+
+  @FXML
   private TextField txtQuantity;
 
   @FXML
   private TextField txtHardDrive;
+
+  @FXML
+  private Label errHardDrive;
 
   @FXML
   private Button btnPreviousProductImg;
@@ -164,12 +189,69 @@ public class InsertProductController implements Initializable {
 
   @FXML
   private void setBtnNextBasicInfo(MouseEvent mouseEvent) {
-    productImages.setVisible(true);
+    ValidationManager check = ValidationManager.getInstance();
+
+    if(basicInfo.isVisible()) {
+      int count = 0;
+      if(txtProductCode.getText().isEmpty()) {
+        errProductCode.setText("Product's code is required");
+        count++;
+      }else errProductCode.setText("");
+
+      if(txtProductName.getText().isEmpty()) {
+        errProductName.setText("Product's name is required");
+        count++;
+      }else errProductName.setText("");
+
+      if(cbCategory.getValue() == null) {
+        errProductCategory.setText("Product's category is required");
+        count++;
+      }else errProductCategory.setText("");
+
+      if(txtImportPrice.getText().isEmpty()) {
+        errImportPrice.setText("Product's import price is required");
+        count++;
+      }else if(!check.isPositiveNumber(txtImportPrice.getText())) {
+        errImportPrice.setText("Product's import price must be a positive number");
+        count++;
+      }else errImportPrice.setText("");
+
+      if(txtPrice.getText().isEmpty()) {
+        errPrice.setText("Product's price is required");
+        count++;
+      }else if(!check.isPositiveNumber(txtPrice.getText())) {
+        errPrice.setText("Product's price must be a positive number");
+        count++;
+      }else errPrice.setText("");
+
+      if(dpImportDate.getValue() == null) {
+        errImportDate.setText("Product's import date is required");
+        count++;
+      }else errImportDate.setText("");
+
+      if(count == 0)
+        productImages.setVisible(true);
+    }
   }
 
   @FXML
   private void setBtnNextProductImg(MouseEvent mouseEvent) {
-    productData.setVisible(true);
+    if(productImages.isVisible()) {
+      int count = 0;
+      if(txtColor.getText().isEmpty()) {
+        errColor.setText("Product's color is required");
+        count++;
+      }
+      else errColor.setText("");
+
+      if(txtHardDrive.getText().isEmpty()) {
+        errHardDrive.setText("Hard drive is required");
+        count++;
+      }
+      else errHardDrive.setText("");
+
+      if(count == 0) productData.setVisible(true);
+    }
   }
 
   @FXML

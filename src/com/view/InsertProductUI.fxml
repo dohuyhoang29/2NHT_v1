@@ -293,7 +293,7 @@
                                 <Font size="16.0" />
                               </font>
                             </TextField>
-                                          <Label fx:id="errProductCode" />
+                                          <Label fx:id="errProductCode" textFill="RED" />
                           </children>
                         </VBox>
                         <VBox HBox.hgrow="ALWAYS">
@@ -308,7 +308,7 @@
                                 <Font size="16.0" />
                               </font>
                             </TextField>
-                                          <Label text="Label" />
+                                          <Label fx:id="errProductName" textFill="RED" />
                           </children>
                         </VBox>
                       </children>
@@ -323,7 +323,7 @@
                               </font>
                             </Label>
                             <ChoiceBox fx:id="cbCategory" prefHeight="36.0" prefWidth="292.0" styleClass="choice-box-category" stylesheets="@../css/style.css" />
-                                          <Label text="Label" />
+                                          <Label fx:id="errProductCategory" textFill="RED" />
                           </children>
                         </VBox>
                         <VBox HBox.hgrow="ALWAYS">
@@ -338,7 +338,7 @@
                                 <Font size="16.0" />
                               </font>
                             </TextField>
-                                          <Label text="Label" />
+                                          <Label fx:id="errImportPrice" textFill="RED" />
                           </children>
                         </VBox>
                         <VBox HBox.hgrow="ALWAYS">
@@ -353,6 +353,7 @@
                                 <Font size="16.0" />
                               </font>
                             </TextField>
+                                          <Label fx:id="errPrice" textFill="RED" />
                           </children>
                         </VBox>
                       </children>
@@ -371,6 +372,7 @@
                                 <Font size="16.0" />
                               </font>
                             </TextField>
+                                          <Label />
                           </children>
                         </VBox>
                         <VBox prefHeight="48.0" prefWidth="175.0" HBox.hgrow="ALWAYS">
@@ -381,6 +383,7 @@
                               </font>
                             </Label>
                             <DatePicker fx:id="dpImportDate" prefHeight="67.0" prefWidth="479.0" VBox.vgrow="ALWAYS" />
+                                          <Label fx:id="errImportDate" textFill="RED" />
                           </children>
                         </VBox>
                       </children>
@@ -514,6 +517,7 @@
                                 <Font size="16.0" />
                               </font>
                             </TextField>
+                                          <Label fx:id="errColor" textFill="RED" />
                             <Label text="%quantity">
                               <font>
                                 <Font size="16.0" />
@@ -534,6 +538,7 @@
                                                 <Font size="16.0" />
                                              </font>
                                           </TextField>
+                                          <Label fx:id="errHardDrive" textFill="RED" />
                           </children>
                         </VBox>
                       </children>

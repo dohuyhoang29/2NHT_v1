@@ -52,6 +52,9 @@ public class EditCategoryController implements Initializable {
   private TextField txtName;
 
   @FXML
+  private Label errName;
+
+  @FXML
   private TextArea txtDescription;
 
   @FXML
@@ -84,8 +87,15 @@ public class EditCategoryController implements Initializable {
 
   @FXML
   private void editCategory() throws IOException {
-    CategoryDatabaseHelper.editCategory(txtName.getText(), txtDescription.getText(), category.getId());
-    Navigator.getInstance().goToCategoryList();
+    if(txtName.getText().isEmpty()) {
+      errName.setText("Category's name is required");
+    }else if(CategoryDatabaseHelper.getCategoryByName(txtName.getText()) != null && !txtName.getText().equalsIgnoreCase(category.getName())) {
+      errName.setText("Category exists");
+    }else {
+      errName.setText("");
+      CategoryDatabaseHelper.editCategory(txtName.getText(), txtDescription.getText(), category.getId());
+      Navigator.getInstance().goToCategoryList();
+    }
   }
 
   //Dieu Huong

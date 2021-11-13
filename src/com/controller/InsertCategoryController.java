@@ -27,6 +27,9 @@ public class InsertCategoryController implements Initializable {
   private Label username;
 
   @FXML
+  private Label errName;
+
+  @FXML
   private HBox dashboard;
 
   @FXML
@@ -76,7 +79,14 @@ public class InsertCategoryController implements Initializable {
 
   @FXML
   private void insertCategory() {
-    CategoryDatabaseHelper.insertCategory(txtName.getText(), txtDescription.getText());
+    if(txtName.getText().isEmpty()) {
+      errName.setText("Category's name is required");
+    }else if(CategoryDatabaseHelper.getCategoryByName(txtName.getText()) != null) {
+      errName.setText("Category exists");
+    }else {
+      errName.setText("");
+      CategoryDatabaseHelper.insertCategory(txtName.getText(), txtDescription.getText());
+    }
   }
 
   //Dieu Huong

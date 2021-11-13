@@ -70,4 +70,21 @@ public class ValidationManager {
     }
     return true;
   }
+
+  public static boolean isPositiveNumber(String txt) {
+    if (txt == null) {
+      return false;
+    }
+
+    try {
+      float n = Float.parseFloat(txt);
+      if (n < 0) {
+        return false;
+      }
+    } catch (Exception e) {
+      return false;
+    }
+
+    return true;
+  }
 }

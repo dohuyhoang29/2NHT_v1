@@ -242,6 +242,7 @@
                         <Font size="16.0" />
                       </font>
                     </TextField>
+                              <Label fx:id="errName" textFill="RED" />
                   </children>
                 </VBox>
                 <VBox>
