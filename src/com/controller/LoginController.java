@@ -17,13 +17,18 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
@@ -99,27 +104,17 @@ public class LoginController implements Initializable {
     void goToRegister() throws IOException {
         Navigator.getInstance().goToRegister();
     }
+
     @FXML
-    private void handleOnMouseEntered(MouseEvent event)
-    {
-        Node source=(Node)event.getSource();
-       
-        scaleTransition1 = new ScaleTransition(Duration.millis(200),source);
-        scaleTransition1.setCycleCount(1);
-        scaleTransition1.setToX(1.2);
-        scaleTransition1.setToY(1.2);
-        scaleTransition1.playFromStart();
-    }
-   @FXML
-    private void handleOnMouseExited(MouseEvent event)
-    {
-        Node source=(Node)event.getSource();
-        
-       scaleTransition1 = new ScaleTransition(Duration.millis(200),source);
-        scaleTransition1.setCycleCount(1);
-        scaleTransition1.setToX(1);
-        scaleTransition1.setToY(1);
-        
-        scaleTransition1.playFromStart();
+    void forgotPassword() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/com/view/ForgotUI.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage viewAccount = new Stage();
+        viewAccount.setScene(scene);
+        viewAccount.initModality(Modality.WINDOW_MODAL);
+        viewAccount.initOwner(Navigator.getInstance().getStage());
+        viewAccount.show();
     }
 }

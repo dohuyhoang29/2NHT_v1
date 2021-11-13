@@ -1,6 +1,8 @@
 package com;
 
 import com.view.Navigator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,5 +22,6 @@ public class Main extends Application {
     Navigator.getInstance().setStage(primaryStage);
     Navigator.getInstance().goToLogin();
     //test commit
+
   }
 }

@@ -82,12 +82,57 @@ public class RegisterController implements Initializable {
 
   @FXML
   void createUserAccount(ActionEvent event) throws IOException {
-//    if (ValidationManager.getInstance().validEmail(txtEmail.getText()) && ValidationManager.getInstance()
-//        .validAddress(txtAddress.getText()) && ValidationManager.getInstance().validPhoneNumber(txtPhone.getText()),
-//        ValidationManager.getInstance().validPassword(txtPassword.getText()), )
-      if (txtPassword.getText().equalsIgnoreCase(txtConfirmPassword.getText())) {
-      boolean check = AccountDatabaseHelper.insertAccount(txtUsername.getText(), txtEmail.getText(), txtPassword.getText(), "USER", txtAddress.getText(), txtPhone.getText());
-      if (check) {
+    int count = 0;
+    ValidationManager check = ValidationManager.getInstance();
+    if (txtUsername.getText().isEmpty()) {
+      errUsername.setText("Username is required");
+      count++;
+    }
+    if (!check.validUsername(txtUsername.getText()) && !txtUsername.getText().isEmpty()) {
+      errUsername.setText("Username can only have characters and numbers");
+      count++;
+    }
+    if (txtEmail.getText().isEmpty()) {
+      errEmail.setText("Email is required");
+      count++;
+    }
+    if (!check.validEmail(txtEmail.getText()) && !txtEmail.getText().isEmpty()) {
+      errEmail.setText("Email must have the same syntax as follows: xyz012@xyz.xyz");
+      count++;
+    }
+    if (txtPassword.getText().isEmpty()) {
+      errPassword.setText("Password is required");
+      count++;
+    }
+    if (!check.validPassword(txtPassword.getText()) && !txtPassword.getText().isEmpty()) {
+      errPassword.setText("Use 8 or more characters with a mix of letters, numbers & symbols");
+      count++;
+    }
+    if (txtConfirmPassword.getText().isEmpty()) {
+      errConfirmPassword.setText("Confirm Password is required");
+      count++;
+    }
+    if (!txtConfirmPassword.getText().equalsIgnoreCase(txtPassword.getText())  && !txtConfirmPassword.getText().isEmpty()) {
+      errConfirmPassword.setText("Those passwords didn’t match");
+      count++;
+    }
+    if (txtPhone.getText().isEmpty()) {
+      errPhone.setText("Phone Number is required");
+      count++;
+    }
+    if (!check.validPhoneNumber(txtPhone.getText()) && !txtPhone.getText().isEmpty()) {
+      errPhone.setText("Phone numbers can only be numeric and have 10 numbers");
+      count++;
+    }
+    if (txtAddress.getText().isEmpty()) {
+      errAddress.setText("Address is required");
+      count++;
+    }
+
+    if (txtPassword.getText().equalsIgnoreCase(txtConfirmPassword.getText()) && count == 0) {
+      boolean result = AccountDatabaseHelper.insertAccount(txtUsername.getText(), txtEmail.getText(),
+          txtPassword.getText(), "USER", txtAddress.getText(), txtPhone.getText());
+      if (result) {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setContentText("Register Successfully");
@@ -124,4 +169,5 @@ public class RegisterController implements Initializable {
   void back(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToLogin();
   }
+
 }

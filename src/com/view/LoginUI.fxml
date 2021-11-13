@@ -54,7 +54,7 @@
             <Image url="@../images/lock.png" />
          </image>
       </ImageView>
-      <Text fill="#8a8282" layoutX="106.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot your password?">
+      <Text fill="#8a8282" layoutX="106.0" layoutY="488.0" onMouseClicked="#forgotPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot your password?">
          <font>
             <Font name="Times New Roman" size="15.0" />
          </font>
