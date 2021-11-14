@@ -9,6 +9,8 @@ import com.view.Navigator;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -19,6 +21,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -91,7 +94,7 @@ public class InsertProductController implements Initializable {
   private TextField txtOrigin;
 
   @FXML
-  private DatePicker dpImportDate;
+  private TextField txtWarrantyPeriod;
 
   @FXML
   private Label errImportDate;
@@ -106,7 +109,7 @@ public class InsertProductController implements Initializable {
   private Button btnChooseImages;
 
   @FXML
-  private TextArea txtAreaImgSrc;
+  private ImageView imgPreview;
 
   @FXML
   private TextField txtColor;
@@ -171,6 +174,56 @@ public class InsertProductController implements Initializable {
   @FXML
   private Button btnSave;
 
+  int count;
+
+  private File imgSrc;
+  final FileChooser fileChooser = new FileChooser();
+  String path = "D:/App/IntelliJ IDEA 2021.2/Project/2NHT_v1/src/com/images/";
+
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
+    List<Category> listCate = CategoryDatabaseHelper.getAllCategories();
+    for (Category c : listCate) {
+      cbCategory.getItems().add(c.getName());
+    }
+  }
+
+  //Actions
+  @FXML
+  private void clickSave() throws IOException {
+    Category category = CategoryDatabaseHelper.getCategoryByName(cbCategory.getValue());
+    ProductDatabaseHelper.insertLaptop(category.getId(), txtProductCode.getText(),
+        txtProductName.getText(), txtWarrantyPeriod.getText(),
+        Integer.parseInt(txtImportPrice.getText()), Integer.parseInt(txtPrice.getText()),
+        txtHardDrive.getText(), txtOrigin.getText(), Integer.parseInt(txtQuantity.getText()),
+        txtColor.getText(), imgSrc.getName(), txtScreen.getText(), txtCpu.getText(),
+        txtGpu.getText(), txtRam.getText(), txtOperatingSystem.getText(), txtRearCamera.getText(),
+        txtSelfieCamera.getText(), txtBatteryCapacity.getText(), txtSim.getText(),
+        txtDimensions.getText(), txtWeight.getText());
+    Files.copy(imgSrc.toPath(), (new File(path + imgSrc.getName())).toPath(), StandardCopyOption.REPLACE_EXISTING);
+    Navigator.getInstance().goToInsertProduct();
+  }
+
+  @FXML
+  private void showChangeLanguageMousePressed(MouseEvent mouseEvent) {
+    count++;
+    if (count % 2 != 0) {
+      changeLanguageContainer.setVisible(true);
+    } else {
+      changeLanguageContainer.setVisible(false);
+    }
+  }
+
+  @FXML
+  void clickChooseImage(MouseEvent mouseEvent) {
+    imgSrc = fileChooser.showOpenDialog(Navigator.getInstance().getStage());
+    Image image = new Image("file:///" + imgSrc.getAbsolutePath());
+
+    if (imgSrc != null) {
+      imgPreview.setImage(image);
+    }
+  }
+
   //Dieu huong
   @FXML
   private void goToDashboard(MouseEvent mouseEvent) throws IOException {
@@ -224,8 +277,8 @@ public class InsertProductController implements Initializable {
         count++;
       }else errPrice.setText("");
 
-      if(dpImportDate.getValue() == null) {
-        errImportDate.setText("Product's import date is required");
+      if(txtWarrantyPeriod.getText().isEmpty()) {
+        errImportDate.setText("Warranty Period date is required");
         count++;
       }else errImportDate.setText("");
 
@@ -264,58 +317,5 @@ public class InsertProductController implements Initializable {
   private void setBtnPreviousProductData(MouseEvent mouseEvent) {
     productData.setVisible(false);
     productImages.setVisible(true);
-  }
-
-  //Actions
-  @FXML
-  private void clickSave() throws IOException {
-    Category category = CategoryDatabaseHelper.getCategoryByName(cbCategory.getValue());
-    ProductDatabaseHelper.insertLaptop(category.getId(), txtProductCode.getText(),
-        txtProductName.getText(), dpImportDate.getValue(),
-        Integer.parseInt(txtImportPrice.getText()), Integer.parseInt(txtPrice.getText()),
-        txtHardDrive.getText(), txtOrigin.getText(), Integer.parseInt(txtQuantity.getText()),
-        txtColor.getText(), txtAreaImgSrc.getText(), txtScreen.getText(), txtCpu.getText(),
-        txtGpu.getText(), txtRam.getText(), txtOperatingSystem.getText(), txtRearCamera.getText(),
-        txtSelfieCamera.getText(), txtBatteryCapacity.getText(), txtSim.getText(),
-        txtDimensions.getText(), txtWeight.getText());
-//    Navigator.getInstance().goToInsertProduct();
-  }
-
-  @FXML
-  private void showChangeLanguageMousePressed(MouseEvent mouseEvent) {
-    count++;
-    if (count % 2 != 0) {
-      changeLanguageContainer.setVisible(true);
-    } else {
-      changeLanguageContainer.setVisible(false);
-    }
-  }
-
-  @FXML
-  void clickChooseImage(MouseEvent mouseEvent) {
-    imgSrc = fileChooser.showOpenDialog(Navigator.getInstance().getStage());
-    if (imgSrc != null) {
-      printListSrc(txtAreaImgSrc, imgSrc);
-    }
-  }
-
-  private void printListSrc(TextArea textArea, File file) {
-    if (file == null) {
-      return;
-    }
-
-    textArea.setText(file.getAbsolutePath());
-  }
-
-  int count;
-  private File imgSrc;
-  final FileChooser fileChooser = new FileChooser();
-
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    List<Category> listCate = CategoryDatabaseHelper.getAllCategories();
-    for (Category c : listCate) {
-      cbCategory.getItems().add(c.getName());
-    }
   }
 }

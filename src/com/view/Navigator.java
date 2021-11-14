@@ -2,8 +2,10 @@ package com.view;
 
 import com.controller.EditAccountController;
 import com.controller.EditCategoryController;
+import com.controller.ViewProctController;
 import com.model.Account;
 import com.model.Category;
+import com.model.Product;
 import java.io.IOException;
 
 import com.helper.TranslateManager;
@@ -27,6 +29,7 @@ public class Navigator {
   static final String CATEGORY_LIST = "CategoryListUI.fxml";
   static final String INSERT_CATEGORY = "InsertCategoryUI.fxml";
   static final String EDIT_CATEGORY = "EditCategoryUI.fxml";
+  static final String VIEW_PRODUCT = "ViewProductUI.fxml";
 
   private FXMLLoader loader;
   private static Navigator navigator;
@@ -105,5 +108,11 @@ public class Navigator {
     goToScene(PROJECT_NAME, EDIT_CATEGORY);
     EditCategoryController controller = loader.getController();
     controller.setData(category);
+  }
+
+  public void goToViewProduct(Product product) throws IOException {
+    goToScene(PROJECT_NAME, VIEW_PRODUCT);
+    ViewProctController controller = loader.getController();
+    controller.setData(product);
   }
 }

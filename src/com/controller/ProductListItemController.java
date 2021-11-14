@@ -1,6 +1,8 @@
 package com.controller;
 
 import com.model.Product;
+import com.view.Navigator;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -50,8 +52,11 @@ public class ProductListItemController {
   @FXML
   private ImageView delete;
 
+  Product product;
+
   public void setData(Product product) {
-    Image image = new Image(getClass().getResourceAsStream("/com/images/avatar.jpg"));
+    this.product = product;
+    Image image = new Image(getClass().getResourceAsStream("/com/images/" + product.getImgSrc()));
     imgSrc.setImage(image);
     code.setText(product.getProductCode());
     name.setText(product.getProductName());
@@ -59,12 +64,17 @@ public class ProductListItemController {
     quantity.setText(product.getQuantity().toString());
     importPrice.setText(product.getImportPrice().toString());
     price.setText(product.getPrice().toString());
-    importDate.setText(product.getImportDate().toString());
+    importDate.setText(product.getWarrantyPeriod().toString());
     if (product.getQuantity() > 0) {
       status.setText("Stocking");
     }
     if (product.getQuantity() == 0) {
       status.setText("Sold out");
     }
+  }
+
+  @FXML
+  void viewProduct() throws IOException {
+    Navigator.getInstance().goToViewProduct(product);
   }
 }

@@ -3,10 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -209,7 +207,7 @@
                         <Separator prefHeight="0.0" prefWidth="128.0" HBox.hgrow="ALWAYS" />
                         <VBox alignment="CENTER" prefHeight="65.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
                           <children>
-                            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="number_insert" stylesheets="@../css/style.css">
+                            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="number_insert" stylesheets="@../css/style.css">
                               <children>
                                 <Label styleClass="lb-number-insert" stylesheets="@../css/style.css" text="1">
                                   <font>
@@ -228,7 +226,7 @@
                         <Separator prefHeight="0.0" prefWidth="128.0" HBox.hgrow="ALWAYS" />
                         <VBox alignment="CENTER" prefHeight="59.0" prefWidth="45.0" HBox.hgrow="ALWAYS">
                           <children>
-                            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
+                            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
                               <children>
                                 <Label styleClass="lb-number-insert-non" stylesheets="@../css/style.css" text="2">
                                   <font>
@@ -247,7 +245,7 @@
                         <Separator prefHeight="0.0" prefWidth="128.0" HBox.hgrow="ALWAYS" />
                         <VBox alignment="CENTER" prefHeight="59.0" prefWidth="36.0" HBox.hgrow="ALWAYS">
                           <children>
-                            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
+                            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="35.0" styleClass="number_insert_non" stylesheets="@../css/style.css">
                               <children>
                                 <Label styleClass="lb-number-insert-non" stylesheets="@../css/style.css" text="3">
                                   <font>
@@ -377,12 +375,16 @@
                         </VBox>
                         <VBox prefHeight="48.0" prefWidth="175.0" HBox.hgrow="ALWAYS">
                           <children>
-                            <Label text="%importDate">
+                            <Label text="%warrantyPeriod">
                               <font>
                                 <Font size="16.0" />
                               </font>
                             </Label>
-                            <DatePicker fx:id="dpImportDate" prefHeight="67.0" prefWidth="479.0" VBox.vgrow="ALWAYS" />
+                                          <TextField>
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </TextField>
                                           <Label fx:id="errImportDate" textFill="RED" />
                           </children>
                         </VBox>
@@ -495,17 +497,21 @@
                     </HBox>
                     <HBox spacing="30.0">
                       <children>
-                        <VBox prefHeight="200.0" prefWidth="388.0" spacing="10.0">
+                        <VBox alignment="CENTER_LEFT" prefHeight="212.0" prefWidth="216.0" spacing="10.0">
                           <children>
                             <Label text="%imageSrc">
                               <font>
                                 <Font size="16.0" />
                               </font>
                             </Label>
-                            <TextArea fx:id="txtAreaImgSrc" disable="true" prefHeight="200.0" prefWidth="200.0" />
+                                          <ImageView fx:id="imgPreview" fitHeight="177.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/Laptop/laptop%20Acer/LAPTOP%20ACER%20ASPIRE/61165_laptop_acer_gaming_aspire_7_a715_42g_r6zr_nhqaysv003_den_2021_16.jpg" />
+                                             </image>
+                                          </ImageView>
                           </children>
                         </VBox>
-                        <VBox prefHeight="200.0" prefWidth="657.0" spacing="5.0">
+                        <VBox prefHeight="200.0" prefWidth="657.0" spacing="5.0" HBox.hgrow="ALWAYS">
                           <children>
                             <Label text="%color">
                               <font>

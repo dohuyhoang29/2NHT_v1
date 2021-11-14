@@ -24,7 +24,7 @@ public class ProductDatabaseHelper {
         String categoryId = rs.getString("category_id");
         String code = rs.getString("code");
         String name = rs.getString("name");
-        LocalDate importDate = rs.getDate("import_date").toLocalDate();
+        String warrantyPeriod = rs.getString("import_date");
         Integer importPrice = rs.getInt("import_price");
         Integer price = rs.getInt("price");
         String hardDrive = rs.getString("hard_drive");
@@ -45,7 +45,7 @@ public class ProductDatabaseHelper {
         String dimensions = rs.getString("dimensions");
 
         list.add(
-            new Product(categoryId, code, name, importDate, importPrice, price, hardDrive, origin,
+            new Product(categoryId, code, name, warrantyPeriod, importPrice, price, hardDrive, origin,
                 quantity, color, imgSrc, screen, cpu, gpu, ram, operatingSystem, rearCamera,
                 selfieCamera, batteryCapacity, sim, weight, dimensions));
       }
@@ -58,14 +58,14 @@ public class ProductDatabaseHelper {
   }
 
   public static boolean insertLaptop(Integer categoryId, String code, String name,
-      LocalDate importDate,
+      String warrantyPeriod,
       Integer importPrice, Integer price, String hardDrive, String origin, Integer quatity,
       String color, String imgSrc, String screen, String cpu, String gpu, String ram,
       String operatingSystem, String rearCamera, String selfieCamera, String batteryCapacity,
       String sim,
       String weight, String dimensions) {
     String query =
-        "INSERT INTO product (category_id, code, name, import_date, import_price, price, hard_drive, origin, quantity, color, img_src, screen, cpu, gpu, ram, operating_system, rear_camera, selfie_camera, battery_capacity, sim, weight, dimensions) "
+        "INSERT INTO product (category_id, code, name, warranty_period, import_price, price, hard_drive, origin, quantity, color, img_src, screen, cpu, gpu, ram, operating_system, rear_camera, selfie_camera, battery_capacity, sim, weight, dimensions) "
             + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
     try (Connection cnt = DatabaseHelper.getConnetion();
@@ -73,7 +73,7 @@ public class ProductDatabaseHelper {
       preStm.setInt(1, categoryId);
       preStm.setString(2, code);
       preStm.setString(3, name);
-      preStm.setDate(4, Date.valueOf(importDate));
+      preStm.setString(4, warrantyPeriod);
       preStm.setInt(5, importPrice);
       preStm.setInt(6, price);
       preStm.setString(7, hardDrive);

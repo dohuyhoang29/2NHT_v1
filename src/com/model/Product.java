@@ -12,8 +12,7 @@ public class Product {
   StringProperty categoryName;
   StringProperty productCode;
   StringProperty productName;
-  LocalDate importDate;
-  StringProperty importDateProperty;
+  StringProperty warrantyPeriod;
   ObjectProperty<Integer> importPrice;
   ObjectProperty<Integer> price;
   StringProperty hardDrive;
@@ -41,7 +40,7 @@ public class Product {
 
   // khoi tao contructer
 
-  public Product(String categoryName, String productCode, String productName, LocalDate importDate,
+  public Product(String categoryName, String productCode, String productName, String warrantyPeriod,
       Integer importPrice, Integer price, String hardDrive,
       String origin, Integer quantity, String color, String imgSrc, String screen, String cpu,
       String gpu, String ram, String operatingSystem, String rearCamera, String selfieCamera,
@@ -49,15 +48,14 @@ public class Product {
     this.categoryName = new SimpleStringProperty(categoryName);
     this.productCode = new SimpleStringProperty(productCode);
     this.productName = new SimpleStringProperty(productName);
-    this.importDate = importDate;
-    this.importDateProperty = new SimpleStringProperty(importDate.toString());
+    this.warrantyPeriod = new SimpleStringProperty(warrantyPeriod);
     this.importPrice = new SimpleObjectProperty<>(importPrice);
     this.price = new SimpleObjectProperty<>(price);
     this.hardDrive = new SimpleStringProperty(hardDrive);
     this.origin = new SimpleStringProperty(origin);
     this.quantity = new SimpleObjectProperty<>(quantity);
     this.color = new SimpleStringProperty(color);
-    this.imgSrc = new SimpleStringProperty();
+    this.imgSrc = new SimpleStringProperty(imgSrc);
     this.screen = new SimpleStringProperty(screen);
     this.cpu = new SimpleStringProperty(cpu);
     this.gpu = new SimpleStringProperty(gpu);
@@ -109,24 +107,16 @@ public class Product {
     this.productName.set(productName);
   }
 
-  public LocalDate getImportDate() {
-    return importDate;
+  public String getWarrantyPeriod() {
+    return warrantyPeriod.get();
   }
 
-  public void setImportDate(LocalDate importDate) {
-    this.importDate = importDate;
+  public StringProperty getWarrantyPeriodProperty() {
+    return warrantyPeriod;
   }
 
-  public String getImportDateProperty() {
-    return importDateProperty.get();
-  }
-
-  public StringProperty getImportDatePropertyProperty() {
-    return importDateProperty;
-  }
-
-  public void setImportDateProperty(String importDateProperty) {
-    this.importDateProperty.set(importDateProperty);
+  public void setWarrantyPeriod(String warrantyPeriodProperty) {
+    this.warrantyPeriod.set(warrantyPeriodProperty);
   }
 
   public Integer getImportPrice() {
