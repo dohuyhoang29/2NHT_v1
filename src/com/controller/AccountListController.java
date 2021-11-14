@@ -139,4 +139,14 @@ public class AccountListController implements Initializable {
   private void goToProductList(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToProductsList();
   }
+
+  @FXML
+  private void goToAccountList(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToAccountList();
+  }
+
+  @FXML
+  private void goToCategoryList(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToCategoryList();
+  }
 }

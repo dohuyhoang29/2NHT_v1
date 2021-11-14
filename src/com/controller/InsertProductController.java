@@ -241,6 +241,16 @@ public class InsertProductController implements Initializable {
   }
 
   @FXML
+  private void goToAccountList(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToAccountList();
+  }
+
+  @FXML
+  private void goToCategoryList(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToCategoryList();
+  }
+
+  @FXML
   private void setBtnNextBasicInfo(MouseEvent mouseEvent) {
     ValidationManager check = ValidationManager.getInstance();
 
@@ -318,4 +328,6 @@ public class InsertProductController implements Initializable {
     productData.setVisible(false);
     productImages.setVisible(true);
   }
+
+
 }

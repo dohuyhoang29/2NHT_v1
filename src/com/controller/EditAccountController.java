@@ -198,4 +198,9 @@ public class EditAccountController implements Initializable {
   private void goToAccountList(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToAccountList();
   }
+
+  @FXML
+  private void goToCategoryList(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToCategoryList();
+  }
 }
