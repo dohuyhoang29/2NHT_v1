@@ -74,6 +74,7 @@ public class ProductsListController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     listData = ProductDatabaseHelper.getAllProduct();
+    System.out.println(listData.size());
     try {
       for (Product p : listData) {
         FXMLLoader fxmlLoader = new FXMLLoader();

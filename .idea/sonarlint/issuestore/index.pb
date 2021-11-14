@@ -11,8 +11,6 @@ R
 "src/com/helper/DatabaseHelper.java,2\d\2d526296268542348e17ffbf646bfdabe5434a5c
 O
 src/com/view/EditAccountUi.fxml,1\5\1511565156f9f9575b2a040400140b77de03d059
-_
-/src/com/controller/InsertAccountController.java,4\9\49220b468199c82a8c81ea72d5450bc0736e8e79
 R
 "src/com/helper/ProductManager.java,9\e\9e0b8dd01ca9ef4af49472f17d1e55279b499245
 P
@@ -29,10 +27,6 @@ P
  src/com/view/EditCategoryUI.fxml,2\6\26b40702ad59ce597eaa240ded3a66e8adc40b9a
 `
 0src/com/controller/InsertCategoryController.java,3\9\39c7408b26a2936a72babbff9c8d31a72980c5e2
-]
--src/com/controller/EditAccountController.java,b\4\b4377f369da1f1aed76440d30867a8e8ce651a81
-D
-src/com/sql/2nht.sql,0\9\09d06ce4999c99147457a9f97f60f23ff1bc39f6
 E
 src/com/css/style.css,b\2\b2ff9733bf5fde2b03847446202ed4ba17c95f8e
 S

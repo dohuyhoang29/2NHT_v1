@@ -62,9 +62,9 @@ public class ProductListItemController {
     name.setText(product.getProductName());
     category.setText(product.getCategoryName());
     quantity.setText(product.getQuantity().toString());
-    importPrice.setText(product.getImportPrice().toString());
+    importPrice.setText(product.getWarrantyPeriod().toString());
     price.setText(product.getPrice().toString());
-    importDate.setText(product.getWarrantyPeriod().toString());
+    importDate.setText(product.getWarrantyPeriod());
     if (product.getQuantity() > 0) {
       status.setText("Stocking");
     }

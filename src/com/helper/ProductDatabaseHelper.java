@@ -24,7 +24,7 @@ public class ProductDatabaseHelper {
         String categoryId = rs.getString("category_id");
         String code = rs.getString("code");
         String name = rs.getString("name");
-        String warrantyPeriod = rs.getString("import_date");
+        String warrantyPeriod = rs.getString("warranty_period");
         Integer importPrice = rs.getInt("import_price");
         Integer price = rs.getInt("price");
         String hardDrive = rs.getString("hard_drive");

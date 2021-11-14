@@ -29,15 +29,18 @@ CREATE TABLE IF NOT EXISTS `account` (
   `address` text DEFAULT NULL,
   `phone_number` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table 2nht.account: ~4 rows (approximately)
+-- Dumping data for table 2nht.account: ~7 rows (approximately)
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
 INSERT INTO `account` (`id`, `username`, `email`, `password`, `type`, `address`, `phone_number`) VALUES
 	(1, 'admin', 'admin@gmail.com', 'password', 'ADMIN', 'VN', '012345678'),
 	(2, 'staff', 'staff@gmail.com', '1234', 'STAFF', 'VN', '098765432'),
 	(3, 'hoang', 'hoang@gmail.com', '1234', 'USER', '', '012345678'),
-	(5, 'hoang123', 'hoang@gmail.com', '1234', 'USER', 'VN', '012345678');
+	(5, 'hoang123', 'hoang@gmail.com', '1234', 'USER', 'VN', '012345678'),
+	(6, 'nhilon', 'nhilon@gmail.com', '123', 'USER', 'Chuong Lon', '098765432'),
+	(7, 'tututu', 'tu@gmail.com', '12', 'USER', 'HN', '012'),
+	(8, 'sadf', 'asdf@afas.adf', '01', 'USER', 'faf', '0123123123');
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 
 -- Dumping structure for table 2nht.cart
@@ -70,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table 2nht.categories: ~3 rows (approximately)
+-- Dumping data for table 2nht.categories: ~4 rows (approximately)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `name`, `description`) VALUES
 	(1, 'Laptop', 'lkdf;asldkfjads;lkf'),
@@ -147,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `category_id` int(11) DEFAULT NULL,
   `code` text DEFAULT NULL,
   `name` text DEFAULT NULL,
-  `import_date` date DEFAULT NULL,
+  `warranty_period` text DEFAULT NULL,
   `import_price` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   `hard_drive` text DEFAULT NULL,
@@ -169,14 +172,13 @@ CREATE TABLE IF NOT EXISTS `product` (
   PRIMARY KEY (`id`),
   KEY `FK1_Catergories` (`category_id`),
   CONSTRAINT `FK1_Catergories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table 2nht.product: ~3 rows (approximately)
+-- Dumping data for table 2nht.product: ~2 rows (approximately)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` (`id`, `category_id`, `code`, `name`, `import_date`, `import_price`, `price`, `hard_drive`, `origin`, `quantity`, `color`, `img_src`, `screen`, `cpu`, `gpu`, `ram`, `operating_system`, `rear_camera`, `selfie_camera`, `battery_capacity`, `sim`, `weight`, `dimensions`) VALUES
-	(1, 1, '001', 'Macbook', '2021-11-08', 4000, 4500, '512GB', 'USA', 10, 'Gray', 'C:\\Users\\hoang\\Pictures\\Screenshots\\Screenshot (3).png', 'adfa', 'afda', 'afad', 'afd', 'adfads', NULL, NULL, NULL, NULL, 'afdaf', 'afda'),
-	(2, 1, '', 'Macbook', '2021-11-08', 4000, 4500, '512GB', 'USA', 10, 'Gray', 'C:\\Users\\hoang\\Pictures\\Screenshots\\Screenshot (3).png', 'adfa', 'afda', 'afad', 'afd', 'adfads', NULL, NULL, NULL, NULL, 'afdaf', 'afda'),
-	(3, 1, 'adf', 'asdf', '2021-11-09', 404, 4000, 'asdfasdf', 'adfasdfasf', 80, 'asdfas', 'C:\\Users\\hoang\\Pictures\\Screenshots\\Screenshot (3).png', 'asdfas', 'asdf', 'asdf', 'asdf', 'afads', '', '', '', '', '', '');
+INSERT INTO `product` (`id`, `category_id`, `code`, `name`, `warranty_period`, `import_price`, `price`, `hard_drive`, `origin`, `quantity`, `color`, `img_src`, `screen`, `cpu`, `gpu`, `ram`, `operating_system`, `rear_camera`, `selfie_camera`, `battery_capacity`, `sim`, `weight`, `dimensions`) VALUES
+	(5, 1, 'adsf', 'adfads', '2021-11-10', 4253, 452, 'sfg', 'sfg', 5, 'sfdgsdg', 'Screenshot (9).png', 'asdfasdfa', 'asdf', 'adfas', 'fasdf', 'adfasdfadf', 'f', 'adfads', 'adfad', 'fafasd', 'fasdfasdf', 'sdfas'),
+	(7, 2, 'afdas', 'dfasdf', '2021-11-10', 45, 45, 'asfd', 'afsdf', 14, 'adf', 'Screenshot (9).png', 'kkjh', 'khj', 'kj', 'h', 'jh', 'jh', 'jh', 'jh', 'jh', 'hj', 'hj');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
