@@ -6,7 +6,6 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -32,24 +31,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
           </padding>
         </HBox>
-        <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="26.0" prefWidth="234.0" styleClass="round-layout" stylesheets="@../css/style.css">
-          <children>
-            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../images/ic_search.png" />
-              </image>
-            </ImageView>
-            <TextField fx:id="txtSearch" prefHeight="30.0" prefWidth="194.0" promptText="%search" styleClass="transparent" stylesheets="@../css/style.css">
-              <font>
-                <Font size="14.0" />
-              </font>
-            </TextField>
-          </children>
-          <HBox.margin>
-            <Insets left="10.0" top="10.0" />
-          </HBox.margin>
-        </HBox>
-        <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+        <Pane prefHeight="80.0" prefWidth="737.0" />
         <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="84.0" prefWidth="246.0" spacing="10.0">
           <children>
             <ImageView fx:id="changeLanguage" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#showChangeLanguageMousePressed" onMousePressed="#showChangeLanguageMousePressed" pickOnBounds="true" preserveRatio="true">
@@ -70,6 +52,11 @@
                 <Font size="16.0" />
               </font>
             </Label>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ic_logout.png" />
+                     </image>
+                  </ImageView>
           </children>
         </HBox>
       </children>

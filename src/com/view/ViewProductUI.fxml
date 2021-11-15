@@ -49,9 +49,17 @@
                 <Font size="16.0" />
               </font>
             </Label>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ic_logout.png" />
+                     </image>
+                  </ImageView>
           </children>
         </HBox>
       </children>
+         <padding>
+            <Insets right="50.0" />
+         </padding>
     </HBox>
   </top>
   <left>

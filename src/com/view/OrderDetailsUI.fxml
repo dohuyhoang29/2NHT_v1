@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -53,9 +52,17 @@
                 <Font size="16.0" />
               </font>
             </Label>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ic_logout.png" />
+                     </image>
+                  </ImageView>
           </children>
         </HBox>
       </children>
+         <padding>
+            <Insets right="50.0" />
+         </padding>
     </HBox>
   </top>
   <left>
@@ -447,51 +454,7 @@
                           </children>
                         </HBox>
                         <Line endX="858.2929077148438" endY="-1.4483928680419922E-5" startX="-100.0" />
-                        <VBox>
-                          <children>
-                            <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="967.0">
-                              <children>
-                                <Pane prefHeight="31.0" prefWidth="14.0" />
-                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                  <image>
-                                    <Image url="@../images/Screenshot%20(9).png" />
-                                  </image>
-                                </ImageView>
-                                <Label prefHeight="27.0" prefWidth="245.0" text="Do Huy Hoang">
-                                  <font>
-                                    <Font size="18.0" />
-                                  </font>
-                                </Label>
-                                <Label prefHeight="27.0" prefWidth="13.0" text="\$">
-                                  <font>
-                                    <Font size="18.0" />
-                                  </font>
-                                </Label>
-                                <Label prefHeight="27.0" prefWidth="221.0" text="1250">
-                                  <font>
-                                    <Font size="18.0" />
-                                  </font>
-                                </Label>
-                                <Label prefHeight="27.0" prefWidth="221.0" text="5">
-                                  <font>
-                                    <Font size="18.0" />
-                                  </font>
-                                </Label>
-                                <Label prefHeight="27.0" prefWidth="13.0" text="\$">
-                                  <font>
-                                    <Font size="18.0" />
-                                  </font>
-                                </Label>
-                                <Label prefHeight="27.0" prefWidth="190.0" text="1250">
-                                  <font>
-                                    <Font size="18.0" />
-                                  </font>
-                                </Label>
-                              </children>
-                            </HBox>
-                            <Separator prefWidth="200.0" />
-                          </children>
-                        </VBox>
+                        <VBox />
                       </children>
                     </VBox>
                   </content>
