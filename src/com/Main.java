@@ -20,7 +20,7 @@ public class Main extends Application {
 //    primaryStage.show();
 
     Navigator.getInstance().setStage(primaryStage);
-    Navigator.getInstance().goToDashboard();
+    Navigator.getInstance().goToHome();
 
     //test commit
 

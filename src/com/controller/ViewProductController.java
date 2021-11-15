@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class ViewProctController implements Initializable {
+public class ViewProductController implements Initializable {
   @FXML
   private ImageView changeLanguage;
 
@@ -160,5 +160,20 @@ public class ViewProctController implements Initializable {
   @FXML
   private void goToCategoryList(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToCategoryList();
+  }
+
+  @FXML
+  private void back(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToProductsList();
+  }
+
+  @FXML
+  private void goToOrder(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToOrder();
+  }
+
+  @FXML
+  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToOrderDetails();
   }
 }

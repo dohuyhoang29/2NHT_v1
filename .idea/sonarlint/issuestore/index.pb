@@ -5,42 +5,18 @@ T
 $src/com/helper/TranslateManager.java,2\b\2b6d0e52d30fecde86f793fe821701edf562753f
 J
 src/com/model/Account.java,a\7\a7bf038ffd95ccf8d21303a26ad278d901462b63
-K
-src/com/model/Category.java,d\5\d506d185cd54ca34cc01cd5e4a394a4bad05b1c6
 R
 "src/com/helper/DatabaseHelper.java,2\d\2d526296268542348e17ffbf646bfdabe5434a5c
-O
-src/com/view/EditAccountUi.fxml,1\5\1511565156f9f9575b2a040400140b77de03d059
 R
 "src/com/helper/ProductManager.java,9\e\9e0b8dd01ca9ef4af49472f17d1e55279b499245
-P
- src/com/view/ProductsListUI.fxml,d\4\d4d6994b5bba719d469e8bd10f42d8df27580668
 ]
 -src/com/controller/ViewAccountController.java,f\6\f63aa1bc231d298afd1db75f1ba3986ca050a253
 O
 src/com/view/ViewAccountUI.fxml,7\c\7ce12b9014a81bd81315e653f59cce8a3dba075f
 Y
 )src/com/helper/AccountDatabaseHelper.java,4\8\484d8e2a9f53e9046174c6c9043eba27e6f118d6
-^
-.src/com/controller/EditCategoryController.java,3\0\30e891e64d2a3aa342fa6251bef50a7de4568984
-P
- src/com/view/EditCategoryUI.fxml,2\6\26b40702ad59ce597eaa240ded3a66e8adc40b9a
-`
-0src/com/controller/InsertCategoryController.java,3\9\39c7408b26a2936a72babbff9c8d31a72980c5e2
 E
 src/com/css/style.css,b\2\b2ff9733bf5fde2b03847446202ed4ba17c95f8e
-S
-#src/com/view/AccountListItemUI.fxml,4\c\4ca3b8e10e94b1b03c9c5eedf5e842154e2ec04b
-T
-$src/com/view/CategoryListItemUI.fxml,a\b\ab78d23549c16070b1c1c4137f4c630ed96ed7ea
-O
-src/com/view/AccountListUI.fxml,6\4\64c329ee42f7131c8268e1bd9d8192a23cc0e77f
-P
- src/com/view/CategoryListUI.fxml,9\7\97f9161b43430a33744041f626fb0cc0eedcdded
-]
--src/com/controller/AccountListController.java,7\3\7315375d019ed60d0f00a2eb8ba322e60ae220bf
-a
-1src/com/controller/AccountListItemController.java,d\6\d6b2b4011c67d4fa1fe07cef9c0630a82339f03b
 I
 src/com/view/LoginUI.fxml,0\2\02e4b832f95e8a731eecfc76096a2d15cef727c0
 Z
@@ -51,5 +27,15 @@ U
 %src/com/helper/ValidationManager.java,3\3\332e28b3b2bedbb5d9af96b25cb455cc08654448
 J
 src/com/view/ForgotUI.fxml,2\c\2c630e6cbf574454200be91e21c473c9b7b2e6d8
-^
-.src/com/controller/CategoryListController.java,e\8\e857ae8850a1da7ac356bf4c7e04f30b5d0e7103
+W
+'src/com/controller/LoginController.java,b\4\b4d8b973f94d5557e2da5cd9cd817dfc27cf2141
+b
+2src/com/controller/CategoryListItemController.java,a\4\a4be16bb7a82ba75d4f8588275bfe0e072827740
+D
+src/com/sql/2nht.sql,0\9\09d06ce4999c99147457a9f97f60f23ff1bc39f6
+a
+1src/com/controller/AccountListItemController.java,d\6\d6b2b4011c67d4fa1fe07cef9c0630a82339f03b
+Z
+*src/com/helper/CategoryDatabaseHelper.java,f\8\f8729f13eb0a19a18c886f5a937e577491ce1727
+K
+src/com/model/Category.java,d\5\d506d185cd54ca34cc01cd5e4a394a4bad05b1c6

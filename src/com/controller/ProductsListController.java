@@ -74,15 +74,14 @@ public class ProductsListController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     listData = ProductDatabaseHelper.getAllProduct();
-    System.out.println(listData.size());
     try {
       for (Product p : listData) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/com/view/ProductListItemUI.fxml"));
-        HBox hBox = fxmlLoader.load();
+        VBox vBox = fxmlLoader.load();
         ProductListItemController productListItemController = fxmlLoader.getController();
         productListItemController.setData(p);
-        itemLayout.getChildren().add(hBox);
+        itemLayout.getChildren().add(vBox);
       }
     } catch (IOException e) {
       e.printStackTrace();
@@ -124,5 +123,15 @@ public class ProductsListController implements Initializable {
   @FXML
   private void goToCategoryList(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToCategoryList();
+  }
+
+  @FXML
+  private void goToOrder(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToOrder();
+  }
+
+  @FXML
+  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToOrderDetails();
   }
 }

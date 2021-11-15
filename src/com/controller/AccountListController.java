@@ -100,10 +100,10 @@ public class AccountListController implements Initializable {
       for (Account acc : listAccount) {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/com/view/AccountListItemUI.fxml"));
-        HBox hBox = fxmlLoader.load();
+        VBox vBox = fxmlLoader.load();
         AccountListItemController accountListItemController = fxmlLoader.getController();
         accountListItemController.setData(acc);
-        itemLayout.getChildren().add(hBox);
+        itemLayout.getChildren().add(vBox);
       }
     } catch (IOException e) {
       e.printStackTrace();
@@ -148,5 +148,15 @@ public class AccountListController implements Initializable {
   @FXML
   private void goToCategoryList(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToCategoryList();
+  }
+
+  @FXML
+  private void goToOrder(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToOrder();
+  }
+
+  @FXML
+  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
+    Navigator.getInstance().goToOrderDetails();
   }
 }

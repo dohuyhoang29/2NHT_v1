@@ -2,9 +2,9 @@ package com.controller;
 
 import com.helper.CategoryDatabaseHelper;
 import com.helper.ProductDatabaseHelper;
-import com.helper.ProductManager;
 import com.helper.ValidationManager;
 import com.model.Category;
+import com.model.Product;
 import com.view.Navigator;
 import java.io.File;
 import java.io.IOException;
@@ -17,9 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -28,8 +26,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
-public class InsertProductController implements Initializable {
-
+public class EditProductController implements Initializable {
   @FXML
   private TextField txtSearch;
 
@@ -118,9 +115,6 @@ public class InsertProductController implements Initializable {
   private Label errColor;
 
   @FXML
-  private TextField txtQuantity;
-
-  @FXML
   private TextField txtHardDrive;
 
   @FXML
@@ -179,6 +173,8 @@ public class InsertProductController implements Initializable {
   private File imgSrc;
   final FileChooser fileChooser = new FileChooser();
   String path = "D:/App/IntelliJ IDEA 2021.2/Project/2NHT_v1/src/com/images/";
+  String pathOut = "D:/App/IntelliJ IDEA 2021.2/Project/2NHT_v1/out/production/2NHT_v1/com/images";
+  Product product;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -186,21 +182,61 @@ public class InsertProductController implements Initializable {
     for (Category c : listCate) {
       cbCategory.getItems().add(c.getName());
     }
+    cbCategory.setValue("Laptop");
+  }
+
+  public void setData (Product product) {
+    this.product = product;
+    System.out.println(product.getCategoryName());
+    Image image = new Image(getClass().getResourceAsStream("/com/images/" + product.getImgSrc()));
+//    imgSrc = new File("/com/view/" + product.getImgSrc());
+
+    imgPreview.setImage(image);
+    txtProductCode.setText(product.getProductCode());
+    txtProductName.setText(product.getProductName());
+    cbCategory.setValue(product.getCategoryName());
+    txtWarrantyPeriod.setText(product.getWarrantyPeriod());
+    txtImportPrice.setText(product.getImportPrice().toString());
+    txtPrice.setText(product.getPrice().toString());
+    txtHardDrive.setText(product.getHardDrive());
+    txtOrigin.setText(product.getOrigin());
+    txtSim.setText(product.getSim());
+    txtWeight.setText(product.getWeight());
+    txtDimensions.setText(product.getDimensions());
+    txtScreen.setText(product.getScreen());
+    txtCpu.setText(product.getCpu());
+    txtGpu.setText(product.getGpu());
+    txtRam.setText(product.getRam());
+    txtColor.setText(product.getColor());
+    txtOperatingSystem.setText(product.getOperatingSystem());
+    txtRearCamera.setText(product.getRearCamera());
+    txtSelfieCamera.setText(product.getSelfieCamera());
+    txtBatteryCapacity.setText(product.getBatteryCapacity());
   }
 
   //Actions
   @FXML
   private void clickSave() throws IOException {
     Category category = CategoryDatabaseHelper.getCategoryByName(cbCategory.getValue());
-    ProductDatabaseHelper.insertProduct(category.getId(), txtProductCode.getText(),
+    String imgName;
+    if (imgSrc == null) {
+      imgName = product.getImgSrc();
+    } else {
+      imgName = imgSrc.getName();
+    }
+    ProductDatabaseHelper.editProduct(category.getId(), txtProductCode.getText(),
         txtProductName.getText(), txtWarrantyPeriod.getText(),
         Integer.parseInt(txtImportPrice.getText()), Integer.parseInt(txtPrice.getText()),
-        txtHardDrive.getText(), txtOrigin.getText(), Integer.parseInt(txtQuantity.getText()),
-        txtColor.getText(), imgSrc.getName(), txtScreen.getText(), txtCpu.getText(),
+        txtHardDrive.getText(), txtOrigin.getText(), txtColor.getText(),
+        imgName,
+        txtScreen.getText(), txtCpu.getText(),
         txtGpu.getText(), txtRam.getText(), txtOperatingSystem.getText(), txtRearCamera.getText(),
         txtSelfieCamera.getText(), txtBatteryCapacity.getText(), txtSim.getText(),
-        txtDimensions.getText(), txtWeight.getText());
-    Files.copy(imgSrc.toPath(), (new File(path + imgSrc.getName())).toPath(), StandardCopyOption.REPLACE_EXISTING);
+        txtDimensions.getText(), txtWeight.getText(), product.getId());
+
+    if (imgSrc != null) {
+      Files.copy(imgSrc.toPath(), (new File(path + imgSrc.getName())).toPath(), StandardCopyOption.REPLACE_EXISTING);
+    }
     Navigator.getInstance().goToInsertProduct();
   }
 
@@ -302,8 +338,8 @@ public class InsertProductController implements Initializable {
     productData.setVisible(false);
     productImages.setVisible(true);
   }
-
   //Dieu huong
+
   @FXML
   private void goToDashboard(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToDashboard();

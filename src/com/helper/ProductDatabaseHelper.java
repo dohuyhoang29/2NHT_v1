@@ -15,21 +15,21 @@ public class ProductDatabaseHelper {
 
   public static List<Product> getAllProduct() {
     List<Product> list = new ArrayList<>();
-    String query = "SELECT * FROM product";
+    String query = "SELECT p.id, p.code, p.name AS 'product_name', p.warranty_period, p.import_price, p.price, p.hard_drive, p.origin, p.color, p.img_src, p.screen, p.cpu, p.gpu, p.ram, p.operating_system, p.rear_camera, p.selfie_camera, p.battery_capacity, p.sim, p.weight, p.dimensions, c.name AS 'category_name' FROM product AS p INNER JOIN categories AS c ON p.category_id=c.id;";
 
     try (Connection cnt = DatabaseHelper.getConnetion();
         PreparedStatement preStm = cnt.prepareStatement(query);
         ResultSet rs = preStm.executeQuery()) {
       while (rs.next()) {
-        String categoryId = rs.getString("category_id");
+        Integer id = rs.getInt("id");
+        String categoryId = rs.getString("category_name");
         String code = rs.getString("code");
-        String name = rs.getString("name");
+        String name = rs.getString("product_name");
         String warrantyPeriod = rs.getString("warranty_period");
         Integer importPrice = rs.getInt("import_price");
         Integer price = rs.getInt("price");
         String hardDrive = rs.getString("hard_drive");
         String origin = rs.getString("origin");
-        Integer quantity = rs.getInt("quantity");
         String color = rs.getString("color");
         String imgSrc = rs.getString("img_src");
         String screen = rs.getString("screen");
@@ -45,8 +45,8 @@ public class ProductDatabaseHelper {
         String dimensions = rs.getString("dimensions");
 
         list.add(
-            new Product(categoryId, code, name, warrantyPeriod, importPrice, price, hardDrive, origin,
-                quantity, color, imgSrc, screen, cpu, gpu, ram, operatingSystem, rearCamera,
+            new Product(id, categoryId, code, name, warrantyPeriod, importPrice, price, hardDrive, origin
+                , color, imgSrc, screen, cpu, gpu, ram, operatingSystem, rearCamera,
                 selfieCamera, batteryCapacity, sim, weight, dimensions));
       }
     } catch (SQLException throwables) {
@@ -57,7 +57,7 @@ public class ProductDatabaseHelper {
     return list;
   }
 
-  public static boolean insertLaptop(Integer categoryId, String code, String name,
+  public static boolean insertProduct(Integer categoryId, String code, String name,
       String warrantyPeriod,
       Integer importPrice, Integer price, String hardDrive, String origin, Integer quatity,
       String color, String imgSrc, String screen, String cpu, String gpu, String ram,
@@ -93,6 +93,62 @@ public class ProductDatabaseHelper {
       preStm.setString(21, weight);
       preStm.setString(22, dimensions);
 
+      if (preStm.executeUpdate() > 0) {
+        return true;
+      }
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+    }
+    return false;
+  }
+
+  public static boolean editProduct(Integer categoryId, String code, String name,
+      String warrantyPeriod,
+      Integer importPrice, Integer price, String hardDrive, String origin,
+      String color, String imgSrc, String screen, String cpu, String gpu, String ram,
+      String operatingSystem, String rearCamera, String selfieCamera, String batteryCapacity,
+      String sim, String weight, String dimensions, Integer id) {
+    String query = "UPDATE product SET category_id = ?, code = ?, name = ?, warranty_period = ?, import_price = ?, price = ?, hard_drive = ?, origin = ?, color = ?, img_src = ?, screen = ?, cpu = ?, gpu = ?, ram = ?, operating_system = ?, rear_camera = ?, selfie_camera = ?, battery_capacity = ?, sim = ?, weight = ?, dimensions = ? WHERE id = ?";
+
+    try (Connection cnt = DatabaseHelper.getConnetion();
+        PreparedStatement preStm = cnt.prepareStatement(query)) {
+      preStm.setInt(1, categoryId);
+      preStm.setString(2, code);
+      preStm.setString(3, name);
+      preStm.setString(4, warrantyPeriod);
+      preStm.setInt(5, importPrice);
+      preStm.setInt(6, price);
+      preStm.setString(7, hardDrive);
+      preStm.setString(8, origin);
+      preStm.setString(9, color);
+      preStm.setString(10, imgSrc);
+      preStm.setString(11, screen);
+      preStm.setString(12, cpu);
+      preStm.setString(13, gpu);
+      preStm.setString(14, ram);
+      preStm.setString(15, operatingSystem);
+      preStm.setString(16, rearCamera);
+      preStm.setString(17, selfieCamera);
+      preStm.setString(18, batteryCapacity);
+      preStm.setString(19, sim);
+      preStm.setString(20, weight);
+      preStm.setString(21, dimensions);
+      preStm.setInt(22, id);
+
+      if (preStm.executeUpdate() > 0) {
+        return true;
+      }
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+    }
+    return false;
+  }
+
+  public static boolean deleteProduct(Integer id) {
+    String query = "DELETE FROM product WHERE id = ?";
+    try (Connection cnt = DatabaseHelper.getConnetion();
+        PreparedStatement preStm = cnt.prepareStatement(query)) {
+      preStm.setInt(1, id);
       if (preStm.executeUpdate() > 0) {
         return true;
       }

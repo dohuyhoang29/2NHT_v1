@@ -9,6 +9,7 @@ import javafx.beans.property.StringProperty;
 public class Product {
 
   // khoi tao properties
+  ObjectProperty<Integer> id;
   StringProperty categoryName;
   StringProperty productCode;
   StringProperty productName;
@@ -17,7 +18,6 @@ public class Product {
   ObjectProperty<Integer> price;
   StringProperty hardDrive;
   StringProperty origin;
-  ObjectProperty<Integer> quantity;
   StringProperty color;
   StringProperty imgSrc;
 
@@ -40,11 +40,12 @@ public class Product {
 
   // khoi tao contructer
 
-  public Product(String categoryName, String productCode, String productName, String warrantyPeriod,
+  public Product(Integer id, String categoryName, String productCode, String productName, String warrantyPeriod,
       Integer importPrice, Integer price, String hardDrive,
-      String origin, Integer quantity, String color, String imgSrc, String screen, String cpu,
+      String origin, String color, String imgSrc, String screen, String cpu,
       String gpu, String ram, String operatingSystem, String rearCamera, String selfieCamera,
       String batteryCapacity, String sim, String weight, String dimensions) {
+    this.id = new SimpleObjectProperty<>(id);
     this.categoryName = new SimpleStringProperty(categoryName);
     this.productCode = new SimpleStringProperty(productCode);
     this.productName = new SimpleStringProperty(productName);
@@ -53,7 +54,6 @@ public class Product {
     this.price = new SimpleObjectProperty<>(price);
     this.hardDrive = new SimpleStringProperty(hardDrive);
     this.origin = new SimpleStringProperty(origin);
-    this.quantity = new SimpleObjectProperty<>(quantity);
     this.color = new SimpleStringProperty(color);
     this.imgSrc = new SimpleStringProperty(imgSrc);
     this.screen = new SimpleStringProperty(screen);
@@ -70,6 +70,19 @@ public class Product {
   }
 
   //khoi tao getter va setter
+
+
+  public Integer getId() {
+    return id.get();
+  }
+
+  public ObjectProperty<Integer> getIdProperty() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id.set(id);
+  }
 
   public String getCategoryName() {
     return categoryName.get();
@@ -165,18 +178,6 @@ public class Product {
 
   public void setOrigin(String origin) {
     this.origin.set(origin);
-  }
-
-  public Integer getQuantity() {
-    return quantity.get();
-  }
-
-  public ObjectProperty<Integer> getQuantityProperty() {
-    return quantity;
-  }
-
-  public void setQuantity(Integer quantity) {
-    this.quantity.set(quantity);
   }
 
   public String getColor() {

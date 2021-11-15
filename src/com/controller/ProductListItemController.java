@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.helper.ProductDatabaseHelper;
 import com.model.Product;
 import com.view.Navigator;
 import java.io.IOException;
@@ -61,20 +62,24 @@ public class ProductListItemController {
     code.setText(product.getProductCode());
     name.setText(product.getProductName());
     category.setText(product.getCategoryName());
-    quantity.setText(product.getQuantity().toString());
     importPrice.setText(product.getWarrantyPeriod().toString());
     price.setText(product.getPrice().toString());
     importDate.setText(product.getWarrantyPeriod());
-    if (product.getQuantity() > 0) {
-      status.setText("Stocking");
-    }
-    if (product.getQuantity() == 0) {
-      status.setText("Sold out");
-    }
+
   }
 
   @FXML
   void viewProduct() throws IOException {
     Navigator.getInstance().goToViewProduct(product);
+  }
+
+  @FXML
+  void editProduct() throws IOException {
+    Navigator.getInstance().goToEditProduct(product);
+  }
+
+  @FXML
+  void deleteProduct() {
+    ProductDatabaseHelper.deleteProduct(product.getId());
   }
 }

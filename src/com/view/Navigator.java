@@ -2,7 +2,8 @@ package com.view;
 
 import com.controller.EditAccountController;
 import com.controller.EditCategoryController;
-import com.controller.ViewProctController;
+import com.controller.EditProductController;
+import com.controller.ViewProductController;
 import com.model.Account;
 import com.model.Category;
 import com.model.Product;
@@ -30,6 +31,10 @@ public class Navigator {
   static final String INSERT_CATEGORY = "InsertCategoryUI.fxml";
   static final String EDIT_CATEGORY = "EditCategoryUI.fxml";
   static final String VIEW_PRODUCT = "ViewProductUI.fxml";
+  static final String EDIT_PRODUCT = "EditProductUI.fxml";
+  static final String ORDER = "OrderUI.fxml";
+  static final String ORDER_DETAILS = "OrderDetailsUI.fxml";
+  static final String HOME = "HomeUI.fxml";
 
   private FXMLLoader loader;
   private static Navigator navigator;
@@ -112,7 +117,25 @@ public class Navigator {
 
   public void goToViewProduct(Product product) throws IOException {
     goToScene(PROJECT_NAME, VIEW_PRODUCT);
-    ViewProctController controller = loader.getController();
+    ViewProductController controller = loader.getController();
     controller.setData(product);
+  }
+
+  public void goToEditProduct(Product product) throws IOException {
+    goToScene(PROJECT_NAME, EDIT_PRODUCT);
+    EditProductController controller = loader.getController();
+    controller.setData(product);
+  }
+
+  public void goToOrder() throws IOException {
+    goToScene(PROJECT_NAME, ORDER);
+  }
+
+  public void goToOrderDetails() throws IOException {
+    goToScene(PROJECT_NAME, ORDER_DETAILS);
+  }
+
+  public void goToHome() throws IOException {
+    goToScene(PROJECT_NAME, HOME);
   }
 }

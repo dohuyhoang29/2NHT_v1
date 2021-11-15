@@ -1,7 +1,5 @@
 package com.controller;
 
-import com.helper.CategoryDatabaseHelper;
-import com.model.Category;
 import com.view.Navigator;
 import java.io.IOException;
 import java.net.URL;
@@ -9,18 +7,14 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class EditCategoryController implements Initializable {
-  @FXML
-  private TextField txtSearch;
-
+public class OrderDetailsController implements Initializable {
   @FXML
   private ImageView changeLanguage;
 
@@ -49,29 +43,43 @@ public class EditCategoryController implements Initializable {
   private VBox changeLanguageContainer;
 
   @FXML
-  private TextField txtName;
+  private Label date;
 
   @FXML
-  private Label errName;
+  private Label orderID;
 
   @FXML
-  private TextArea txtDescription;
+  private ChoiceBox<?> cbStatus;
 
   @FXML
   private Button btnSave;
 
+  @FXML
+  private Label name;
+
+  @FXML
+  private Label email;
+
+  @FXML
+  private Label phone;
+
+  @FXML
+  private Label status;
+
+  @FXML
+  private Label address;
+
+  @FXML
+  private VBox itemLayout;
+
+  @FXML
+  private Label subtotal;
+
   int count;
-  Category category;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 
-  }
-
-  public void setData (Category category) {
-    this.category = category;
-    txtName.setText(category.getName());
-    txtDescription.setText(category.getDescription());
   }
 
   //Hanh dong
@@ -82,19 +90,6 @@ public class EditCategoryController implements Initializable {
       changeLanguageContainer.setVisible(true);
     } else {
       changeLanguageContainer.setVisible(false);
-    }
-  }
-
-  @FXML
-  private void editCategory() throws IOException {
-    if(txtName.getText().isEmpty()) {
-      errName.setText("Category's name is required");
-    }else if(CategoryDatabaseHelper.getCategoryByName(txtName.getText()) != null && !txtName.getText().equalsIgnoreCase(category.getName())) {
-      errName.setText("Category exists");
-    }else {
-      errName.setText("");
-      CategoryDatabaseHelper.editCategory(txtName.getText(), txtDescription.getText(), category.getId());
-      Navigator.getInstance().goToCategoryList();
     }
   }
 
