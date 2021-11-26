@@ -156,23 +156,6 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" onMouseClicked="#goToOrderDetails" spacing="5.0" style="-fx-background-color: #234;">
-               <children>
-                  <ImageView fitHeight="30.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/ic_order_details.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="30.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label text="%orderDetails" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
       </children>
       <padding>
         <Insets top="15.0" />
@@ -259,53 +242,52 @@
                     <DatePicker fx:id="dpFrom" prefHeight="30.0" prefWidth="174.0" promptText="From" />
                     <DatePicker fx:id="dpTo" prefHeight="30.0" prefWidth="174.0" promptText="To" />
                     <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                    <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="29.0" prefWidth="67.0" style="-fx-background-color: #56d;" text="Search" textFill="WHITE" />
+                    <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" prefHeight="29.0" prefWidth="67.0" style="-fx-background-color: #56d;" text="Search" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Button>
                   </children>
                 </HBox>
-                <ScrollPane prefHeight="443.0" prefWidth="967.0" style="-fx-background-color: #fff;" styleClass="transparent" stylesheets="@../css/style.css" VBox.vgrow="ALWAYS">
-                  <content>
-                    <VBox fx:id="itemLayout" prefHeight="423.0" prefWidth="965.0" style="-fx-background-color: #fff;">
-                      <children>
-                        <HBox prefHeight="31.0" prefWidth="967.0">
-                          <children>
-                            <Pane prefHeight="31.0" prefWidth="14.0" />
-                            <Label prefHeight="27.0" prefWidth="116.0" text="ID">
-                              <font>
-                                <Font size="18.0" />
-                              </font>
-                            </Label>
-                            <Label prefHeight="27.0" prefWidth="295.0" text="Customer Name">
-                              <font>
-                                <Font size="18.0" />
-                              </font>
-                            </Label>
-                            <Label prefHeight="27.0" prefWidth="124.0" text="Price">
-                              <font>
-                                <Font size="18.0" />
-                              </font>
-                            </Label>
-                            <Label prefHeight="27.0" prefWidth="123.0" text="Status">
-                              <font>
-                                <Font size="18.0" />
-                              </font>
-                            </Label>
-                            <Label prefHeight="27.0" prefWidth="161.0" text="Date">
-                              <font>
-                                <Font size="18.0" />
-                              </font>
-                            </Label>
-                            <Label text="Action">
-                              <font>
-                                <Font size="18.0" />
-                              </font>
-                            </Label>
-                          </children>
-                        </HBox>
-                        <Line endX="858.2929077148438" endY="-1.4483928680419922E-5" startX="-100.0" />
-                      </children>
-                    </VBox>
-                  </content>
-                </ScrollPane>
+              <VBox prefHeight="423.0" prefWidth="965.0" style="-fx-background-color: #fff;">
+                <children>
+                  <HBox prefHeight="31.0" prefWidth="967.0">
+                    <children>
+                      <Pane prefHeight="31.0" prefWidth="14.0" />
+                      <Label prefHeight="27.0" prefWidth="440.0" text="Customer Name">
+                        <font>
+                          <Font size="18.0" />
+                        </font>
+                      </Label>
+                      <Label prefHeight="27.0" prefWidth="124.0" text="Price">
+                        <font>
+                          <Font size="18.0" />
+                        </font>
+                      </Label>
+                      <Label prefHeight="27.0" prefWidth="123.0" text="Status">
+                        <font>
+                          <Font size="18.0" />
+                        </font>
+                      </Label>
+                      <Label prefHeight="27.0" prefWidth="161.0" text="Date">
+                        <font>
+                          <Font size="18.0" />
+                        </font>
+                      </Label>
+                      <Label text="Action">
+                        <font>
+                          <Font size="18.0" />
+                        </font>
+                      </Label>
+                    </children>
+                  </HBox>
+                  <Line endX="868.2929077148438" endY="-1.4142135381698608" startX="-100.0" />
+                              <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="transparent" stylesheets="@../css/style.css" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <VBox fx:id="orderBox" prefHeight="386.0" prefWidth="968.0" style="-fx-background-color: #fff;" />
+                                 </content>
+                              </ScrollPane>
+                </children>
+              </VBox>
               </children>
             </VBox>
           </children>

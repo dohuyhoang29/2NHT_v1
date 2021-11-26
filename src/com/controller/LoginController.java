@@ -8,6 +8,7 @@ package com.controller;
 
 
 import com.helper.AccountDatabaseHelper;
+import com.helper.ProjectManager;
 import com.helper.ValidationManager;
 import com.model.Account;
 import com.sun.glass.ui.Window;
@@ -76,7 +77,13 @@ public class LoginController implements Initializable {
             Account account = AccountDatabaseHelper.getAccountByUsernameOrEmail(username.getText());
             if (username.getText().equalsIgnoreCase(account.getUsername()) || username.getText().equalsIgnoreCase(account.getEmail())) {
                 if (password.getText().equalsIgnoreCase(account.getPassword())) {
-                    Navigator.getInstance().goToDashboard();
+                    ProjectManager.getInstance().setAccount(account);
+                    if (account.getType().equalsIgnoreCase("ADMIN")) {
+                        Navigator.getInstance().goToDashboard();
+                    } else {
+                        Navigator.getInstance().goToHome();
+                    }
+
                 }
             }
         }

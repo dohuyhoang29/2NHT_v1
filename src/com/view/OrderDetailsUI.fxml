@@ -154,23 +154,6 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" onMouseClicked="#goToOrderDetails" spacing="5.0" style="-fx-background-color: #234;">
-               <children>
-                  <ImageView fitHeight="30.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/ic_order_details.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="30.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label text="%orderDetails" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
       </children>
       <padding>
         <Insets top="15.0" />
@@ -257,25 +240,11 @@
                                 <Font name="System Bold" size="24.0" />
                               </font>
                             </Label>
-                            <HBox>
-                              <children>
-                                <Label text="OrderID: ">
-                                  <font>
-                                    <Font size="18.0" />
-                                  </font>
-                                </Label>
-                                <Label fx:id="orderID" text="8541">
-                                  <font>
-                                    <Font size="18.0" />
-                                  </font>
-                                </Label>
-                              </children>
-                            </HBox>
                           </children>
                         </VBox>
                         <Pane prefHeight="76.0" prefWidth="414.0" />
                         <ChoiceBox fx:id="cbStatus" prefHeight="38.0" prefWidth="207.0" style="-fx-border-color: #dde; -fx-border-radius: 5;" styleClass="transparent" stylesheets="@../css/style.css" />
-                        <Button fx:id="btnSave" mnemonicParsing="false" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #56d;" text="Save" textFill="WHITE">
+                        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#changeStatus" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #56d;" text="Save" textFill="WHITE">
                           <font>
                             <Font size="18.0" />
                           </font>
@@ -424,10 +393,10 @@
                     </HBox>
                   </children>
                 </VBox>
-                <ScrollPane prefHeight="404.0" prefWidth="967.0" style="-fx-background-color: #fff;" styleClass="transparent" stylesheets="@../css/style.css">
-                  <content>
-                    <VBox fx:id="itemLayout" prefHeight="240.0" prefWidth="965.0" style="-fx-background-color: #fff;">
-                      <children>
+                        <VBox>
+                           <children>
+                              <VBox>
+                                 <children>
                         <HBox prefHeight="31.0" prefWidth="967.0">
                           <children>
                             <Pane prefHeight="31.0" prefWidth="14.0" />
@@ -454,11 +423,19 @@
                           </children>
                         </HBox>
                         <Line endX="858.2929077148438" endY="-1.4483928680419922E-5" startX="-100.0" />
-                        <VBox />
-                      </children>
-                    </VBox>
-                  </content>
-                </ScrollPane>
+                                 </children>
+                              </VBox>
+                      <ScrollPane prefHeight="404.0" prefWidth="967.0" style="-fx-background-color: #fff;" styleClass="transparent" stylesheets="@../css/style.css">
+                        <content>
+                          <VBox fx:id="itemLayout" prefHeight="232.0" prefWidth="965.0" style="-fx-background-color: #fff;">
+                            <children>
+                              <VBox />
+                            </children>
+                          </VBox>
+                        </content>
+                      </ScrollPane>
+                           </children>
+                        </VBox>
                 <HBox alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="967.0">
                   <children>
                     <Label text="Subtotal : ">

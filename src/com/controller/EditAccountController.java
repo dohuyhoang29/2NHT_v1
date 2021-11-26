@@ -6,11 +6,15 @@ import com.model.Account;
 import com.view.Navigator;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -173,8 +177,14 @@ public class EditAccountController implements Initializable {
     }else errPhone.setText("");
 
     if (count == 0) {
-      AccountDatabaseHelper.editAccount(txtUsername.getText(), txtEmail.getText(), pfPassword.getText(), "STAFF", txtAddress.getText(), txtPhoneNumber.getText(), acc.getId());
-      Navigator.getInstance().goToAccountList();
+      Alert alert = new Alert(AlertType.CONFIRMATION);
+      alert.setContentText("Are you sure you want to do it?");
+
+      Optional<ButtonType> option = alert.showAndWait();
+      if (option.get() == ButtonType.OK) {
+        AccountDatabaseHelper.editAccount(txtEmail.getText(), pfPassword.getText(), "STAFF", txtAddress.getText(), txtPhoneNumber.getText(), acc.getId());
+        Navigator.getInstance().goToAccountList();
+      }
     }
   }
 
@@ -208,12 +218,6 @@ public class EditAccountController implements Initializable {
   private void goToOrder(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToOrder();
   }
-
-  @FXML
-  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
-    Navigator.getInstance().goToOrderDetails();
-  }
-
   @FXML
   private void logout(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToLogin();

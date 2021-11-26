@@ -3,9 +3,14 @@ package com.view;
 import com.controller.EditAccountController;
 import com.controller.EditCategoryController;
 import com.controller.EditProductController;
+import com.controller.OrderDetailsController;
+import com.controller.ProductItemController;
+import com.controller.ScreenProductController;
+import com.controller.SearchController;
 import com.controller.ViewProductController;
 import com.model.Account;
 import com.model.Category;
+import com.model.Order;
 import com.model.Product;
 import java.io.IOException;
 
@@ -35,6 +40,14 @@ public class Navigator {
   static final String ORDER = "OrderUI.fxml";
   static final String ORDER_DETAILS = "OrderDetailsUI.fxml";
   static final String HOME = "HomeUI.fxml";
+  static final String SCREEN_PRODUCT = "ScreenProductUI.fxml";
+  static final String CART = "CartUI.fxml";
+  static final String PAY = "PayUI.fxml";
+  static final String MACBOOK = "MacbookUI.fxml";
+  static final String IPHONE = "iPhoneUI.fxml";
+  static final String IPAD = "iPadUI.fxml";
+  static final String PROFILE = "ProfileUI.fxml";
+  static final String SEARCH = "SearchUI.fxml";
 
   private FXMLLoader loader;
   private static Navigator navigator;
@@ -131,11 +144,55 @@ public class Navigator {
     goToScene(PROJECT_NAME, ORDER);
   }
 
-  public void goToOrderDetails() throws IOException {
+  public void goToOrderDetails(Order order) throws IOException {
     goToScene(PROJECT_NAME, ORDER_DETAILS);
+    OrderDetailsController controller = loader.getController();
+    controller.setData(order);
   }
 
   public void goToHome() throws IOException {
     goToScene(PROJECT_NAME, HOME);
+  }
+
+  public void goToScreenProduct(Product product) throws IOException {
+    goToScene(PROJECT_NAME, SCREEN_PRODUCT);
+    ScreenProductController controller = loader.getController();
+    controller.setData(product);
+  }
+
+  public void goToCart () throws IOException {
+    goToScene(PROJECT_NAME, CART);
+  }
+
+  public void goToPay () throws IOException {
+    goToScene(PROJECT_NAME, PAY);
+  }
+
+  public void goToMacbook () throws IOException {
+    goToScene(PROJECT_NAME, MACBOOK);
+  }
+
+  public void goToIPhone () throws IOException {
+    goToScene(PROJECT_NAME, IPHONE);
+  }
+
+  public void goToIPad () throws IOException {
+    goToScene(PROJECT_NAME, IPAD);
+  }
+
+  public void goToProfile() throws IOException {
+    goToScene(PROJECT_NAME, PROFILE);
+  }
+
+  public void goToSearch (String key) throws IOException {
+    goToScene(PROJECT_NAME, SEARCH);
+    SearchController controller = loader.getController();
+    controller.setData(key);
+  }
+
+  public void goToSearchWithCategory (String name, String category) throws IOException {
+    goToScene(PROJECT_NAME, SEARCH);
+    SearchController controller = loader.getController();
+    controller.setDataWithCategory(name, category);
   }
 }

@@ -45,7 +45,8 @@ public class ProductDatabaseHelper {
         String dimensions = rs.getString("dimensions");
 
         list.add(
-            new Product(id, categoryId, code, name, warrantyPeriod, importPrice, price, hardDrive, origin
+            new Product(id, categoryId, code, name, warrantyPeriod, importPrice, price, hardDrive,
+                origin
                 , color, imgSrc, screen, cpu, gpu, ram, operatingSystem, rearCamera,
                 selfieCamera, batteryCapacity, sim, weight, dimensions));
       }
@@ -54,6 +55,96 @@ public class ProductDatabaseHelper {
       return null;
     }
 
+    return list;
+  }
+
+  public static List<Product> getAllProductByname(String name) {
+    List<Product> list = new ArrayList<>();
+    String query = "SELECT p.id, p.code, p.name AS 'product_name', p.warranty_period, p.import_price, p.price, p.hard_drive, p.origin, p.color, p.img_src, p.screen, p.cpu, p.gpu, p.ram, p.operating_system, p.rear_camera, p.selfie_camera, p.battery_capacity, p.sim, p.weight, p.dimensions, c.name AS 'category_name' FROM product AS p INNER JOIN categories AS c ON p.category_id=c.id WHERE p.name = ?;";
+
+    try (Connection cnt = DatabaseHelper.getConnetion();
+        PreparedStatement preStm = cnt.prepareStatement(query)) {
+      preStm.setString(1, name);
+
+      ResultSet rs = preStm.executeQuery();
+      while (rs.next()) {
+        Integer id = rs.getInt("id");
+        String categoryId = rs.getString("category_name");
+        String code = rs.getString("code");
+        String Name = rs.getString("product_name");
+        String warrantyPeriod = rs.getString("warranty_period");
+        Integer importPrice = rs.getInt("import_price");
+        Integer price = rs.getInt("price");
+        String hardDrive = rs.getString("hard_drive");
+        String origin = rs.getString("origin");
+        String color = rs.getString("color");
+        String imgSrc = rs.getString("img_src");
+        String screen = rs.getString("screen");
+        String cpu = rs.getString("cpu");
+        String gpu = rs.getString("gpu");
+        String ram = rs.getString("ram");
+        String operatingSystem = rs.getString("operating_system");
+        String rearCamera = rs.getString("rear_camera");
+        String selfieCamera = rs.getString("selfie_camera");
+        String batteryCapacity = rs.getString("battery_capacity");
+        String sim = rs.getString("sim");
+        String weight = rs.getString("weight");
+        String dimensions = rs.getString("dimensions");
+
+        list.add (
+            new Product(id, categoryId, code, Name, warrantyPeriod, importPrice, price, hardDrive,
+                origin, color, imgSrc, screen, cpu, gpu, ram, operatingSystem, rearCamera,
+                selfieCamera, batteryCapacity, sim, weight, dimensions));
+      }
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+      return null;
+    }
+    return list;
+  }
+
+  public static List<Product> getAllProductByCategory(String category) {
+    List<Product> list = new ArrayList<>();
+    String query = "SELECT p.id, p.code, p.name AS 'product_name', p.warranty_period, p.import_price, p.price, p.hard_drive, p.origin, p.color, p.img_src, p.screen, p.cpu, p.gpu, p.ram, p.operating_system, p.rear_camera, p.selfie_camera, p.battery_capacity, p.sim, p.weight, p.dimensions, c.name AS 'category_name' FROM product AS p INNER JOIN categories AS c ON p.category_id=c.id WHERE c.name = ?;";
+
+    try (Connection cnt = DatabaseHelper.getConnetion();
+        PreparedStatement preStm = cnt.prepareStatement(query)) {
+      preStm.setString(1, category);
+
+      ResultSet rs = preStm.executeQuery();
+      while (rs.next()) {
+        Integer id = rs.getInt("id");
+        String categoryId = rs.getString("category_name");
+        String code = rs.getString("code");
+        String Name = rs.getString("product_name");
+        String warrantyPeriod = rs.getString("warranty_period");
+        Integer importPrice = rs.getInt("import_price");
+        Integer price = rs.getInt("price");
+        String hardDrive = rs.getString("hard_drive");
+        String origin = rs.getString("origin");
+        String color = rs.getString("color");
+        String imgSrc = rs.getString("img_src");
+        String screen = rs.getString("screen");
+        String cpu = rs.getString("cpu");
+        String gpu = rs.getString("gpu");
+        String ram = rs.getString("ram");
+        String operatingSystem = rs.getString("operating_system");
+        String rearCamera = rs.getString("rear_camera");
+        String selfieCamera = rs.getString("selfie_camera");
+        String batteryCapacity = rs.getString("battery_capacity");
+        String sim = rs.getString("sim");
+        String weight = rs.getString("weight");
+        String dimensions = rs.getString("dimensions");
+
+        list.add (
+            new Product(id, categoryId, code, Name, warrantyPeriod, importPrice, price, hardDrive,
+                origin, color, imgSrc, screen, cpu, gpu, ram, operatingSystem, rearCamera,
+                selfieCamera, batteryCapacity, sim, weight, dimensions));
+      }
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+      return null;
+    }
     return list;
   }
 
@@ -156,5 +247,97 @@ public class ProductDatabaseHelper {
       throwables.printStackTrace();
     }
     return false;
+  }
+
+  public static List<Product> searchProduct(String key) {
+    List<Product> list = new ArrayList<>();
+    String query = "SELECT p.id, p.code, p.name AS 'product_name', p.warranty_period, p.import_price, p.price, p.hard_drive, p.origin, p.color, p.img_src, p.screen, p.cpu, p.gpu, p.ram, p.operating_system, p.rear_camera, p.selfie_camera, p.battery_capacity, p.sim, p.weight, p.dimensions, c.name AS 'category_name' FROM product AS p INNER JOIN categories AS c ON p.category_id=c.id WHERE c.name LIKE ? OR p.name LIKE ?;";
+
+    try (Connection cnt = DatabaseHelper.getConnetion();
+        PreparedStatement preStm = cnt.prepareStatement(query)) {
+      preStm.setString(1, "%" + key + "%");
+      preStm.setString(2, "%" + key + "%");
+
+      ResultSet rs = preStm.executeQuery();
+      while (rs.next()) {
+        Integer id = rs.getInt("id");
+        String categoryId = rs.getString("category_name");
+        String code = rs.getString("code");
+        String Name = rs.getString("product_name");
+        String warrantyPeriod = rs.getString("warranty_period");
+        Integer importPrice = rs.getInt("import_price");
+        Integer price = rs.getInt("price");
+        String hardDrive = rs.getString("hard_drive");
+        String origin = rs.getString("origin");
+        String color = rs.getString("color");
+        String imgSrc = rs.getString("img_src");
+        String screen = rs.getString("screen");
+        String cpu = rs.getString("cpu");
+        String gpu = rs.getString("gpu");
+        String ram = rs.getString("ram");
+        String operatingSystem = rs.getString("operating_system");
+        String rearCamera = rs.getString("rear_camera");
+        String selfieCamera = rs.getString("selfie_camera");
+        String batteryCapacity = rs.getString("battery_capacity");
+        String sim = rs.getString("sim");
+        String weight = rs.getString("weight");
+        String dimensions = rs.getString("dimensions");
+
+        list.add (
+            new Product(id, categoryId, code, Name, warrantyPeriod, importPrice, price, hardDrive,
+                origin, color, imgSrc, screen, cpu, gpu, ram, operatingSystem, rearCamera,
+                selfieCamera, batteryCapacity, sim, weight, dimensions));
+      }
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+      return null;
+    }
+    return list;
+  }
+
+  public static List<Product> searchProductByCategoryAndName(String name, String category) {
+    List<Product> list = new ArrayList<>();
+    String query = "SELECT p.id, p.code, p.name AS 'product_name', p.warranty_period, p.import_price, p.price, p.hard_drive, p.origin, p.color, p.img_src, p.screen, p.cpu, p.gpu, p.ram, p.operating_system, p.rear_camera, p.selfie_camera, p.battery_capacity, p.sim, p.weight, p.dimensions, c.name AS 'category_name' FROM product AS p INNER JOIN categories AS c ON p.category_id=c.id WHERE c.name = ? AND p.name LIKE ?;";
+
+    try (Connection cnt = DatabaseHelper.getConnetion();
+        PreparedStatement preStm = cnt.prepareStatement(query)) {
+      preStm.setString(1, category);
+      preStm.setString(2, "%" + name + "%");
+
+      ResultSet rs = preStm.executeQuery();
+      while (rs.next()) {
+        Integer id = rs.getInt("id");
+        String categoryId = rs.getString("category_name");
+        String code = rs.getString("code");
+        String Name = rs.getString("product_name");
+        String warrantyPeriod = rs.getString("warranty_period");
+        Integer importPrice = rs.getInt("import_price");
+        Integer price = rs.getInt("price");
+        String hardDrive = rs.getString("hard_drive");
+        String origin = rs.getString("origin");
+        String color = rs.getString("color");
+        String imgSrc = rs.getString("img_src");
+        String screen = rs.getString("screen");
+        String cpu = rs.getString("cpu");
+        String gpu = rs.getString("gpu");
+        String ram = rs.getString("ram");
+        String operatingSystem = rs.getString("operating_system");
+        String rearCamera = rs.getString("rear_camera");
+        String selfieCamera = rs.getString("selfie_camera");
+        String batteryCapacity = rs.getString("battery_capacity");
+        String sim = rs.getString("sim");
+        String weight = rs.getString("weight");
+        String dimensions = rs.getString("dimensions");
+
+        list.add (
+            new Product(id, categoryId, code, Name, warrantyPeriod, importPrice, price, hardDrive,
+                origin, color, imgSrc, screen, cpu, gpu, ram, operatingSystem, rearCamera,
+                selfieCamera, batteryCapacity, sim, weight, dimensions));
+      }
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+      return null;
+    }
+    return list;
   }
 }

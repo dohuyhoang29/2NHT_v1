@@ -192,11 +192,6 @@ public class InsertAccountController implements Initializable {
   }
 
   @FXML
-  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
-    Navigator.getInstance().goToOrderDetails();
-  }
-
-  @FXML
   private void logout(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToLogin();
   }

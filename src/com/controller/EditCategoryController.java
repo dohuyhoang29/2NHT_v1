@@ -1,14 +1,19 @@
 package com.controller;
 
+import com.helper.AccountDatabaseHelper;
 import com.helper.CategoryDatabaseHelper;
 import com.model.Category;
 import com.view.Navigator;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -93,8 +98,14 @@ public class EditCategoryController implements Initializable {
       errName.setText("Category exists");
     }else {
       errName.setText("");
-      CategoryDatabaseHelper.editCategory(txtName.getText(), txtDescription.getText(), category.getId());
-      Navigator.getInstance().goToCategoryList();
+      Alert alert = new Alert(AlertType.CONFIRMATION);
+      alert.setContentText("Are you sure you want to do it?");
+
+      Optional<ButtonType> option = alert.showAndWait();
+      if (option.get() == ButtonType.OK) {
+        CategoryDatabaseHelper.editCategory(txtName.getText(), txtDescription.getText(), category.getId());
+        Navigator.getInstance().goToCategoryList();
+      }
     }
   }
 
@@ -127,11 +138,6 @@ public class EditCategoryController implements Initializable {
   @FXML
   private void goToOrder(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToOrder();
-  }
-
-  @FXML
-  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
-    Navigator.getInstance().goToOrderDetails();
   }
 
   @FXML

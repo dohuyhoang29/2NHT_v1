@@ -105,3 +105,8 @@
   -fx-border-color: #000;
   -fx-border-radius: 50;
 }
+
+.background-shopnow {
+  -fx-background-color: #efefef;
+  -fx-background-radius: 15;
+}

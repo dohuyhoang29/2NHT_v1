@@ -2,7 +2,6 @@ package com.controller;
 
 import com.helper.CategoryDatabaseHelper;
 import com.helper.ProductDatabaseHelper;
-import com.helper.ProductManager;
 import com.helper.ValidationManager;
 import com.model.Category;
 import com.view.Navigator;
@@ -17,9 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -332,11 +329,6 @@ public class InsertProductController implements Initializable {
   @FXML
   private void goToOrder(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToOrder();
-  }
-
-  @FXML
-  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
-    Navigator.getInstance().goToOrderDetails();
   }
 
   @FXML

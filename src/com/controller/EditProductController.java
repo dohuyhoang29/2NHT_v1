@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.helper.AccountDatabaseHelper;
 import com.helper.CategoryDatabaseHelper;
 import com.helper.ProductDatabaseHelper;
 import com.helper.ValidationManager;
@@ -12,10 +13,14 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -224,20 +229,27 @@ public class EditProductController implements Initializable {
     } else {
       imgName = imgSrc.getName();
     }
-    ProductDatabaseHelper.editProduct(category.getId(), txtProductCode.getText(),
-        txtProductName.getText(), txtWarrantyPeriod.getText(),
-        Integer.parseInt(txtImportPrice.getText()), Integer.parseInt(txtPrice.getText()),
-        txtHardDrive.getText(), txtOrigin.getText(), txtColor.getText(),
-        imgName,
-        txtScreen.getText(), txtCpu.getText(),
-        txtGpu.getText(), txtRam.getText(), txtOperatingSystem.getText(), txtRearCamera.getText(),
-        txtSelfieCamera.getText(), txtBatteryCapacity.getText(), txtSim.getText(),
-        txtDimensions.getText(), txtWeight.getText(), product.getId());
 
-    if (imgSrc != null) {
-      Files.copy(imgSrc.toPath(), (new File(path + imgSrc.getName())).toPath(), StandardCopyOption.REPLACE_EXISTING);
+    Alert alert = new Alert(AlertType.CONFIRMATION);
+    alert.setContentText("Are you sure you want to do it?");
+
+    Optional<ButtonType> option = alert.showAndWait();
+    if (option.get() == ButtonType.OK) {
+      ProductDatabaseHelper.editProduct(category.getId(), txtProductCode.getText(),
+          txtProductName.getText(), txtWarrantyPeriod.getText(),
+          Integer.parseInt(txtImportPrice.getText()), Integer.parseInt(txtPrice.getText()),
+          txtHardDrive.getText(), txtOrigin.getText(), txtColor.getText(),
+          imgName,
+          txtScreen.getText(), txtCpu.getText(),
+          txtGpu.getText(), txtRam.getText(), txtOperatingSystem.getText(), txtRearCamera.getText(),
+          txtSelfieCamera.getText(), txtBatteryCapacity.getText(), txtSim.getText(),
+          txtDimensions.getText(), txtWeight.getText(), product.getId());
+
+      if (imgSrc != null) {
+        Files.copy(imgSrc.toPath(), (new File(path + imgSrc.getName())).toPath(), StandardCopyOption.REPLACE_EXISTING);
+      }
+      Navigator.getInstance().goToInsertProduct();
     }
-    Navigator.getInstance().goToInsertProduct();
   }
 
   @FXML
@@ -369,12 +381,6 @@ public class EditProductController implements Initializable {
   private void goToOrder(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToOrder();
   }
-
-  @FXML
-  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
-    Navigator.getInstance().goToOrderDetails();
-  }
-
   @FXML
   private void logout(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToLogin();

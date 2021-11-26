@@ -1,10 +1,18 @@
 package com.controller;
 
+import com.helper.OrderDatabaseHelper;
+import com.model.Order;
 import com.view.Navigator;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -48,7 +56,7 @@ public class OrderController implements Initializable {
   private TextField txtSearch;
 
   @FXML
-  private ChoiceBox<?> cbStatus;
+  private ChoiceBox<String> cbStatus;
 
   @FXML
   private DatePicker dpFrom;
@@ -60,13 +68,29 @@ public class OrderController implements Initializable {
   private Button btnSearch;
 
   @FXML
-  private VBox itemLayout;
+  private VBox orderBox;
 
   int count;
+  ObservableList<Order> listOrder = FXCollections.observableArrayList();
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
+    listOrder = OrderDatabaseHelper.getAllOrder();
 
+    try {
+      for (int i = 0; i < listOrder.size(); i++) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/com/view/OrderItemUI.fxml"));
+        VBox hBox = loader.load();
+        OrderItemController controller = loader.getController();
+        controller.setData(listOrder.get(i));
+        orderBox.getChildren().add(hBox);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    cbStatus.getItems().addAll(Order.PENDING, Order.CANCELLED, Order.RECEIVED);
   }
 
   //Hanh dong
@@ -78,6 +102,13 @@ public class OrderController implements Initializable {
     } else {
       changeLanguageContainer.setVisible(false);
     }
+  }
+
+  @FXML
+  void search (ActionEvent event) {
+    List<Order> list = OrderDatabaseHelper.searchOrder(txtSearch.getText(), cbStatus.getValue(), dpFrom.getValue(), dpTo.getValue());
+    listOrder.clear();
+    listOrder.addAll(list);
   }
 
   //Dieu Huong
@@ -109,11 +140,6 @@ public class OrderController implements Initializable {
   @FXML
   private void goToOrder(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToOrder();
-  }
-
-  @FXML
-  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
-    Navigator.getInstance().goToOrderDetails();
   }
 
   @FXML

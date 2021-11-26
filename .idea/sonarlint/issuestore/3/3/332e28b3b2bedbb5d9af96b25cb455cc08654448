@@ -1,0 +1,39 @@
+
+2
+java:S1116"Remove this empty statement.(şŞ½
+W
+java:S1126"AReplace this if-then-else statement by a single return statement.(¡ûÖÉ
+L
+java:S2696"6Make the enclosing method "static" or remove this set.(ùîôË
+Q
+java:S2696 "6Make the enclosing method "static" or remove this set.(ù©›õùÿÿÿÿ
+K
+java:S2696""6Make the enclosing method "static" or remove this set.(‰à±L
+W
+java:S1126#"AReplace this if-then-else statement by a single return statement.(—¸ 
+L
+java:S2696*"6Make the enclosing method "static" or remove this set.(¯ï½¨
+Q
+java:S2696+"6Make the enclosing method "static" or remove this set.(ù©›õùÿÿÿÿ
+K
+java:S2696-"6Make the enclosing method "static" or remove this set.(‰à±L
+W
+java:S1126."AReplace this if-then-else statement by a single return statement.(—¸ 
+Q
+java:S26965"6Make the enclosing method "static" or remove this set.(©½Ì”úÿÿÿÿ
+Q
+java:S26966"6Make the enclosing method "static" or remove this set.(ù©›õùÿÿÿÿ
+K
+java:S26968"6Make the enclosing method "static" or remove this set.(‰à±L
+^
+java:S11269"AReplace this if-then-else statement by a single return statement.(—¸ 8›¯ªÑ/
+S
+java:S2696@"6Make the enclosing method "static" or remove this set.(Ğàøå8Êõ ¹Ñ/
+X
+java:S2696A"6Make the enclosing method "static" or remove this set.(ù©›õùÿÿÿÿ8Êõ ¹Ñ/
+R
+java:S2696C"6Make the enclosing method "static" or remove this set.(‰à±L8Ëõ ¹Ñ/
+^
+java:S1126D"AReplace this if-then-else statement by a single return statement.(—¸ 8Ëõ ¹Ñ/
+S
+java:S1128"7Remove this unused import 'javafx.scene.control.Alert'.(ÊÇê:8ÎÀ¡¹Ñ/

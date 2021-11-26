@@ -1,10 +1,20 @@
 package com.controller;
 
+import com.helper.AccountDatabaseHelper;
+import com.helper.OrderDatabaseHelper;
+import com.helper.OrderDetailsDatabaseHelper;
+import com.model.Account;
+import com.model.Order;
+import com.model.OrderDetail;
 import com.view.Navigator;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -15,6 +25,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class OrderDetailsController implements Initializable {
+
   @FXML
   private ImageView changeLanguage;
 
@@ -49,7 +60,7 @@ public class OrderDetailsController implements Initializable {
   private Label orderID;
 
   @FXML
-  private ChoiceBox<?> cbStatus;
+  private ChoiceBox<String> cbStatus;
 
   @FXML
   private Button btnSave;
@@ -76,15 +87,51 @@ public class OrderDetailsController implements Initializable {
   private Label subtotal;
 
   int count;
+  Order order;
+  List<OrderDetail> listOrderDetail = new ArrayList<>();
+  Account account;
+  Integer sub = 0;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
+    cbStatus.getItems().addAll(Order.PENDING, Order.CANCELLED, Order.RECEIVED);
+  }
+
+  public void setData(Order order) {
+    this.order = order;
+    account = AccountDatabaseHelper.getAccountById(order.getAccountID());
+    name.setText(order.getName());
+    email.setText(account.getEmail());
+    phone.setText(account.getPhone());
+    status.setText(order.getStatus());
+    address.setText(order.getAddress());
+    cbStatus.setValue(order.getStatus());
+    date.setText(order.getCreateDateProperty());
+
+    listOrderDetail = OrderDetailsDatabaseHelper.getOrderDetail(order.getId());
+
+    try {
+      for (OrderDetail o : listOrderDetail) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/com/view/OrderDetailsItemUI.fxml"));
+        VBox vBox = loader.load();
+        sub += o.getPrice() * o.getQuantity();
+
+        OrderDeatailsItemController controller = loader.getController();
+        controller.setData(o);
+        itemLayout.getChildren().add(vBox);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    subtotal.setText(sub.toString());
 
   }
 
   //Hanh dong
   @FXML
-  private void showChangeLanguageMousePressed (MouseEvent mouseEvent) {
+  private void showChangeLanguageMousePressed(MouseEvent mouseEvent) {
     count++;
     if (count % 2 != 0) {
       changeLanguageContainer.setVisible(true);
@@ -93,9 +140,14 @@ public class OrderDetailsController implements Initializable {
     }
   }
 
+  @FXML
+  void changeStatus (ActionEvent event) {
+    OrderDatabaseHelper.changeStatus(cbStatus.getValue(), order.getId());
+  }
+
   //Dieu Huong
   @FXML
-  private void goToInsertProduct (MouseEvent mouseEvent) throws IOException {
+  private void goToInsertProduct(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToInsertProduct();
   }
 
@@ -122,11 +174,6 @@ public class OrderDetailsController implements Initializable {
   @FXML
   private void goToOrder(MouseEvent mouseEvent) throws IOException {
     Navigator.getInstance().goToOrder();
-  }
-
-  @FXML
-  private void goToOrderDetails(MouseEvent mouseEvent) throws IOException {
-    Navigator.getInstance().goToOrderDetails();
   }
 
   @FXML

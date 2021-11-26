@@ -1,13 +1,18 @@
 package com.controller;
 
+import com.helper.AccountDatabaseHelper;
 import com.helper.ProductDatabaseHelper;
 import com.model.Product;
 import com.view.Navigator;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -80,6 +85,12 @@ public class ProductListItemController {
 
   @FXML
   void deleteProduct() {
-    ProductDatabaseHelper.deleteProduct(product.getId());
+    Alert alert = new Alert(AlertType.CONFIRMATION);
+    alert.setContentText("Are you sure you want to do it?");
+
+    Optional<ButtonType> option = alert.showAndWait();
+    if (option.get() == ButtonType.OK) {
+      ProductDatabaseHelper.deleteProduct(product.getId());
+    }
   }
 }
