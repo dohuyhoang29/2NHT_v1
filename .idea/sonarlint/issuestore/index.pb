@@ -11,8 +11,6 @@ U
 %src/com/helper/ValidationManager.java,3\3\332e28b3b2bedbb5d9af96b25cb455cc08654448
 J
 src/com/view/ForgotUI.fxml,2\c\2c630e6cbf574454200be91e21c473c9b7b2e6d8
-D
-src/com/sql/2nht.sql,0\9\09d06ce4999c99147457a9f97f60f23ff1bc39f6
 N
 src/com/view/ImgChoosedUI.fxml,c\0\c0f73cb70a879dfddc669245a2439ad34fe36e54
 T
