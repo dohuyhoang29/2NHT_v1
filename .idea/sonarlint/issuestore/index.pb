@@ -35,16 +35,12 @@ Z
 *src/com/controller/RegisterController.java,3\c\3cec7c570155bbdb5dbeaab7d8ed6ddc9ca0cf9a
 O
 src/com/view/ViewAccountUI.fxml,7\c\7ce12b9014a81bd81315e653f59cce8a3dba075f
-E
-src/com/css/style.css,b\2\b2ff9733bf5fde2b03847446202ed4ba17c95f8e
 Y
 )src/com/helper/AccountDatabaseHelper.java,4\8\484d8e2a9f53e9046174c6c9043eba27e6f118d6
 ]
 -src/com/controller/AccountListController.java,7\3\7315375d019ed60d0f00a2eb8ba322e60ae220bf
 a
 1src/com/controller/AccountListItemController.java,d\6\d6b2b4011c67d4fa1fe07cef9c0630a82339f03b
-O
-src/com/view/AccountListUI.fxml,6\4\64c329ee42f7131c8268e1bd9d8192a23cc0e77f
 G
 src/com/model/Cart.java,f\3\f300763839bfa44822297002ddc9d4de88443750
 V
@@ -67,8 +63,6 @@ P
  src/com/view/CategoryListUI.fxml,9\7\97f9161b43430a33744041f626fb0cc0eedcdded
 `
 0src/com/controller/ChangePasswordController.java,2\1\21394fc477cc247cd486de1c8bea7b4b92302ce0
-R
-"src/com/view/ChangePasswordUI.fxml,4\5\45d4ad00352b321ba6b104b004e6731f71f39f68
 [
 +src/com/controller/DashboardController.java,d\8\d821a4a93d05136a84b986c80f539f43ee8e27bf
 M
@@ -109,10 +103,6 @@ R
 "src/com/view/InsertCategoryUI.fxml,7\8\7839767e9262561619de51d2b47619e34169aa56
 V
 &src/com/controller/IPadController.java,4\b\4baa064bae2aea922eac892e874e109033aa3bf3
-X
-(src/com/controller/IPhoneController.java,6\a\6a69a0c6036fcce208f9df71ee492c2b689f8fde
-J
-src/com/view/iPhoneUI.fxml,6\b\6bf3f198dc54577297db20549715cd5ec07694e1
 W
 'src/com/controller/LoginController.java,b\4\b4d8b973f94d5557e2da5cd9cd817dfc27cf2141
 Y
@@ -137,8 +127,6 @@ I
 src/com/view/OrderUI.fxml,1\0\10a1755a5fcab329f2417f6bd0f1405a523209c1
 U
 %src/com/controller/PayController.java,a\d\ad0232df295a7ca87b2ad9f50456ad14a3f31f07
-G
-src/com/view/PayUI.fxml,9\a\9a159d24689d7dcfd3c10b81867bef6b822a7470
 ]
 -src/com/controller/ProductItemController.java,e\f\ef40100fbd931b80acffd2a0cc9dee8bd4c1b864
 O
