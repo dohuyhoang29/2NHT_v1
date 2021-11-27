@@ -150,14 +150,13 @@ public class ProductDatabaseHelper {
 
   public static boolean insertProduct(Integer categoryId, String code, String name,
       String warrantyPeriod,
-      Integer importPrice, Integer price, String hardDrive, String origin, Integer quatity,
-      String color, String imgSrc, String screen, String cpu, String gpu, String ram,
+      Integer importPrice, Integer price, String hardDrive, String origin, String imgSrc,
+      String screen, String cpu, String gpu, String ram,
       String operatingSystem, String rearCamera, String selfieCamera, String batteryCapacity,
-      String sim,
-      String weight, String dimensions) {
+      String sim, String weight, String dimensions) {
     String query =
-        "INSERT INTO product (category_id, code, name, warranty_period, import_price, price, hard_drive, origin, quantity, color, img_src, screen, cpu, gpu, ram, operating_system, rear_camera, selfie_camera, battery_capacity, sim, weight, dimensions) "
-            + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        "INSERT INTO product (category_id, code, name, warranty_period, import_price, price, hard_drive, origin, img_src, screen, cpu, gpu, ram, operating_system, rear_camera, selfie_camera, battery_capacity, sim, weight, dimensions) "
+            + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
     try (Connection cnt = DatabaseHelper.getConnetion();
         PreparedStatement preStm = cnt.prepareStatement(query)) {
@@ -169,20 +168,18 @@ public class ProductDatabaseHelper {
       preStm.setInt(6, price);
       preStm.setString(7, hardDrive);
       preStm.setString(8, origin);
-      preStm.setInt(9, quatity);
-      preStm.setString(10, color);
-      preStm.setString(11, imgSrc);
-      preStm.setString(12, screen);
-      preStm.setString(13, cpu);
-      preStm.setString(14, gpu);
-      preStm.setString(15, ram);
-      preStm.setString(16, operatingSystem);
-      preStm.setString(17, rearCamera);
-      preStm.setString(18, selfieCamera);
-      preStm.setString(19, batteryCapacity);
-      preStm.setString(20, sim);
-      preStm.setString(21, weight);
-      preStm.setString(22, dimensions);
+      preStm.setString(9, imgSrc);
+      preStm.setString(10, screen);
+      preStm.setString(11, cpu);
+      preStm.setString(12, gpu);
+      preStm.setString(13, ram);
+      preStm.setString(14, operatingSystem);
+      preStm.setString(15, rearCamera);
+      preStm.setString(16, selfieCamera);
+      preStm.setString(17, batteryCapacity);
+      preStm.setString(18, sim);
+      preStm.setString(19, weight);
+      preStm.setString(20, dimensions);
 
       if (preStm.executeUpdate() > 0) {
         return true;

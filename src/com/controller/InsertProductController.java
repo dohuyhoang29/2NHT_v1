@@ -28,9 +28,6 @@ import javafx.stage.FileChooser;
 public class InsertProductController implements Initializable {
 
   @FXML
-  private TextField txtSearch;
-
-  @FXML
   private ImageView changeLanguage;
 
   @FXML
@@ -88,13 +85,22 @@ public class InsertProductController implements Initializable {
   private Label errPrice;
 
   @FXML
+  private TextField txtHardDrive;
+
+  @FXML
+  private Label errHardDrive;
+
+  @FXML
   private TextField txtOrigin;
+
+  @FXML
+  private Label errOrigin;
 
   @FXML
   private TextField txtWarrantyPeriod;
 
   @FXML
-  private Label errImportDate;
+  private Label errWarrantyPeriod;
 
   @FXML
   private Button btnNextBasicInfo;
@@ -103,25 +109,16 @@ public class InsertProductController implements Initializable {
   private VBox productImages;
 
   @FXML
-  private Button btnChooseImages;
+  private HBox demoImg;
 
   @FXML
   private ImageView imgPreview;
 
   @FXML
-  private TextField txtColor;
+  private VBox clickUpload;
 
   @FXML
-  private Label errColor;
-
-  @FXML
-  private TextField txtQuantity;
-
-  @FXML
-  private TextField txtHardDrive;
-
-  @FXML
-  private Label errHardDrive;
+  private Label errImgSrc;
 
   @FXML
   private Button btnPreviousProductImg;
@@ -192,11 +189,10 @@ public class InsertProductController implements Initializable {
     ProductDatabaseHelper.insertProduct(category.getId(), txtProductCode.getText(),
         txtProductName.getText(), txtWarrantyPeriod.getText(),
         Integer.parseInt(txtImportPrice.getText()), Integer.parseInt(txtPrice.getText()),
-        txtHardDrive.getText(), txtOrigin.getText(), Integer.parseInt(txtQuantity.getText()),
-        txtColor.getText(), imgSrc.getName(), txtScreen.getText(), txtCpu.getText(),
-        txtGpu.getText(), txtRam.getText(), txtOperatingSystem.getText(), txtRearCamera.getText(),
-        txtSelfieCamera.getText(), txtBatteryCapacity.getText(), txtSim.getText(),
-        txtDimensions.getText(), txtWeight.getText());
+        txtHardDrive.getText(), txtOrigin.getText(), imgSrc.getName(), txtScreen.getText(),
+        txtCpu.getText(), txtGpu.getText(), txtRam.getText(), txtOperatingSystem.getText(),
+        txtRearCamera.getText(), txtSelfieCamera.getText(), txtBatteryCapacity.getText(),
+        txtSim.getText(), txtDimensions.getText(), txtWeight.getText());
     Files.copy(imgSrc.toPath(), (new File(path + imgSrc.getName())).toPath(), StandardCopyOption.REPLACE_EXISTING);
     Navigator.getInstance().goToInsertProduct();
   }
@@ -218,6 +214,8 @@ public class InsertProductController implements Initializable {
 
     if (imgSrc != null) {
       imgPreview.setImage(image);
+      clickUpload.setVisible(false);
+      demoImg.setVisible(true);
     }
   }
 
@@ -258,10 +256,21 @@ public class InsertProductController implements Initializable {
         count++;
       }else errPrice.setText("");
 
-      if(txtWarrantyPeriod.getText().isEmpty()) {
-        errImportDate.setText("Warranty Period date is required");
+      if(txtHardDrive.getText().isEmpty()) {
+        errHardDrive.setText("Hard drive is required");
         count++;
-      }else errImportDate.setText("");
+      }
+      else errHardDrive.setText("");
+
+      if(txtOrigin.getText().isEmpty()) {
+        errOrigin.setText("Origin is required");
+        count++;
+      }else errOrigin.setText("");
+
+      if(txtWarrantyPeriod.getText().isEmpty()) {
+        errWarrantyPeriod.setText("Warranty Period date is required");
+        count++;
+      }else errWarrantyPeriod.setText("");
 
       if(count == 0)
         productImages.setVisible(true);
@@ -272,17 +281,10 @@ public class InsertProductController implements Initializable {
   private void setBtnNextProductImg(MouseEvent mouseEvent) {
     if(productImages.isVisible()) {
       int count = 0;
-      if(txtColor.getText().isEmpty()) {
-        errColor.setText("Product's color is required");
+      if (imgSrc == null) {
+        errImgSrc.setText("No photos selected");
         count++;
-      }
-      else errColor.setText("");
-
-      if(txtHardDrive.getText().isEmpty()) {
-        errHardDrive.setText("Hard drive is required");
-        count++;
-      }
-      else errHardDrive.setText("");
+      } else errImgSrc.setText("");
 
       if(count == 0) productData.setVisible(true);
     }

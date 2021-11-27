@@ -3,10 +3,10 @@ package com.controller;
 import com.helper.AccountDatabaseHelper;
 import com.helper.ProjectManager;
 import com.view.Navigator;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -83,5 +83,20 @@ public class ProfileController implements Initializable {
   @FXML
   void goToIPad(MouseEvent event) throws IOException {
     Navigator.getInstance().goToIPad();
+  }
+
+  @FXML
+  void goToSearch (MouseEvent event) throws IOException {
+    Navigator.getInstance().goToSearch(txtSearch.getText());
+  }
+
+  @FXML
+  void goToProfile (MouseEvent event) throws IOException {
+    Navigator.getInstance().goToProfile();
+  }
+
+  @FXML
+  void goToLogin (MouseEvent event) throws IOException {
+    Navigator.getInstance().goToLogin();
   }
 }

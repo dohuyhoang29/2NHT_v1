@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -16,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.HomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.HomeController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="1250.0" spacing="20.0" style="-fx-background-color: #26d;" BorderPane.alignment="CENTER">
          <children>
@@ -81,12 +80,12 @@
                   </Pane>
                </children>
             </StackPane>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#goToProfile" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/ic_my_account.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="27.0" fitWidth="27.0" onMouseClicked="#goToLogin" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/ic_logout1.png" />
                </image>
@@ -103,11 +102,11 @@
          <content>
             <VBox prefHeight="2000.0" prefWidth="1248.0" spacing="20.0" style="-fx-background-color: #fff;">
                <children>
-                  <ScrollPane prefHeight="487.0" prefWidth="1248.0">
+                  <ScrollPane prefHeight="361.0" prefWidth="1248.0">
                      <content>
-                        <HBox prefHeight="281.0" prefWidth="2177.0">
+                        <HBox prefHeight="346.0" prefWidth="2180.0">
                            <children>
-                              <ImageView fitHeight="472.0" fitWidth="1245.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="346.0" fitWidth="905.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/slide1.png" />
                                  </image>
@@ -126,94 +125,6 @@
                         </HBox>
                      </content>
                   </ScrollPane>
-                  <HBox prefHeight="197.0" prefWidth="1248.0">
-                     <children>
-                        <HBox prefHeight="277.0" prefWidth="450.0" styleClass="background-shopnow" stylesheets="@../css/style.css">
-                           <children>
-                              <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/demo_phone.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox alignment="CENTER" prefHeight="248.0" prefWidth="171.0" spacing="20.0">
-                                 <children>
-                                    <Label text="iPhone">
-                                       <font>
-                                          <Font name="System Bold" size="30.0" />
-                                       </font>
-                                    </Label>
-                                    <Button fx:id="btnShopNowiPhone" mnemonicParsing="false" onMouseClicked="#goToIPhone" prefHeight="34.0" prefWidth="105.0" style="-fx-background-color: #26d;" text="Shop Now" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="20.0" right="20.0" />
-                           </HBox.margin>
-                        </HBox>
-                        <HBox prefHeight="277.0" prefWidth="450.0" styleClass="background-shopnow" stylesheets="@../css/style.css">
-                           <children>
-                              <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/demo_ipad.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox alignment="CENTER" prefHeight="248.0" prefWidth="171.0" spacing="20.0">
-                                 <children>
-                                    <Label text="iPad">
-                                       <font>
-                                          <Font name="System Bold" size="30.0" />
-                                       </font>
-                                    </Label>
-                                    <Button fx:id="btnShopNowiPad" mnemonicParsing="false" onMouseClicked="#goToIPad" prefHeight="34.0" prefWidth="105.0" style="-fx-background-color: #26d;" text="Shop Now" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="20.0" right="20.0" />
-                           </HBox.margin>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="277.0" prefWidth="450.0" styleClass="background-shopnow" stylesheets="@../css/style.css">
-                           <children>
-                              <ImageView fitHeight="155.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/demo_macbook.png" />
-                                 </image>
-                              </ImageView>
-                              <VBox alignment="CENTER" prefHeight="248.0" prefWidth="171.0" spacing="20.0">
-                                 <children>
-                                    <Label text="Mac">
-                                       <font>
-                                          <Font name="System Bold" size="30.0" />
-                                       </font>
-                                    </Label>
-                                    <Button fx:id="btnShopNowMac" mnemonicParsing="false" onMouseClicked="#goToMacBook" prefHeight="34.0" prefWidth="105.0" style="-fx-background-color: #26d;" text="Shop Now" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="20.0" right="20.0" />
-                           </HBox.margin>
-                        </HBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="20.0" right="20.0" />
-                     </padding>
-                  </HBox>
                   <HBox alignment="CENTER" prefHeight="55.0" prefWidth="1248.0">
                      <children>
                         <Label text="All Product ">
