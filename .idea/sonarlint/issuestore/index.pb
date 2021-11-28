@@ -61,8 +61,6 @@ b
 2src/com/controller/CategoryListItemController.java,a\4\a4be16bb7a82ba75d4f8588275bfe0e072827740
 P
  src/com/view/CategoryListUI.fxml,9\7\97f9161b43430a33744041f626fb0cc0eedcdded
-`
-0src/com/controller/ChangePasswordController.java,2\1\21394fc477cc247cd486de1c8bea7b4b92302ce0
 [
 +src/com/controller/DashboardController.java,d\8\d821a4a93d05136a84b986c80f539f43ee8e27bf
 M
@@ -153,3 +151,37 @@ O
 src/com/view/ViewProductUI.fxml,4\c\4c7544d623226fda95e420e071283dc7dc338dd0
 D
 src/com/sql/2nht.sql,0\9\09d06ce4999c99147457a9f97f60f23ff1bc39f6
+^
+.src/com/controller/OrderDetailsController.java,2\4\24a1e09759e6dbf380c4fecf2ca098861b3bdb00
+W
+'src/com/helper/OrderDatabaseHelper.java,a\c\acb049e92daa2322136d7c6ebd2e12c3ed5a4d57
+W
+'src/com/controller/OrderController.java,c\a\ca252f820c4f10eb19708f6f747fd775d947ff66
+T
+$src/com/view/OrderDetailsItemUI.fxml,d\b\dbe01c9f858b496c0f0f4f0ea502b94ce89eec63
+P
+ src/com/view/OrderDetailsUI.fxml,4\2\4289ff3bd5426d122ca422479c2007ae53875bfa
+_
+/src/com/controller/InsertProductController.java,6\6\6654d053489f17b7ff0378773929c20d2a0267bf
+Q
+!src/com/view/InsertProductUI.fxml,e\1\e12aeae504d0f87d3464b9a0e23aba917696aed1
+H
+src/com/view/iPadUI.fxml,b\f\bfe969663889abd2465635826a64af30a466832d
+K
+src/com/view/Navigator.java,a\4\a4e65d59f646f35f969ff59abca8d1f081eddf7b
+Y
+)src/com/helper/ProductDatabaseHelper.java,f\8\f83b2f8f065bf8cc8a43948a326e4a22bb481fe5
+Y
+)src/com/controller/ProfileController.java,3\b\3b588c2e8119c13eea636615f1af6df496dc7cfe
+V
+&src/com/controller/HomeController.java,1\1\11446b2f41aa383194000c357e63bc0c8fa5d556
+X
+(src/com/controller/IPhoneController.java,6\a\6a69a0c6036fcce208f9df71ee492c2b689f8fde
+O
+src/com/view/AccountListUI.fxml,6\4\64c329ee42f7131c8268e1bd9d8192a23cc0e77f
+G
+src/com/view/PayUI.fxml,9\a\9a159d24689d7dcfd3c10b81867bef6b822a7470
+E
+src/com/css/style.css,b\2\b2ff9733bf5fde2b03847446202ed4ba17c95f8e
+J
+src/com/view/iPhoneUI.fxml,6\b\6bf3f198dc54577297db20549715cd5ec07694e1

@@ -1,0 +1,11 @@
+
+r
+java:S1450;"WRemove the "listCart" field and declare it as a local variable in the relevant methods.(õ”¨üÿÿÿÿ
+m
+java:S1450:"WRemove the "listData" field and declare it as a local variable in the relevant methods.(ÿéñ
+Y
+java:S1128">Remove this unused import 'com.helper.FeedbackDatabaseHelper'.(ùûèşÿÿÿÿ
+E
+java:S1128"/Remove this unused import 'com.model.Feedback'.(½Û†±
+R
+java:S1128"7Remove this unused import 'javafx.scene.layout.Region'.(ñ³Áİıÿÿÿÿ

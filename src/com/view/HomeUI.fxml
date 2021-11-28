@@ -111,7 +111,7 @@
                                     <Image url="@../images/slide1.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="277.0" fitWidth="732.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="446.0" fitWidth="903.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/slide2.png" />
                                  </image>

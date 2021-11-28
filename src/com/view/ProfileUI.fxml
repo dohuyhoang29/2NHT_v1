@@ -97,136 +97,197 @@
       </HBox>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </BorderPane.margin>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
          <children>
-            <Label text="My Profile">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label text="Manage profile information for account security">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Separator prefWidth="200.0" />
-            <HBox prefHeight="51.0" prefWidth="1170.0" spacing="20.0">
+            <VBox prefHeight="782.0" prefWidth="188.0" spacing="10.0">
                <children>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <VBox>
                      <children>
-                        <Label text="Username ">
+                        <HBox alignment="CENTER_LEFT" prefHeight="79.0" prefWidth="188.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/user.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Username">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="188.0" spacing="10.0" styleClass="border_choose" stylesheets="@../css/style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/ic_my_account_gray.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="My Account">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="14.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="188.0" spacing="10.0">
                      <children>
-                        <Label fx:id="username" text="Username ">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/ic_purchase_order.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Purchase Order">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="188.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/ic_key.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Change Password">
+                           <font>
+                              <Font size="14.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
                </children>
-            </HBox>
-            <HBox prefHeight="51.0" prefWidth="1170.0" spacing="20.0">
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #fff;" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
                <children>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <Label text="My Profile">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Manage profile information for account security">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="51.0" prefWidth="1170.0" spacing="20.0">
                      <children>
-                        <Label text="Email">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Username ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="username" text="Username ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                  <HBox prefHeight="51.0" prefWidth="1170.0" spacing="20.0">
                      <children>
-                        <TextField fx:id="txtEmail" prefHeight="39.0" prefWidth="860.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Email">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="txtEmail" prefHeight="39.0" prefWidth="860.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="51.0" prefWidth="1170.0" spacing="20.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Phone Number">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="txtPhone" prefHeight="25.0" prefWidth="860.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="51.0" prefWidth="1170.0" spacing="20.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Address">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="txtAddress" prefHeight="25.0" prefWidth="860.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="74.0" prefWidth="1170.0" spacing="20.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="302.0">
+                           <children>
+                              <Button fx:id="save" mnemonicParsing="false" onAction="#editAccount" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: #26d;" text="Save" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </children>
-            </HBox>
-            <HBox prefHeight="51.0" prefWidth="1170.0" spacing="20.0">
-               <children>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label text="Phone Number">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                     <children>
-                        <TextField fx:id="txtPhone" prefHeight="25.0" prefWidth="860.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="51.0" prefWidth="1170.0" spacing="20.0">
-               <children>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label text="Address">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                     <children>
-                        <TextField fx:id="txtAddress" prefHeight="25.0" prefWidth="860.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="74.0" prefWidth="1170.0" spacing="20.0">
-               <children>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="302.0">
-                     <children>
-                        <Button fx:id="save" mnemonicParsing="false" onAction="#editAccount" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: #26d;" text="Save" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                     <children>
-                        <Button fx:id="changePassword" mnemonicParsing="false" prefHeight="39.0" prefWidth="178.0" style="-fx-background-color: #26d;" text="Change Password" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
+            </VBox>
          </children>
-      </VBox>
+      </HBox>
    </center>
 </BorderPane>

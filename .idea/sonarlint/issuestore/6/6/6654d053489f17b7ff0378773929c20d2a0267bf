@@ -1,0 +1,17 @@
+
+X
+java:S1075¯"ARefactor your code to get this URI from a customizable parameter.(Ñ„—
+^
+java:S1126Ë"BReplace this if-then-else statement by a single method invocation.(İ³¶’ùÿÿÿÿ
+n
+java:S3776ß"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(›ÂÚúÿÿÿÿ
+Q
+java:S1117ã":Rename "count" which hides the field declared at line 171.(æÕ¿¼
+K
+java:S2209ö"5Change this instance-reference to a static reference.(†®Ğj
+L
+java:S2209ş"5Change this instance-reference to a static reference.(Ğ€®…
+Q
+java:S1117›":Rename "count" which hides the field declared at line 171.(æÕ¿¼
+N
+java:S2589×"7Remove this expression which always evaluates to "true"(ß¶

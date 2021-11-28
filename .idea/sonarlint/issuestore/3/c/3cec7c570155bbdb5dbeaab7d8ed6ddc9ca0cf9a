@@ -1,0 +1,18 @@
+
+l	java:S116)"RRename this field "show_tf" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÜÚşÿÿÿÿ
+l	java:S116L"WRename this field "written_text" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—…í¥
+—
+java:S1186O"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¦Ê—
+t
+java:S3776T"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(äÛÑ•üÿÿÿÿ8ê…ÅºÑ/
+i	java:S100™"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÉìÿÿÿÿÿ
+C
+java:S1125š"'Remove the unnecessary boolean literal.(ÜÖ³öúÿÿÿÿ
+R
+java:S1128"0Remove this unused import 'javafx.geometry.Pos'.(ÌÆ÷Ùøÿÿÿÿ8ÆÑÙ»Ñ/
+K
+java:S1128".Remove this unused import 'javafx.scene.Node'.(ÑÖ¬ï8ÆÑÙ»Ñ/
+N
+java:S1128"1Remove this unused import 'javafx.util.Duration'.(ç½®§8ÆÑÙ»Ñ/
+X
+java:S3655Œ"5Call "option.isPresent()" before accessing the value.(Ï¬ÚÃúÿÿÿÿ8¨éÙºÑ/
