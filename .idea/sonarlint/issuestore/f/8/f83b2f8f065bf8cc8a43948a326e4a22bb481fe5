@@ -1,0 +1,56 @@
+
+P
+java:S1118":Add a private constructor to hide the implicit public one.(˜‰Á…
+A
+java:S11687"+Return an empty collection instead of null.(¥¹ï
+A
+java:S1168e"+Return an empty collection instead of null.(¥¹ï
+B
+java:S1168’"+Return an empty collection instead of null.(¥¹ï
+B
+java:S1168¢"+Return an empty collection instead of null.(¥¹ï
+I
+java:S1168Ğ"+Return an empty collection instead of null.(¥¹ï8Ï…’ºÕ/
+G
+java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8´“ºÕ/
+R
+java:S1128
+"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8´“ºÕ/
+i
+java:S1192"NDefine a constant instead of duplicating this literal "category_name" 5 times.(˜ñÊşøÿÿÿÿ
+\
+java:S1192!"FDefine a constant instead of duplicating this literal "color" 5 times.(ˆ…¹à
+b
+java:S1192 "GDefine a constant instead of duplicating this literal "origin" 5 times.(âĞ¾ûÿÿÿÿ
+]
+java:S1192#"GDefine a constant instead of duplicating this literal "screen" 5 times.(´Âı¹
+b
+java:S1192("LDefine a constant instead of duplicating this literal "rear_camera" 5 times.(›­ÔÕ
+f
+java:S1192"PDefine a constant instead of duplicating this literal "warranty_period" 5 times.(Ø½ÜÉ
+a
+java:S1192"FDefine a constant instead of duplicating this literal "price" 5 times.(ü‘ÄÊşÿÿÿÿ
+g
+java:S1192'"QDefine a constant instead of duplicating this literal "operating_system" 5 times.(í©¹ú
+i
+java:S1192)"NDefine a constant instead of duplicating this literal "selfie_camera" 5 times.(áçŸ£ıÿÿÿÿ
+]
+java:S1192,"GDefine a constant instead of duplicating this literal "weight" 5 times.(ÕşİÁ
+c
+java:S1192"MDefine a constant instead of duplicating this literal "product_name" 5 times.(Ò£—¦
+c
+java:S1192""HDefine a constant instead of duplicating this literal "img_src" 5 times.(ŒğèÁüÿÿÿÿ
+h
+java:S1192"MDefine a constant instead of duplicating this literal "import_price" 5 times.(â„…àşÿÿÿÿ
+a
+java:S1192"KDefine a constant instead of duplicating this literal "hard_drive" 5 times.(ÆÔ¿Ì
+l
+java:S1192*"QDefine a constant instead of duplicating this literal "battery_capacity" 5 times.(æÆÓİøÿÿÿÿ
+a
+java:S1192-"KDefine a constant instead of duplicating this literal "dimensions" 5 times.(á¦šµ
+S	java:S107—"=Method has 20 parameters, which is greater than 7 authorized.(‡Ğİ™
+S	java:S107Á"=Method has 22 parameters, which is greater than 7 authorized.(•ôºô
+f	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š™ğË
+f	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š™ğË
+g	java:S117‡"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š™ğË
+n	java:S117µ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š™ğË8·©‘ºÕ/
