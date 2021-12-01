@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.IPhoneController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.IPhoneController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="1250.0" spacing="20.0" style="-fx-background-color: #26d;" BorderPane.alignment="CENTER">
          <children>
@@ -28,25 +28,25 @@
                </image>
             </ImageView>
             <Pane prefHeight="61.0" prefWidth="39.0" />
-            <Label onMouseClicked="#goToMacBook" text="MacBook" textFill="WHITE">
+            <Label onMouseClicked="#goToMacBook" text="%macBook" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label onMouseClicked="#goToIPhone" text="iPhone" textFill="WHITE">
+            <Label onMouseClicked="#goToIPhone" text="%iphone" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label onMouseClicked="#goToIPad" text="iPad" textFill="WHITE">
+            <Label onMouseClicked="#goToIPad" text="%ipad" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Pane prefHeight="76.0" prefWidth="311.0" HBox.hgrow="ALWAYS" />
-            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="34.0" prefWidth="215.0" style="-fx-background-color: #fff; -fx-background-radius: 100;">
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#goToSearch" prefHeight="34.0" prefWidth="215.0" style="-fx-background-color: #fff; -fx-background-radius: 100;">
                <children>
-                  <TextField fx:id="txtSearch" promptText="Search" styleClass="transparent" stylesheets="@../css/style.css">
+                  <TextField fx:id="txtSearch" promptText="%search" styleClass="transparent" stylesheets="@../css/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -62,11 +62,6 @@
                   </Pane>
                </children>
             </HBox>
-            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/ic_my_account.png" />
-               </image>
-            </ImageView>
             <StackPane onMouseClicked="#goToCart">
                <children>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -88,6 +83,16 @@
                   </Pane>
                </children>
             </StackPane>
+            <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#goToProfile" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_my_account.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="27.0" onMouseClicked="#goToLogin" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_logout1.png" />
+               </image>
+            </ImageView>
             <HBox alignment="CENTER" />
          </children>
          <padding>
@@ -108,7 +113,7 @@
                            </image>
                         </ImageView>
                         <Separator maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="17.0" prefWidth="6.0" />
-                        <Label text="MacBook">
+                        <Label text="%macBook">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -122,7 +127,7 @@
                      <children>
                         <VBox prefHeight="519.0" prefWidth="210.0" spacing="10.0">
                            <children>
-                              <Label prefHeight="39.0" prefWidth="212.0" style="-fx-background-color: #f53c5e; -fx-background-radius: 5;" text="Category" textFill="WHITE">
+                              <Label prefHeight="39.0" prefWidth="212.0" style="-fx-background-color: #f53c5e; -fx-background-radius: 5;" text="%category" textFill="WHITE">
                                  <padding>
                                     <Insets left="15.0" />
                                  </padding>
@@ -132,26 +137,26 @@
                               </Label>
                               <VBox prefHeight="134.0" prefWidth="210.0" style="-fx-border-color: #c5c5c5;">
                                  <children>
-                                    <Label alignment="CENTER" onMouseClicked="#goToMacBook" prefHeight="40.0" prefWidth="82.0" text="MacBook">
+                                    <Label alignment="CENTER" onMouseClicked="#goToMacBook" prefHeight="40.0" prefWidth="82.0" text="%macBook">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
                                     <Separator prefWidth="200.0" />
-                                    <Label alignment="CENTER" onMouseClicked="#goToIPhone" prefHeight="40.0" prefWidth="71.0" text="iPhone">
+                                    <Label alignment="CENTER" onMouseClicked="#goToIPhone" prefHeight="40.0" prefWidth="71.0" text="%iphone">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
                                     <Separator prefWidth="200.0" />
-                                    <Label alignment="CENTER" onMouseClicked="#goToIPad" prefHeight="40.0" prefWidth="57.0" text="iPad">
+                                    <Label alignment="CENTER" onMouseClicked="#goToIPad" prefHeight="40.0" prefWidth="57.0" text="%ipad">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </VBox>
-                              <Label prefHeight="39.0" prefWidth="212.0" style="-fx-background-color: #f53c5e; -fx-background-radius: 5;" text="Refine Search" textFill="WHITE">
+                              <Label prefHeight="39.0" prefWidth="212.0" style="-fx-background-color: #f53c5e; -fx-background-radius: 5;" text="%refineSearch" textFill="WHITE">
                                  <padding>
                                     <Insets left="15.0" />
                                  </padding>
@@ -202,7 +207,7 @@
                                     <Separator prefWidth="200.0" />
                                     <HBox alignment="CENTER_RIGHT">
                                        <children>
-                                          <Button fx:id="refineSearch" mnemonicParsing="false" style="-fx-background-color: #26d;" text="Refine Search" textFill="WHITE">
+                                          <Button fx:id="refineSearch" mnemonicParsing="false" style="-fx-background-color: #26d;" text="%refineSearch" textFill="WHITE">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>

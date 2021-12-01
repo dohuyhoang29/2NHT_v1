@@ -110,3 +110,13 @@
   -fx-background-color: #efefef;
   -fx-background-radius: 15;
 }
+
+.border_choose   {
+  -fx-border-color: #666666;
+  -fx-border-width: 0 0 2 0;
+}
+
+.nav_choose   {
+  -fx-border-color: #fff;
+  -fx-border-width: 0 0 2 0;
+}
