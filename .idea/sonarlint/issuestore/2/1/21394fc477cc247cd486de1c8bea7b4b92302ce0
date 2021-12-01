@@ -1,0 +1,7 @@
+
+v	java:S116%"\Rename this field "show_password_btn" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Ê²ıÿÿÿÿ
+
+java:S1130G"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(÷´ ùÿÿÿÿ8¨ìÆÍÖ/
+c	java:S100Y"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çèÒ½
+=
+java:S1125Z"'Remove the unnecessary boolean literal.(Û´ÌÅ

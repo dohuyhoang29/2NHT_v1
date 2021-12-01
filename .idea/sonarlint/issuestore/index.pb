@@ -81,8 +81,6 @@ O
 src/com/view/EditProductUI.fxml,f\0\f06c4d5f8bc280008c66e113bb168a93ccada497
 K
 src/com/model/Feedback.java,4\f\4f8f11aa506bc94b02ccab4a23a8e5f0684ad0a9
-Z
-*src/com/helper/FeedbackDatabaseHelper.java,c\7\c72c0ab2aa7be6933377cc3e2c4d6df71208d8f3
 ^
 .src/com/controller/FeedbackItemController.java,d\e\de8b7f64bfee57aada29dbd2372edf07a0246d13
 P
@@ -103,8 +101,6 @@ V
 &src/com/controller/IPadController.java,4\b\4baa064bae2aea922eac892e874e109033aa3bf3
 W
 'src/com/controller/LoginController.java,b\4\b4d8b973f94d5557e2da5cd9cd817dfc27cf2141
-Y
-)src/com/controller/MacbookController.java,3\8\389042f24fdac2d55371bdf3f6ce7b0b7feeb0fd
 K
 src/com/view/MacbookUI.fxml,e\e\eee62c0328786389ac463b1095144ccb228e8b0b
 A
@@ -167,10 +163,6 @@ Q
 !src/com/view/InsertProductUI.fxml,e\1\e12aeae504d0f87d3464b9a0e23aba917696aed1
 H
 src/com/view/iPadUI.fxml,b\f\bfe969663889abd2465635826a64af30a466832d
-K
-src/com/view/Navigator.java,a\4\a4e65d59f646f35f969ff59abca8d1f081eddf7b
-Y
-)src/com/helper/ProductDatabaseHelper.java,f\8\f83b2f8f065bf8cc8a43948a326e4a22bb481fe5
 Y
 )src/com/controller/ProfileController.java,3\b\3b588c2e8119c13eea636615f1af6df496dc7cfe
 V
